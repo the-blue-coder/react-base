@@ -8,7 +8,7 @@ const MainWrapper: React.FC = () => {
             <Grid container>
                 <Grid item xs={6}>
                     <Typography fontSize={30} color={BASE_COLOR.mainPrimary}>
-                        <strong>Site logo</strong>
+                        <strong>App logo</strong>
                     </Typography>
                 </Grid>
 
@@ -23,7 +23,7 @@ const MainWrapper: React.FC = () => {
 
             <Grid item xs={12} textAlign="center">
                 <Typography>
-                    <strong>Site name - {new Date().getFullYear()}</strong>
+                    <strong>App name - {new Date().getFullYear()}</strong>
                 </Typography>
             </Grid>
         </Grid>
