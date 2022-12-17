@@ -22,9 +22,7 @@ const MainWrapper: React.FC = () => {
             </Grid>
 
             <Grid item xs={12} textAlign="center">
-                <Typography>
-                    <strong>App name - {new Date().getFullYear()}</strong>
-                </Typography>
+                <Typography>App name - {new Date().getFullYear()}</Typography>
             </Grid>
         </Grid>
     );
