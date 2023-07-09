@@ -1,29 +1,32 @@
-import { Grid, Typography } from "@mui/material";
+import { Container, Row, Col } from "react-bootstrap";
 import { Outlet } from "react-router-dom";
 import useMainWrapperStyles from "../hooks/useMainWrapperStyles";
+import { APP_NAME } from "../constants/appDetails";
 
-const MainWrapper: React.FC = () => {
-  const styles = useMainWrapperStyles();
+const MainWrapper = () => {
+    const styles = useMainWrapperStyles();
 
-  return (
-    <Grid container sx={styles.MainWrapper}>
-      <Grid container>
-        <Grid item xs={6}>
-          <Typography sx={styles.MainWrapper.logoContainer}>
-            <strong>App logo</strong>
-          </Typography>
-        </Grid>
-      </Grid>
+    return (
+        <Container fluid style={styles.MainWrapper}>
+            <Row>
+                <Col xs={6}>
+                    <strong>{APP_NAME}</strong>
+                </Col>
+            </Row>
 
-      <Grid item xs={12}>
-        <Outlet />
-      </Grid>
+            <Row>
+                <Col xs={12}>
+                    <Outlet />
+                </Col>
+            </Row>
 
-      <Grid item xs={12} textAlign="center">
-        <Typography>App name - {new Date().getFullYear()}</Typography>
-      </Grid>
-    </Grid>
-  );
+            <Row>
+                <Col xs={12}>
+                    {APP_NAME} - {new Date().getFullYear()}
+                </Col>
+            </Row>
+        </Container>
+    );
 };
 
 export default MainWrapper;
