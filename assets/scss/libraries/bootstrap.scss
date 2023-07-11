@@ -1,7 +1,7 @@
-// change the theme
+// Customization
 $theme-colors: (
-    "primary": $c1,
+  "primary": $c1,
 );
 
-// Import Bootstrap and its default variables
+// Bootstrap scss
 @import "bootstrap/scss/bootstrap.scss";
