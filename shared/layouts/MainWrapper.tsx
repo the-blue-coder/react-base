@@ -1,14 +1,14 @@
 import { Container, Row, Col } from "react-bootstrap";
 import { Outlet } from "react-router-dom";
-import "../../assets/scss/shared/layouts/MainWrapper.scss";
 import { APP_NAME } from "../constants/appDetails";
+import "../../assets/scss/shared/layouts/MainWrapper.scss";
 
 const MainWrapper: React.FC = () => {
     return (
         <Container fluid className="main-wrapper">
             <Row>
                 <Col xs={6} className="logo-container">
-                    <strong>{APP_NAME}</strong>
+                    <strong className="text-primary">{APP_NAME}</strong>
                 </Col>
 
                 <Col xs={6} className="text-end">
