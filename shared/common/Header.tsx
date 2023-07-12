@@ -11,7 +11,9 @@ const Header: React.FC = () => {
             <strong className="text-primary">{APP_NAME}</strong>
           </Col>
 
-          <Col xs={6}>Menu</Col>
+          <Col xs={6} className="text-end">
+            Menu
+          </Col>
         </Row>
       </Container>
     </header>
