@@ -6,7 +6,7 @@ const Home: React.FC = () => {
       <Row>
         <Col
           xs={12}
-          className="d-flex flex-column align-items-center justify-content-center"
+          className="d-flex align-items-center justify-content-center"
         >
           Hello world
         </Col>
