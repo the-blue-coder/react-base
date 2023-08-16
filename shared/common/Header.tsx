@@ -1,23 +1,30 @@
-import { Col, Container, Row } from "react-bootstrap";
-import { APP_NAME } from "../constants/appDetails";
-import "../../assets/scss/shared/common/Header.scss";
+import { Container, Typography, AppBar, Toolbar } from "@mui/material";
+import { routes } from "routes";
+import { Link } from "react-router-dom";
+import useHeaderStyles from "../hooks/useHeaderStyles";
+import useDotEnv from "../hooks/useDotEnv";
+import useAppRoutes from "shared/hooks/useAppRoutes";
 
 const Header: React.FC = () => {
-  return (
-    <header className="d-flex align-items-center justify-content-center">
-      <Container fluid>
-        <Row>
-          <Col xs={6} className="logo-container">
-            <strong className="text-primary">{APP_NAME}</strong>
-          </Col>
+    const { styles } = useHeaderStyles();
+    const { getEnvVariable } = useDotEnv();
+    const { getRoutePath } = useAppRoutes();
 
-          <Col xs={6} className="text-end">
-            Menu
-          </Col>
-        </Row>
-      </Container>
-    </header>
-  );
+    return (
+        <AppBar sx={styles.header}>
+            <Toolbar id="toolbar">
+                <Container>
+                    <Typography variant="h6">
+                        <Link to={getRoutePath(routes.public.home)} color="inherit">
+                            <Typography color="primary" fontWeight="bold" textAlign="center" fontSize={18}>
+                                {getEnvVariable("VITE_APP_NAME")}
+                            </Typography>
+                        </Link>
+                    </Typography>
+                </Container>
+            </Toolbar>
+        </AppBar>
+    );
 };
 
 export default Header;

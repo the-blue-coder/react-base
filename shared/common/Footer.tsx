@@ -1,18 +1,25 @@
-import { Col, Container, Row } from "react-bootstrap";
-import { APP_NAME } from "../constants/appDetails";
-import "../../assets/scss/shared/common/Footer.scss";
+import { Typography, Grid, Box } from "@mui/material";
+import useFooterStyles from "../hooks/useFooterStyles";
+import { Link } from "react-router-dom";
+import { routes } from "routes";
+import useDotEnv from "../hooks/useDotEnv";
+import useAppRoutes from "shared/hooks/useAppRoutes";
 
 const Footer: React.FC = () => {
+    const { styles } = useFooterStyles();
+    const { getEnvVariable } = useDotEnv();
+    const { getRoutePath } = useAppRoutes();
+
     return (
-        <footer className="d-flex align-items-center justify-content-center">
-            <Container fluid>
-                <Row>
-                    <Col xs={12} className="text-center">
-                        {APP_NAME} - {new Date().getFullYear()}
-                    </Col>
-                </Row>
-            </Container>
-        </footer>
+        <Box component="footer" sx={styles.footer}>
+            <Grid container alignItems="center">
+                <Grid item xs={12} textAlign="center">
+                    <Typography variant="body1">
+                        <Link to={getRoutePath(routes.public.home)}>{getEnvVariable("VITE_APP_NAME")}</Link> - {new Date().getFullYear()}
+                    </Typography>
+                </Grid>
+            </Grid>
+        </Box>
     );
 };
 

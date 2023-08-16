@@ -1,19 +1,23 @@
+import React from "react";
+import { Box } from "@mui/material";
 import { Outlet } from "react-router-dom";
 import Header from "../common/Header";
 import Footer from "../common/Footer";
-import "../../assets/scss/shared/layouts/Main.scss";
+import useMainLayoutStyles from "../hooks/useMainLayoutStyles";
 
 const Main: React.FC = () => {
+    const { styles } = useMainLayoutStyles();
+
     return (
-        <div id="main-layout">
+        <Box sx={styles.main}>
             <Header />
 
-            <section id="content">
+            <Box component="section" id="content">
                 <Outlet />
-            </section>
+            </Box>
 
             <Footer />
-        </div>
+        </Box>
     );
 };
 
