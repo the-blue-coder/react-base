@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import _ from "lodash";
 import { useCallback, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -14,7 +15,7 @@ export const useUrlParamsState = <TValue extends object = Record<string, any>>(d
         if (defaultValue && _.isEmpty(urlParamsValue)) {
             navigate(`${location.pathname}?${encode({ ...defaultValue, ...urlParamsValue })}`, { replace: true });
         }
-    }, [defaultValue]);
+    }, [defaultValue]); // eslint-disable-line react-hooks/exhaustive-deps
 
     const setUrlParams = useCallback(
         (key: string | SetUrlParamsCallback<TValue>, value?: any) => {
@@ -29,7 +30,7 @@ export const useUrlParamsState = <TValue extends object = Record<string, any>>(d
                 navigate(`${location.pathname}?${encode(newValue)}`);
             }
         },
-        [urlParamsValue]
+        [urlParamsValue] // eslint-disable-line react-hooks/exhaustive-deps
     );
 
     return {

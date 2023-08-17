@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Button, IconButton, Alert, Snackbar, Typography } from "@mui/material";
 import { useRecoilState } from "recoil";
 import { SnackbarListState } from "../../state/SnackbarList.state";
@@ -54,7 +55,7 @@ const SnackbarList: React.FC = ({ limit }: SnackbarListProps) => {
         }
 
         return list;
-    }, [list]);
+    }, [limit, list]);
 
     return (
         <>

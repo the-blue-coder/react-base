@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useCallback } from "react";
 
 /**
@@ -7,7 +8,7 @@ export const useUrlParamsEncode = () => {
     return useCallback((data?: Record<string, any>): string => {
         let str = "";
 
-        for (let prop in data) {
+        for (const prop in data) {
             if (Array.isArray(data[prop])) {
                 const adr = data[prop] as Array<string>;
                 adr.forEach((item: string) => {
