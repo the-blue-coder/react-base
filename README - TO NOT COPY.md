@@ -1,9 +1,9 @@
-DO NOT forget to add "baseUrl": "src" in tsconfig.json > compilerOptions
-DO NOT remove vite-end.d.ts
-DO NOT copy this README.md file to your project, you don't need it there
+Add "baseUrl": "src" in tsconfig.json > compilerOptions
+KEEP vite-end.d.ts in src folder when you copy src files from react-base
 Copy .prettierrc and .prettierignore to the root of your new React project
 Copy .env.development and .env.production as well to the root
-DO NOT forget to ignore .env.development ONLY (do not ignore .env.production) in your .gitignore file (use "# Dotenv" as header comment)
+Ignore .env.development ONLY (do not ignore .env.production) in your .gitignore file (use "# Dotenv" as header comment)
+Update .env.production and .env.development content
 
 Run these pnpm commands:
 pnpm add @tanstack/react-query
