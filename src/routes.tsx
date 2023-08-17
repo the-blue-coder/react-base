@@ -1,11 +1,11 @@
-import Dashboard from "pages/Dashboard/containers/Dashboard";
+import Homepage from "pages/Homepage/containers/Homepage";
 
 /**
  * The react-router-dom implementation is done inside shared\components\routes\AppRouter.tsx
  */
 export const routes = {
-	dashboard: {
-		path: "/dashboard",
-		container: <Dashboard />,
-	},
+    homepage: {
+        path: "/",
+        container: <Homepage />,
+    },
 };

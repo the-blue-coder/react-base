@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Form } from "@rjsf/material-ui";
+import { Form } from "@rjsf/mui";
 import { GenericFormProps } from "../../types/Forms.type";
 import { useState } from "react";
 import { IChangeEvent } from "@rjsf/core";

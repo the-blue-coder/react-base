@@ -1,21 +1,24 @@
 Add "baseUrl": "src" in tsconfig.json > compilerOptions
+Add tsconfigPaths() as element in the array "defineConfig" > "plugins" in the file vite.config.ts (plugins: [react(), tsconfigPaths()])
 KEEP vite-end.d.ts in src folder when you copy src files from react-base
 Copy .prettierrc and .prettierignore to the root of your new React project
 Copy .env.development and .env.production as well to the root
 Ignore .env.development ONLY (do not ignore .env.production) in your .gitignore file (use "# Dotenv" as header comment)
 Update .env.production and .env.development content
+In index.html > Update <title> tag and <script type="module" src="/src/[main.tsx INTO index.tsx]"></script>
 
 Run these pnpm commands:
 pnpm add @tanstack/react-query
 pnpm add recoil
 pnpm add @mui/material
-pnpm add react-icons
+pnpm add @mui/icons-material
 pnpm add react-router-dom
-pnpm add @rjsf/material-ui
+pnpm add @rjsf/mui
 pnpm add @rjsf/core
 pnpm add @rjsf/validator-ajv8
 pnpm add @rjsf/utils
 pnpm add lodash
 pnpm add @types/lodash
 pnpm add axios
-pnpm add react-use-cookie
+pnpm add sass
+pnpm add vite-tsconfig-paths

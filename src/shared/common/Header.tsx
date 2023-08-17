@@ -15,7 +15,7 @@ const Header: React.FC = () => {
             <Toolbar id="toolbar">
                 <Container>
                     <Typography variant="h6">
-                        <Link to={getRoutePath(routes.dashboard)} color="inherit">
+                        <Link to={getRoutePath(routes.homepage)} color="inherit">
                             <Typography color="primary" fontWeight="bold" textAlign="center" fontSize={18}>
                                 {getEnvVariable("VITE_APP_NAME")}
                             </Typography>
