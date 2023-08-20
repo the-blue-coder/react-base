@@ -7,7 +7,7 @@ const GenericButton: React.FC<GenericButtonProps> = ({ variant, color, isText, w
             {...props}
             variant={isText ? "text" : variant ?? "contained"}
             color={color ?? "primary"}
-            sx={{ width: isText ? "auto" : width ?? 125 }}
+            sx={{ ...props?.sx, width: isText ? "auto" : width ?? 125 }}
             onClick={onClick}
         >
             {children}
