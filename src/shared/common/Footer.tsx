@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
         <Box component="footer" sx={styles.footer}>
             <Grid container alignItems="center">
                 <Grid item xs={12} textAlign="center">
-                    <Typography variant="body1">
+                    <Typography fontSize={14}>
                         <Link to={getRoutePath(routes.homepage)}>{getEnvVariable("VITE_APP_NAME")}</Link> - {new Date().getFullYear()}
                     </Typography>
                 </Grid>
