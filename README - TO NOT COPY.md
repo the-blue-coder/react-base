@@ -13,6 +13,8 @@ pnpm add recoil
 pnpm add @mui/material
 pnpm add @mui/icons-material
 pnpm add react-router-dom
+pnpm add json-schema
+pnpm add @types/json-schema
 pnpm add @rjsf/mui
 pnpm add @rjsf/core
 pnpm add @rjsf/validator-ajv8
