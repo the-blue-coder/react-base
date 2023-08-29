@@ -3,7 +3,6 @@ Copy the content of src folder from react-base to your project
 Copy .prettierrc, .prettierignore, .env.development and .env.production to the root of your new React project
 Update the content of the .env files
 Add "baseUrl": "src" in tsconfig.json > compilerOptions
-Add tsconfigPaths() as element in the array "defineConfig" > "plugins" in the file vite.config.ts (plugins: [react(), tsconfigPaths()])
 Ignore .env.development ONLY (do not ignore .env.production) in your .gitignore file (use "# Dotenv" as header comment)
 In index.html > Update <title> tag and <script type="module" src="/src/[main.tsx INTO index.tsx]"></script>
 
@@ -24,3 +23,5 @@ pnpm add @types/lodash
 pnpm add axios
 pnpm add sass
 pnpm add vite-tsconfig-paths
+
+Add tsconfigPaths() as element in the array "defineConfig" > "plugins" in the file vite.config.ts (plugins: [react(), tsconfigPaths()])
