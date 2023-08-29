@@ -10,3 +10,4 @@ Run this long pnpm commands:
 pnpm add @tanstack/react-query recoil @mui/material @mui/icons-material react-router-dom json-schema @types/json-schema @rjsf/mui @rjsf/core @rjsf/validator-ajv8 @rjsf/utils lodash @types/lodash axios sass vite-tsconfig-paths
 
 Add tsconfigPaths() as element in the array "defineConfig" > "plugins" in the file vite.config.ts (plugins: [react(), tsconfigPaths()])
+import tsconfigPaths from "vite-tsconfig-paths"; (if not detected)
