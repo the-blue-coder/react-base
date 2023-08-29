@@ -7,7 +7,7 @@ import Tasks from "./pages/Tasks/containers/Tasks";
 export const routes = {
     overview: {
         title: "Overview",
-        path: "/overview",
+        path: "/",
         container: <Overview />,
     },
     groups: {
