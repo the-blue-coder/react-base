@@ -1,13 +1,11 @@
 const useFooterStyles = () => {
-    const styles = {
+    return {
         footer: {
             "& >.MuiGrid-container": {
                 height: 30,
             },
         },
     };
-
-    return { styles };
 };
 
 export default useFooterStyles;

@@ -6,7 +6,7 @@ import Footer from "../common/Footer";
 import useMainLayoutStyles from "../hooks/useMainLayoutStyles";
 
 const Main: React.FC = () => {
-    const { styles } = useMainLayoutStyles();
+    const styles = useMainLayoutStyles();
 
     return (
         <Box sx={styles.main}>

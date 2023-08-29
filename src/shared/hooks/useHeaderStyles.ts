@@ -1,5 +1,5 @@
 const useHeaderStyles = () => {
-    const styles = {
+    return {
         header: {
             position: "static",
             backgroundColor: "transparent",
@@ -10,8 +10,6 @@ const useHeaderStyles = () => {
             },
         },
     };
-
-    return { styles };
 };
 
 export default useHeaderStyles;

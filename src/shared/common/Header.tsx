@@ -6,7 +6,7 @@ import useDotEnv from "../hooks/useDotEnv";
 import useAppRoutes from "shared/hooks/useAppRoutes";
 
 const Header: React.FC = () => {
-    const { styles } = useHeaderStyles();
+    const styles = useHeaderStyles();
     const { getEnvVariable } = useDotEnv();
     const { getRoutePath } = useAppRoutes();
 

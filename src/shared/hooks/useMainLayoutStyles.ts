@@ -1,13 +1,11 @@
 const useMainLayoutStyles = () => {
-    const styles = {
+    return {
         main: {
             "& #content": {
                 minHeight: "calc(100vh - 120px)",
             },
         },
     };
-
-    return { styles };
 };
 
 export default useMainLayoutStyles;

@@ -6,7 +6,7 @@ import useDotEnv from "../hooks/useDotEnv";
 import useAppRoutes from "shared/hooks/useAppRoutes";
 
 const Footer: React.FC = () => {
-    const { styles } = useFooterStyles();
+    const styles = useFooterStyles();
     const { getEnvVariable } = useDotEnv();
     const { getRoutePath } = useAppRoutes();
 
