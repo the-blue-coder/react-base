@@ -1,4 +1,4 @@
-const useMainLayoutStyles = () => {
+const useMainStyles = () => {
     return {
         main: {
             "& #content": {
@@ -8,4 +8,4 @@ const useMainLayoutStyles = () => {
     };
 };
 
-export default useMainLayoutStyles;
+export default useMainStyles;

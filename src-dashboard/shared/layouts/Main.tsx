@@ -2,11 +2,11 @@ import React from "react";
 import { Box, Grid } from "@mui/material";
 import { Outlet } from "react-router-dom";
 import Footer from "../common/Footer";
-import useMainLayoutStyles from "../styles/useMainLayoutStyles";
+import useMainStyles from "../styles/layouts/useMainStyles";
 import LeftMenu from "shared/common/LeftMenu";
 
 const Main: React.FC = () => {
-    const styles = useMainLayoutStyles();
+    const styles = useMainStyles();
 
     return (
         <Box sx={styles.main}>

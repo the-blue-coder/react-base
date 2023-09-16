@@ -1,5 +1,5 @@
 import { Typography, Grid, Box } from "@mui/material";
-import useFooterStyles from "../styles/useFooterStyles";
+import useFooterStyles from "../styles/common/useFooterStyles";
 import { Link } from "react-router-dom";
 import { routes } from "routes";
 import useDotEnv from "../hooks/useDotEnv";

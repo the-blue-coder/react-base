@@ -1,7 +1,7 @@
 import { Container, Typography, AppBar, Toolbar } from "@mui/material";
 import { routes } from "routes";
 import { Link } from "react-router-dom";
-import useHeaderStyles from "../styles/useHeaderStyles";
+import useHeaderStyles from "../styles/common/useHeaderStyles";
 import useDotEnv from "../hooks/useDotEnv";
 import useAppRoutes from "shared/hooks/useAppRoutes";
 
