@@ -3,7 +3,7 @@ import { Box } from "@mui/material";
 import { Outlet } from "react-router-dom";
 import Header from "../common/Header";
 import Footer from "../common/Footer";
-import useMainLayoutStyles from "../hooks/useMainLayoutStyles";
+import useMainLayoutStyles from "../styles/useMainLayoutStyles";
 
 const Main: React.FC = () => {
     const styles = useMainLayoutStyles();
