@@ -15,7 +15,7 @@ const Main: React.FC = () => {
                     <LeftMenu />
                 </Grid>
 
-                <Grid item xs={10}>
+                <Grid item xs={10} id="right-section">
                     <Outlet />
                 </Grid>
             </Grid>

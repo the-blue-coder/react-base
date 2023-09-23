@@ -1,10 +1,11 @@
 import { Grid, Typography } from "@mui/material";
+import SectionTitle from "shared/components/texts/SectionTitle";
 
 const Groups: React.FC = () => {
     return (
-        <Grid container padding={2}>
+        <Grid container>
             <Grid item xs={12}>
-                <Typography component="h1">Groups</Typography>
+                <SectionTitle>Groups</SectionTitle>
             </Grid>
         </Grid>
     );

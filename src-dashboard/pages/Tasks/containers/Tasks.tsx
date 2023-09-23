@@ -1,10 +1,11 @@
 import { Grid, Typography } from "@mui/material";
+import SectionTitle from "shared/components/texts/SectionTitle";
 
 const Tasks: React.FC = () => {
     return (
-        <Grid container padding={2}>
+        <Grid container>
             <Grid item xs={12}>
-                <Typography component="h1">Tasks</Typography>
+                <SectionTitle>Tasks</SectionTitle>
             </Grid>
         </Grid>
     );
