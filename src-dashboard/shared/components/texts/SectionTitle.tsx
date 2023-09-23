@@ -1,6 +1,4 @@
 import { Typography } from "@mui/material";
-import { useRecoilValue } from "recoil";
-import { SelectedPropertyState } from "shared/state/PropertySwitcher.state";
 import useSectionTitleStyles from "shared/styles/components/texts/useSectionTitleStyles";
 import { SectionTitleProps } from "shared/types/Texts.type";
 
