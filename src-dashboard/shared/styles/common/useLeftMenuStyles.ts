@@ -5,7 +5,7 @@ const useLeftMenuStyles = () => {
         leftMenu: {
             "& .MuiListItemButton-root": {
                 transition: "initial",
-                "-webkit-transition": "initial",
+                WebkitTransition: "initial",
             },
             "& .MuiListItemButton-root.Mui-selected, & .MuiListItemButton-root.Mui-selected:hover, & .MuiListItemButton-root:hover": {
                 backgroundColor: BASE_COLOR.primary,
