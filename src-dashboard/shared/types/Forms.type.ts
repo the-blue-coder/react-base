@@ -7,7 +7,7 @@ export type GenericFormProps = {
     schema: GenericFormSchemaType;
     defaultValue: any;
     children?: ReactNode;
-    onSubmit: (formData: any) => any;
+    onSubmit?: (formData: any) => any;
 };
 
 export type GenericFormSchemaType = {

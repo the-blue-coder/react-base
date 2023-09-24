@@ -26,7 +26,7 @@ const GenericForm: React.FC<GenericFormProps> = ({ defaultValue, schema, childre
     };
 
     const handleSubmit = ({ formData }: IChangeEvent<any>) => {
-        onSubmit(formData);
+        onSubmit?.(formData);
     };
 
     return (
