@@ -6,7 +6,7 @@ import { IChangeEvent } from "@rjsf/core";
 import validator from "@rjsf/validator-ajv8";
 import { ErrorTransformer, RJSFSchema } from "@rjsf/utils";
 
-const GenericForm: React.FC<GenericFormProps> = ({ defaultValue, schema, children, onSubmit, ...props }) => {
+const GenericForm: React.FC<GenericFormProps> = ({ defaultValue, schema, children, onFormChange, onSubmit, ...props }) => {
     const [formData, setFormData] = useState(defaultValue);
 
     const transformErrors: ErrorTransformer<any, RJSFSchema, any> = (errors, uiSchema) => {
@@ -22,7 +22,8 @@ const GenericForm: React.FC<GenericFormProps> = ({ defaultValue, schema, childre
     };
 
     const handleChange = ({ formData }: IChangeEvent<any>): void => {
-        setFormData(formData ?? defaultValue);
+        setFormData(formData);
+        onFormChange?.(formData);
     };
 
     const handleSubmit = ({ formData }: IChangeEvent<any>) => {
