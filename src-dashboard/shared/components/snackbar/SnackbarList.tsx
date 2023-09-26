@@ -71,7 +71,7 @@ const SnackbarList: React.FC = ({ limit }: SnackbarListProps) => {
                         {..._.omit(item, ["AlertProps", "action"])}
                         style={{ top: index > 0 ? 70 * index + 10 : undefined, ...item.style }}
                         onClose={(e) => handleClickOutside(e, index)}
-                        autoHideDuration={15000}
+                        autoHideDuration={item.autoHideDuration ?? 15000}
                     >
                         <Alert
                             className={severity}
