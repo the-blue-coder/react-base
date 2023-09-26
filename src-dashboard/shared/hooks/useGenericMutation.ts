@@ -4,7 +4,7 @@ import axios from "axios";
 import { GenericMutationPropsType } from "../types/Mutations.type";
 import useDotEnv from "./useDotEnv";
 
-const useGenericMutation = ({ method = "POST", endpointPath }: GenericMutationPropsType) => {
+const useGenericMutation = ({ method, endpointPath }: GenericMutationPropsType) => {
     const { getEnvVariable } = useDotEnv();
 
     const mutation = useMutation(async (data: any) => {
