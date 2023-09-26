@@ -1,15 +1,9 @@
 import { Button } from "@mui/material";
 import { GenericButtonProps } from "shared/types/Buttons.type";
 
-const GenericButton: React.FC<GenericButtonProps> = ({ variant, color, isText, width, children, onClick, ...props }) => {
+const GenericButton: React.FC<GenericButtonProps> = ({ variant, color, isText, children, onClick, ...props }) => {
     return (
-        <Button
-            {...props}
-            variant={isText ? "text" : variant ?? "contained"}
-            color={color ?? "primary"}
-            sx={{ ...props?.sx, width: isText ? "auto" : width ?? 125 }}
-            onClick={onClick}
-        >
+        <Button {...props} variant={isText ? "text" : variant ?? "contained"} color={color ?? "primary"} onClick={onClick}>
             {children}
         </Button>
     );
