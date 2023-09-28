@@ -3,7 +3,7 @@ import { Button, IconButton, Alert, Snackbar, Typography } from "@mui/material";
 import { useRecoilState } from "recoil";
 import { SnackbarListState } from "../../state/SnackbarList.state";
 import { Close } from "@mui/icons-material";
-import { SyntheticEvent, useCallback } from "react";
+import { useCallback } from "react";
 import _ from "lodash";
 import { SnackbarItemType, SnackbarListProps } from "shared/types/Snackbar.type";
 
@@ -21,18 +21,6 @@ const SnackbarList: React.FC = ({ limit }: SnackbarListProps) => {
     const handleActionClick = (item: SnackbarItemType, index: number) => {
         removeFromList(index);
         item.action?.onClick?.(item);
-    };
-
-    const handleClickOutside = (e: Event | SyntheticEvent<any, Event>, index: number) => {
-        const target = e.target as HTMLElement;
-        const targetIsSnackbarRemover =
-            ["A", "BUTTON"].includes(target.tagName) || target.classList.contains("snackbar-remover") || target.closest("a") || target.closest("button");
-
-        if (targetIsSnackbarRemover) {
-            removeFromList(index);
-        } else {
-            e.stopPropagation();
-        }
     };
 
     const renderAction = (item: SnackbarItemType, index: number) => {
@@ -70,8 +58,8 @@ const SnackbarList: React.FC = ({ limit }: SnackbarListProps) => {
                         anchorOrigin={{ vertical: "top", horizontal: "center" }}
                         {..._.omit(item, ["AlertProps", "action"])}
                         style={{ top: index > 0 ? 70 * index + 10 : undefined, ...item.style }}
-                        onClose={(e) => handleClickOutside(e, index)}
-                        autoHideDuration={item.autoHideDuration ?? 15000}
+                        onClose={() => removeFromList(index)}
+                        autoHideDuration={item?.autoHideDuration ?? 15000}
                     >
                         <Alert
                             className={severity}
