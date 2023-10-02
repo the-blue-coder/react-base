@@ -1,0 +1,70 @@
+********* Schema hook *********
+import { GenericFormSchemaType } from "shared/types/Forms.type";
+
+const useSchema = (): GenericFormSchemaType => {
+    return {
+        schema: {
+            type: "object",
+            properties: {
+                fieldName: {
+                    type: "string",
+                    title: "Field title",
+                },
+            },
+        },
+
+        uiSchema: {},
+    };
+};
+
+export default useSchema;
+
+
+
+********* Type *********
+export type FormDataType = {
+    fieldName: string;
+};
+
+
+
+********* Constant *********
+export const defaultFormData: FormDataType = {
+    fieldName: "",
+};
+
+
+
+********* Component *********
+const schema = useSchema();
+
+const displayAlert = useDisplayAlert();
+
+const { mutateAsync: doAction, isLoading } = useGenericMutation({
+    method: "POST",
+    endpointPath: "/endpoint-path",
+});
+
+const handleSubmit = (formData: FormDataType) => {
+    doAction(formData)
+        .then((response) => {
+            displayAlert({
+                label: response?.data?.message,
+                autoHideDuration: 15000,
+                AlertProps: {
+                    severity: "success",
+                },
+            });
+        })
+        .catch(() => alert("Error while performing your request, please try again"));
+};
+
+<GenericForm
+    schema={schema}
+    defaultValue={{}}
+    onSubmit={handleSubmit}
+>
+    <GenericButton type="submit" disabled={isLoading}>
+        Submit
+    </GenericButton>
+</GenericForm>
