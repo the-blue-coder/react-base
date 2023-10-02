@@ -42,7 +42,7 @@ const displayAlert = useDisplayAlert();
 
 const { mutateAsync: doAction, isLoading } = useGenericMutation({
     method: "POST",
-    endpointPath: "/endpoint-path",
+    endpointPath: ApiRoutes.route,
 });
 
 const handleSubmit = (formData: FormDataType) => {
