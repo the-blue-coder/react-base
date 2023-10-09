@@ -19,17 +19,21 @@ const useDisplayAlert = () => {
 
     const displaySuccessAlert = (label?: string, autoHideDuration?: number) => {
         addAlert({
-            severity: "success",
             label: label ?? defaultFormMessages.success,
             autoHideDuration: autoHideDuration ?? defaultAutoHideDuration,
+            AlertProps: {
+                severity: "success",
+            },
         });
     };
 
     const displayFailureAlert = (label?: string, autoHideDuration?: number) => {
         addAlert({
-            severity: "error",
             label: label ?? defaultFormMessages.failure,
             autoHideDuration: autoHideDuration ?? defaultAutoHideDuration,
+            AlertProps: {
+                severity: "error",
+            },
         });
     };
 
