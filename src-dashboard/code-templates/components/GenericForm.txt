@@ -38,7 +38,7 @@ export const defaultFormData: FormDataType = {
 ********* Component *********
 const schema = useSchema();
 
-const displayAlert = useDisplayAlert();
+const { displaySuccessAlert, displayFailureAlert } = useDisplayAlert();
 
 const { mutateAsync: doAction, isLoading } = useGenericMutation({
     method: "POST",
@@ -48,15 +48,9 @@ const { mutateAsync: doAction, isLoading } = useGenericMutation({
 const handleSubmit = (formData: FormDataType) => {
     doAction(formData)
         .then((response) => {
-            displayAlert({
-                label: response?.data?.message,
-                autoHideDuration: 15000,
-                AlertProps: {
-                    severity: "success",
-                },
-            });
+            displaySuccessAlert(response?.data?.message);
         })
-        .catch(() => alert("Error while performing your request, please try again"));
+        .catch(() => displayFailureAlert());
 };
 
 <GenericForm

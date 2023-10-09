@@ -1,1 +1,4 @@
-export const defaultFormMessages = { error: "Error occured while performing your request, please try again" };
+export const defaultFormMessages = {
+    success: "Success",
+    failure: "Error occured while performing your request, please try again",
+};
