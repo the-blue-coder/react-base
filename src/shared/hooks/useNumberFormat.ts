@@ -9,7 +9,7 @@ const useNumberFormat = () => {
         return `${format(value)} ${currency ?? DEFAULT_CURRENCY}`;
     };
 
-    return { formatToCurrency };
+    return { format, formatToCurrency };
 };
 
 export default useNumberFormat;
