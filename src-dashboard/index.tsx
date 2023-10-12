@@ -10,12 +10,15 @@ import { BASE_COLOR } from "shared/constants/colors.constant";
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 
-const defaultFontSize = 15;
+const defaultFontSize = 14;
 
 const theme: Theme = createTheme({
     typography: {
         fontSize: defaultFontSize,
         body1: {
+            fontSize: defaultFontSize,
+        },
+        button: {
             fontSize: defaultFontSize,
         },
     },
