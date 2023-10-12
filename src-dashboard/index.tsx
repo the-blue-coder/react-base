@@ -10,9 +10,14 @@ import { BASE_COLOR } from "shared/constants/colors.constant";
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 
+const defaultFontSize = 15;
+
 const theme: Theme = createTheme({
     typography: {
-        fontSize: 13,
+        fontSize: defaultFontSize,
+        body1: {
+            fontSize: defaultFontSize,
+        },
     },
     palette: {
         primary: {
