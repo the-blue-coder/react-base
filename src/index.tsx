@@ -20,6 +20,7 @@ const theme: Theme = createTheme({
         },
         button: {
             fontSize: defaultFontSize,
+            textTransform: "none",
         },
     },
     palette: {
