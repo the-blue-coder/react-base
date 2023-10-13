@@ -10,7 +10,8 @@ const GenericDataGrid: React.FC<GenericDataGridProps> = ({
     rows,
     pageSize = defaultDataGridPageSize,
     checkboxSelection = true,
-    disableRowSelectionOnClick = true,
+    disableRowSelectionOnClick = false,
+    disableColumnMenu = false,
 }) => {
     const styles = useGenericDataGridStyles();
 
@@ -39,6 +40,7 @@ const GenericDataGrid: React.FC<GenericDataGridProps> = ({
                 checkboxSelection={checkboxSelection}
                 disableRowSelectionOnClick={disableRowSelectionOnClick}
                 onPaginationModelChange={handlePageChange}
+                disableColumnMenu={disableColumnMenu}
             />
         </Box>
     );
