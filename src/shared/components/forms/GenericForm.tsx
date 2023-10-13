@@ -5,9 +5,21 @@ import { useState } from "react";
 import { IChangeEvent } from "@rjsf/core";
 import validator from "@rjsf/validator-ajv8";
 import { ErrorTransformer, RJSFSchema } from "@rjsf/utils";
+import { Box } from "@mui/material";
+import useGenericFormStyles from "shared/styles/components/forms/useGenericFormStyles";
 
-const GenericForm: React.FC<GenericFormProps> = ({ defaultValue, schema, children, onFormChange, onSubmit, ...props }) => {
+const GenericForm: React.FC<GenericFormProps> = ({
+    defaultValue,
+    schema,
+    hideDefaultSubmitBtn = false,
+    children,
+    onFormChange,
+    onSubmit,
+    ...props
+}) => {
     const [formData, setFormData] = useState(defaultValue);
+
+    const styles = useGenericFormStyles(hideDefaultSubmitBtn);
 
     const transformErrors: ErrorTransformer<any, RJSFSchema, any> = (errors, uiSchema) => {
         return errors.map((error) => {
@@ -31,19 +43,21 @@ const GenericForm: React.FC<GenericFormProps> = ({ defaultValue, schema, childre
     };
 
     return (
-        <Form
-            {...props}
-            schema={schema.schema}
-            uiSchema={schema.uiSchema}
-            formData={formData}
-            validator={validator}
-            showErrorList={false}
-            onChange={handleChange}
-            onSubmit={handleSubmit}
-            transformErrors={transformErrors}
-        >
-            {children}
-        </Form>
+        <Box sx={styles.genericForm}>
+            <Form
+                {...props}
+                schema={schema.schema}
+                uiSchema={schema.uiSchema}
+                formData={formData}
+                validator={validator}
+                showErrorList={false}
+                onChange={handleChange}
+                onSubmit={handleSubmit}
+                transformErrors={transformErrors}
+            >
+                {children}
+            </Form>
+        </Box>
     );
 };
 

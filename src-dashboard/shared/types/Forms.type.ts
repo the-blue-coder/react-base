@@ -6,6 +6,7 @@ import { JSONSchema7 } from "json-schema";
 export type GenericFormProps = {
     schema: GenericFormSchemaType;
     defaultValue: any;
+    hideDefaultSubmitBtn?: boolean;
     children?: ReactNode;
     onFormChange?: (formData: any) => any;
     onSubmit?: (formData: any) => any;
