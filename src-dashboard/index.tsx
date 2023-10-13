@@ -18,6 +18,9 @@ const theme: Theme = createTheme({
         body1: {
             fontSize: defaultFontSize,
         },
+        h6: {
+            fontSize: 16,
+        },
         button: {
             fontSize: defaultFontSize,
             textTransform: "none",
