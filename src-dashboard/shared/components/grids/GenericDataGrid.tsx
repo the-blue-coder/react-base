@@ -17,7 +17,7 @@ const GenericDataGrid: React.FC<GenericDataGridProps> = ({
 
     const gridRef = useRef<HTMLDivElement>(null);
 
-    const handlePageChange = () => {
+    const handlePageChangeScrollToGridTop = () => {
         if (gridRef?.current) {
             gridRef.current.scrollIntoView();
         }
@@ -39,7 +39,7 @@ const GenericDataGrid: React.FC<GenericDataGridProps> = ({
                 pageSizeOptions={[pageSize]}
                 checkboxSelection={checkboxSelection}
                 disableRowSelectionOnClick={disableRowSelectionOnClick}
-                onPaginationModelChange={handlePageChange}
+                onPaginationModelChange={handlePageChangeScrollToGridTop}
                 disableColumnMenu={disableColumnMenu}
             />
         </Box>
