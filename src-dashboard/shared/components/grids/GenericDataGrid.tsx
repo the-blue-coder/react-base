@@ -3,11 +3,12 @@ import { DataGrid } from "@mui/x-data-grid";
 import { Box } from "@mui/material";
 import useGenericDataGridStyles from "shared/styles/components/grids/useGenericDataGridStyles";
 import { useRef } from "react";
+import { defaultDataGridPageSize } from "shared/constants/MuiDataGrid.constant";
 
 const GenericDataGrid: React.FC<GenericDataGridProps> = ({
     columns,
     rows,
-    pageSize = 5,
+    pageSize = defaultDataGridPageSize,
     checkboxSelection = true,
     disableRowSelectionOnClick = true,
 }) => {
