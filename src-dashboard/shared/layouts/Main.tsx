@@ -15,7 +15,7 @@ const Main: React.FC = () => {
                     <LeftMenu />
                 </Grid>
 
-                <Grid item xs={10} id="right-section">
+                <Grid item xs={10} py={1} pl={1} pr={2}>
                     <Outlet />
                 </Grid>
             </Grid>
