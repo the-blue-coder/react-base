@@ -1,8 +1,8 @@
 import { BASE_COLOR } from "shared/constants/colors.constant";
 
-const useLeftMenuStyles = () => {
+const useMenuStyles = () => {
     return {
-        leftMenu: {
+        menu: {
             "& .MuiListItemButton-root": {
                 transition: "initial",
                 WebkitTransition: "initial",
@@ -16,4 +16,4 @@ const useLeftMenuStyles = () => {
     };
 };
 
-export default useLeftMenuStyles;
+export default useMenuStyles;
