@@ -1,10 +1,14 @@
 const useGenericDataGridStyles = () => {
     return {
         genericDataGrid: {
-            minHeight: 400,
+            "& .MuiDataGrid-columnHeader": {
+                "&:focus": {
+                    outline: "none",
+                },
 
-            "& .MuiDataGrid-columnHeaderTitle": {
-                fontWeight: "bold",
+                "& .MuiDataGrid-columnHeaderTitle": {
+                    fontWeight: "bold",
+                },
             },
         },
     };

@@ -1,8 +1,14 @@
 const useGenericDataGridStyles = () => {
     return {
         genericDataGrid: {
-            "& .MuiDataGrid-columnHeaderTitle": {
-                fontWeight: "bold",
+            "& .MuiDataGrid-columnHeader": {
+                "&:focus": {
+                    outline: "none",
+                },
+
+                "& .MuiDataGrid-columnHeaderTitle": {
+                    fontWeight: "bold",
+                },
             },
         },
     };
