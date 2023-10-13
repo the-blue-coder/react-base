@@ -5,7 +5,7 @@ const useFullPageLoaderStyles = () => {
             alignItems: "center",
             justifyContent: "center",
             backgroundColor: "#ffffff",
-            position: "absolute",
+            position: "fixed",
             width: "100%",
             height: "100%",
             zIndex: 5,
