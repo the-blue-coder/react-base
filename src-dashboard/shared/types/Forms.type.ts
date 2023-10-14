@@ -20,5 +20,4 @@ export type GenericFormSchemaType = {
 export type SelectOptionsType = {
     id: string | number;
     value: string | number;
-    name: string | number;
 };
