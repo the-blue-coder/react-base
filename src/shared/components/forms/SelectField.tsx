@@ -11,7 +11,7 @@ const SelectField: React.FC<WidgetProps> = ({ value, schema, uiSchema, onChange 
     const id = String(uiOptions?.id);
     const label = schema.title;
     const variant = (uiOptions?.variant as SelectProps["variant"]) ?? "standard";
-    const options = uiOptions?.optionItems as SelectOptionsType[] | undefined;
+    const options = uiOptions?.options as SelectOptionsType[] | undefined;
 
     const handleChange = (e: SelectChangeEvent) => {
         onChange(e.target.value);
