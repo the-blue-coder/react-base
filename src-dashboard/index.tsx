@@ -13,6 +13,11 @@ const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement)
 const defaultFontSize = 14;
 
 const theme: Theme = createTheme({
+    palette: {
+        primary: {
+            main: BASE_COLOR.primary,
+        },
+    },
     typography: {
         fontSize: defaultFontSize,
         body1: {
@@ -26,9 +31,13 @@ const theme: Theme = createTheme({
             textTransform: "none",
         },
     },
-    palette: {
-        primary: {
-            main: BASE_COLOR.primary,
+    components: {
+        MuiButton: {
+            styleOverrides: {
+                root: {
+                    boxShadow: "none",
+                },
+            },
         },
     },
 });
