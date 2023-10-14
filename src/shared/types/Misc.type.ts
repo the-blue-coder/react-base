@@ -1,6 +1,6 @@
 export type DynamicObject = { [key: string]: DynamicObject | string | number | boolean };
 
-export type KeyValueObject = { key: string; value: string };
+export type KeyValueObject = { key: string; value: string | number };
 
 export type ColorsType = "inherit" | "error" | "success" | "primary" | "secondary" | "info" | "warning";
 
