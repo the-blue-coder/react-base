@@ -16,3 +16,9 @@ export type GenericFormSchemaType = {
     schema: JSONSchema7;
     uiSchema: FormProps["uiSchema"];
 };
+
+export type SelectOptionsType = {
+    id: string | number;
+    value: string | number;
+    name: string | number;
+};
