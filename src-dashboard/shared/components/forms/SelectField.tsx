@@ -12,6 +12,7 @@ const SelectField: React.FC<WidgetProps> = ({ value, schema, uiSchema, onChange 
     const label = schema.title;
     const variant = (uiOptions?.variant as SelectProps["variant"]) ?? "standard";
     const options = uiOptions?.options as SelectOptionsType[] | undefined;
+    const isMultiple = Boolean(uiOptions?.isMultiple);
 
     const handleChange = (e: SelectChangeEvent) => {
         onChange(e.target.value);
@@ -22,7 +23,15 @@ const SelectField: React.FC<WidgetProps> = ({ value, schema, uiSchema, onChange 
             {options && options.length > 0 && (
                 <FormControl variant={variant} id={id} className="select-form-control">
                     <InputLabel id={`${id}-label`}>{label}</InputLabel>
-                    <Select variant={variant} labelId={`${id}-label`} id={id} value={value ?? ""} onChange={handleChange} label={label}>
+                    <Select
+                        variant={variant}
+                        labelId={`${id}-label`}
+                        id={id}
+                        value={value ?? (isMultiple ? [] : "")}
+                        onChange={handleChange}
+                        label={label}
+                        multiple={isMultiple}
+                    >
                         {options?.map((option: Record<string, string | number>) => {
                             return (
                                 <MenuItem key={option.id} value={option.id}>
