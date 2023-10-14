@@ -20,7 +20,7 @@ const SelectField: React.FC<WidgetProps> = ({ value, schema, uiSchema, onChange 
     return (
         <Box sx={styles.selectField}>
             {options && options.length > 0 && (
-                <FormControl variant="standard" id={id} className="select-form-control">
+                <FormControl variant={variant} id={id} className="select-form-control">
                     <InputLabel id={`${id}-label`}>{label}</InputLabel>
                     <Select variant={variant} labelId={`${id}-label`} id={id} value={value ?? ""} onChange={handleChange} label={label}>
                         {options?.map((option: Record<string, string | number>) => {
