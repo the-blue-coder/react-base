@@ -12,6 +12,7 @@ const GenericDataGrid: React.FC<GenericDataGridProps> = ({
     checkboxSelection = true,
     disableRowSelectionOnClick = false,
     disableColumnMenu = false,
+    isLoading = false,
 }) => {
     const styles = useGenericDataGridStyles();
 
@@ -36,6 +37,8 @@ const GenericDataGrid: React.FC<GenericDataGridProps> = ({
                         },
                     },
                 }}
+                autoHeight
+                loading={isLoading}
                 pageSizeOptions={[pageSize]}
                 checkboxSelection={checkboxSelection}
                 disableRowSelectionOnClick={disableRowSelectionOnClick}

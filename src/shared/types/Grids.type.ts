@@ -7,4 +7,5 @@ export type GenericDataGridProps = {
     checkboxSelection?: boolean;
     disableRowSelectionOnClick?: boolean;
     disableColumnMenu?: boolean;
+    isLoading?: boolean;
 };
