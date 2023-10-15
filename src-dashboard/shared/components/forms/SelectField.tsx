@@ -14,6 +14,7 @@ const SelectField: React.FC<WidgetProps> = ({ value, schema, uiSchema, onChange 
     const variant = (uiOptions?.variant as SelectProps["variant"]) ?? "standard";
     const options = uiOptions?.options as SelectOptionsType[] | undefined;
     const isMultiple = Boolean(uiOptions?.isMultiple);
+    const hasClearBtn = Boolean(uiOptions?.hasClearBtn);
 
     const handleChange = (e: SelectChangeEvent) => {
         onChange(e.target.value);
@@ -46,7 +47,7 @@ const SelectField: React.FC<WidgetProps> = ({ value, schema, uiSchema, onChange 
                         })}
                     </Select>
 
-                    {value && <Clear onClick={handleClear} />}
+                    {hasClearBtn && value && <Clear onClick={handleClear} />}
                 </FormControl>
             )}
         </Box>
