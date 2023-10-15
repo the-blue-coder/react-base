@@ -1,3 +1,4 @@
+import { Clear } from "@mui/icons-material";
 import { Box, FormControl, InputLabel, MenuItem, Select, SelectChangeEvent, SelectProps } from "@mui/material";
 import { WidgetProps } from "@rjsf/utils";
 import useSelectFieldStyles from "shared/styles/components/forms/useSelectFieldStyles";
@@ -16,6 +17,10 @@ const SelectField: React.FC<WidgetProps> = ({ value, schema, uiSchema, onChange 
 
     const handleChange = (e: SelectChangeEvent) => {
         onChange(e.target.value);
+    };
+
+    const handleClear = () => {
+        onChange("");
     };
 
     return (
@@ -40,6 +45,8 @@ const SelectField: React.FC<WidgetProps> = ({ value, schema, uiSchema, onChange 
                             );
                         })}
                     </Select>
+
+                    {value && <Clear onClick={handleClear} />}
                 </FormControl>
             )}
         </Box>
