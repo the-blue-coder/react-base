@@ -26,7 +26,7 @@ const SelectField: React.FC<WidgetProps> = ({ value, schema, uiSchema, onChange 
 
     return (
         <Box sx={styles.selectField}>
-            {options && options.length > 0 && (
+            {options && (
                 <FormControl variant={variant} id={id} className="select-form-control">
                     <InputLabel id={`${id}-label`}>{label}</InputLabel>
                     <Select
