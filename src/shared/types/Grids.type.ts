@@ -1,4 +1,4 @@
-import { GridColDef, GridValidRowModel } from "@mui/x-data-grid";
+import { GridColDef, GridEventListener, GridValidRowModel } from "@mui/x-data-grid";
 
 export type GenericDataGridProps = {
     columns: GridColDef[];
@@ -8,4 +8,5 @@ export type GenericDataGridProps = {
     disableRowSelectionOnClick?: boolean;
     disableColumnMenu?: boolean;
     isLoading?: boolean;
+    onCellClick?: GridEventListener<"cellClick">;
 };
