@@ -8,5 +8,5 @@ export type GenericDataGridProps = {
     disableRowSelectionOnClick?: boolean;
     disableColumnMenu?: boolean;
     isLoading?: boolean;
-    onCellClick?: GridEventListener<"cellClick">;
+    onCellDoubleClick?: GridEventListener<"cellDoubleClick">;
 };
