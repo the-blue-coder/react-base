@@ -9,6 +9,7 @@ export type GenericFormProps = {
     hideDefaultSubmitBtn?: boolean;
     children?: ReactNode;
     onFormChange?: (formData: any) => any;
+    onSingleFieldBlur?: (id: string, data: any) => any;
     onSubmit?: (formData: any) => any;
 };
 

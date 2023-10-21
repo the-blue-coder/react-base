@@ -14,6 +14,7 @@ const GenericForm: React.FC<GenericFormProps> = ({
     hideDefaultSubmitBtn = false,
     children,
     onFormChange,
+    onSingleFieldBlur,
     onSubmit,
     ...props
 }) => {
@@ -34,8 +35,12 @@ const GenericForm: React.FC<GenericFormProps> = ({
     };
 
     const handleChange = ({ formData }: IChangeEvent<any>): void => {
-        setFormData(formData);
+        setFormData(formData ?? defaultValue);
         onFormChange?.(formData);
+    };
+
+    const handleBlur = (id: string, data: any): void => {
+        onSingleFieldBlur?.(id, data);
     };
 
     const handleSubmit = ({ formData }: IChangeEvent<any>) => {
@@ -52,6 +57,7 @@ const GenericForm: React.FC<GenericFormProps> = ({
                 validator={validator}
                 showErrorList={false}
                 onChange={handleChange}
+                onBlur={handleBlur}
                 onSubmit={handleSubmit}
                 transformErrors={transformErrors}
             >
