@@ -1,54 +1,69 @@
-import { GenericDataGridProps } from "shared/types/Grids.type";
+import { useRef, forwardRef, useImperativeHandle } from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import { Box } from "@mui/material";
 import useGenericDataGridStyles from "shared/styles/components/grids/useGenericDataGridStyles";
-import { useRef } from "react";
 import { defaultDataGridPageSize } from "shared/constants/MuiDataGrid.constant";
+import { GenericDataGridProps } from "shared/types/Grids.type";
+import { RefType } from "shared/types/Misc.type";
 
-const GenericDataGrid: React.FC<GenericDataGridProps> = ({
-    columns,
-    rows,
-    pageSize = defaultDataGridPageSize,
-    checkboxSelection = true,
-    disableRowSelectionOnClick = false,
-    disableColumnMenu = false,
-    isLoading = false,
-    onCellDoubleClick,
-}) => {
-    const styles = useGenericDataGridStyles();
+const GenericDataGrid = forwardRef<RefType, GenericDataGridProps>(
+    (
+        {
+            columns,
+            rows,
+            pageSize = defaultDataGridPageSize,
+            checkboxSelection = true,
+            disableRowSelectionOnClick = false,
+            disableColumnMenu = false,
+            isLoading = false,
+            onCellDoubleClick,
+        },
+        ref
+    ) => {
+        const styles = useGenericDataGridStyles();
 
-    const gridRef = useRef<HTMLDivElement>(null);
+        const gridRef = useRef<HTMLDivElement>(null);
 
-    const handlePageChangeScrollToGridTop = () => {
-        if (gridRef?.current) {
-            gridRef.current.scrollIntoView();
-        }
-    };
+        const handlePageChangeScrollToGridTop = () => {
+            if (gridRef?.current) {
+                gridRef.current.scrollIntoView();
+            }
+        };
 
-    return (
-        <Box sx={styles.genericDataGrid}>
-            <DataGrid
-                ref={gridRef}
-                rows={rows}
-                columns={columns}
-                initialState={{
-                    pagination: {
-                        paginationModel: {
-                            pageSize,
+        // Use useImperativeHandle to expose a function through the ref
+        useImperativeHandle(ref, () => ({
+            scrollIntoView: () => {
+                if (gridRef?.current) {
+                    gridRef.current.scrollIntoView();
+                }
+            },
+        }));
+
+        return (
+            <Box sx={styles.genericDataGrid}>
+                <DataGrid
+                    ref={gridRef}
+                    rows={rows}
+                    columns={columns}
+                    initialState={{
+                        pagination: {
+                            paginationModel: {
+                                pageSize,
+                            },
                         },
-                    },
-                }}
-                autoHeight
-                loading={isLoading}
-                pageSizeOptions={[pageSize]}
-                checkboxSelection={checkboxSelection}
-                disableRowSelectionOnClick={disableRowSelectionOnClick}
-                disableColumnMenu={disableColumnMenu}
-                onCellDoubleClick={onCellDoubleClick}
-                onPaginationModelChange={handlePageChangeScrollToGridTop}
-            />
-        </Box>
-    );
-};
+                    }}
+                    autoHeight
+                    loading={isLoading}
+                    pageSizeOptions={[pageSize]}
+                    checkboxSelection={checkboxSelection}
+                    disableRowSelectionOnClick={disableRowSelectionOnClick}
+                    disableColumnMenu={disableColumnMenu}
+                    onCellDoubleClick={onCellDoubleClick}
+                    onPaginationModelChange={handlePageChangeScrollToGridTop}
+                />
+            </Box>
+        );
+    }
+);
 
 export default GenericDataGrid;
