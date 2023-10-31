@@ -1,6 +1,6 @@
 import { useSetRecoilState } from "recoil";
 import { defaultFormMessages } from "shared/constants/errorMessages.constant";
-import { SnackbarListState } from "shared/state/SnackbarList.state";
+import { SnackbarListState } from "shared/states/SnackbarList.state";
 import { SnackbarItemType } from "shared/types/Snackbar.type";
 
 const useDisplayAlert = () => {
