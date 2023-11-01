@@ -6,7 +6,6 @@ import { useRef } from "react";
 import { defaultDataGridPageSize } from "shared/constants/MuiDataGrid.constant";
 
 const GenericDataGrid: React.FC<GenericDataGridProps> = ({
-    apiRef,
     columns,
     rows,
     pageSize = defaultDataGridPageSize,
@@ -29,7 +28,6 @@ const GenericDataGrid: React.FC<GenericDataGridProps> = ({
     return (
         <Box sx={styles.genericDataGrid}>
             <DataGrid
-                apiRef={apiRef}
                 ref={ref}
                 rows={rows}
                 columns={columns}
