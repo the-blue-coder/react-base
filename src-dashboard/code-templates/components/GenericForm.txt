@@ -28,13 +28,6 @@ export type FormDataType = {
 
 
 
-********* Constant *********
-export const defaultFormData: FormDataType = {
-    fieldName: "",
-};
-
-
-
 ********* Component *********
 const schema = useSchema();
 
@@ -55,7 +48,6 @@ const handleSubmit = (formData: FormDataType) => {
 
 <GenericForm
     schema={schema}
-    defaultValue={{}}
     onSubmit={handleSubmit}
 >
     <GenericButton type="submit" disabled={isLoading}>
