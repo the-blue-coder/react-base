@@ -33,7 +33,7 @@ const StickyOnScroll: React.FC<StickyOnScrollProps> = ({ children }) => {
     }, [topOffset, isSticky]);
 
     return (
-        <Box ref={elementRef} sx={styles.stickyOnScroll} className={isSticky ? "is-sticky" : ""}>
+        <Box ref={elementRef} sx={styles.stickyOnScroll} className={`sticky-on-scroll ${isSticky ? "is-sticky" : ""}`}>
             {children}
         </Box>
     );
