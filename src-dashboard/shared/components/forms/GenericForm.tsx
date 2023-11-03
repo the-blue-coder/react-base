@@ -9,7 +9,7 @@ import { Box } from "@mui/material";
 import useGenericFormStyles from "shared/styles/components/forms/useGenericFormStyles";
 
 const GenericForm: React.FC<GenericFormProps> = ({
-    defaultValue,
+    defaultValue = {},
     schema,
     hideDefaultSubmitBtn = false,
     children,
