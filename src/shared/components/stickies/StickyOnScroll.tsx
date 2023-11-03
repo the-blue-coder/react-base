@@ -14,11 +14,7 @@ const StickyOnScroll: React.FC<StickyOnScrollProps> = ({ children }) => {
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             const elementHeight = (elementRef as MutableRefObject<any>).current.clientHeight;
 
-            if (window.scrollY > topOffset) {
-                setIsSticky(true);
-            } else {
-                setIsSticky(false);
-            }
+            setIsSticky(window.scrollY > topOffset);
 
             if (!isSticky && elementHeight !== topOffset) {
                 setTopOffset(elementHeight);
