@@ -14,35 +14,6 @@ a:active {
 }
 
 /**
-* Material UI > Snackbar
-*/
-.MuiSnackbar-root {
-    .MuiAlert-root {
-        &.error {
-            background-color: $primary;
-            color: #ffffff;
-
-            .MuiAlert-icon {
-                color: #ffffff;
-            }
-        }
-
-        .MuiAlert-message {
-            p {
-                font-size: inherit;
-            }
-        }
-    }
-}
-
-/**
-* Material UI > Forms
-*/
-.MuiTextField-root {
-    margin-top: -16px !important;
-}
-
-/**
 * Material UI > Forms > RJSF
 */
 form.rjsf {
@@ -57,12 +28,4 @@ form.rjsf {
             }
         }
     }
-}
-
-/**
-* Material UI > Tables
-*/
-.MuiTableCell-root {
-    padding: 4px !important;
-    border: 1px solid rgba(224, 224, 224, 1);
 }

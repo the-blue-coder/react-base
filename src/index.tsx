@@ -10,7 +10,7 @@ import { BASE_COLOR } from "shared/constants/colors.constant";
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 
-const defaultFontSize = 14;
+const defaultFontSize = 15;
 
 const theme: Theme = createTheme({
     palette: {
@@ -24,7 +24,7 @@ const theme: Theme = createTheme({
             fontSize: defaultFontSize,
         },
         h6: {
-            fontSize: 16,
+            fontSize: 18,
         },
         button: {
             fontSize: defaultFontSize,
@@ -32,10 +32,48 @@ const theme: Theme = createTheme({
         },
     },
     components: {
+        MuiSnackbar: {
+            styleOverrides: {
+                root: {
+                    "& .MuiAlert-root.error": {
+                        backgroundColor: BASE_COLOR.primary,
+                        color: "#ffffff",
+                        "& .MuiAlert-icon": {
+                            color: "#ffffff",
+                        },
+                    },
+                    "& .MuiAlert-message p": {
+                        fontSize: "inherit",
+                    },
+                },
+            },
+        },
         MuiButton: {
             styleOverrides: {
                 root: {
                     boxShadow: "none",
+                },
+            },
+        },
+        MuiTableCell: {
+            styleOverrides: {
+                root: {
+                    padding: "4px",
+                    border: "1px solid rgba(224, 224, 224, 1)",
+                },
+            },
+        },
+        MuiTextField: {
+            styleOverrides: {
+                root: {
+                    marginTop: "-16px",
+                },
+            },
+        },
+        MuiChip: {
+            styleOverrides: {
+                root: {
+                    marginRight: "4px",
                 },
             },
         },
