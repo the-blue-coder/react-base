@@ -6,7 +6,7 @@ const useSelectFieldStyles = () => {
 
                 "& .MuiSvgIcon-root[data-testid='ClearIcon']": {
                     position: "absolute",
-                    right: "-30px",
+                    right: "30px",
                     top: "50%",
                     transform: "translateY(-50%)",
                     cursor: "pointer",
