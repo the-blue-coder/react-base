@@ -4,6 +4,7 @@ import { Box } from "@mui/material";
 import useGenericDataGridStyles from "shared/styles/components/grids/useGenericDataGridStyles";
 import { useRef } from "react";
 import { defaultDataGridPageSize } from "shared/constants/MuiDataGrid.constant";
+import GridFilterToolbar from "./GridFilterToolbar";
 
 const GenericDataGrid: React.FC<GenericDataGridProps> = ({
     columns,
@@ -11,6 +12,8 @@ const GenericDataGrid: React.FC<GenericDataGridProps> = ({
     pageSize = defaultDataGridPageSize,
     checkboxSelection = true,
     disableRowSelectionOnClick = false,
+    disableColumnMenu = true,
+    onlyGridFilterInToolbar = false,
     isLoading = false,
     onCellDoubleClick,
 }) => {
@@ -37,13 +40,15 @@ const GenericDataGrid: React.FC<GenericDataGridProps> = ({
                         },
                     },
                 }}
-                slots={{ toolbar: GridToolbar }}
+                slots={{
+                    toolbar: onlyGridFilterInToolbar ? GridFilterToolbar : GridToolbar,
+                }}
                 autoHeight
                 loading={isLoading}
                 pageSizeOptions={[pageSize]}
                 checkboxSelection={checkboxSelection}
                 disableRowSelectionOnClick={disableRowSelectionOnClick}
-                disableColumnMenu={true}
+                disableColumnMenu={disableColumnMenu}
                 onCellDoubleClick={onCellDoubleClick}
                 onPaginationModelChange={handlePageChangeScrollToGridTop}
             />
