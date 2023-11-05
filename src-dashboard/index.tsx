@@ -32,6 +32,13 @@ const theme: Theme = createTheme({
         },
     },
     components: {
+        MuiCssBaseline: {
+            styleOverrides: {
+                ".MuiDataGrid-panel .MuiTextField-root": {
+                    marginTop: 0,
+                },
+            },
+        },
         MuiSnackbar: {
             styleOverrides: {
                 root: {
