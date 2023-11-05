@@ -6,7 +6,6 @@ export type GenericDataGridProps = {
     pageSize?: number;
     checkboxSelection?: boolean;
     disableRowSelectionOnClick?: boolean;
-    disableColumnMenu?: boolean;
     isLoading?: boolean;
     onCellDoubleClick?: GridEventListener<"cellDoubleClick">;
 };

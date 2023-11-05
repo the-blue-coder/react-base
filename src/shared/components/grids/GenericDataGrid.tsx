@@ -11,7 +11,6 @@ const GenericDataGrid: React.FC<GenericDataGridProps> = ({
     pageSize = defaultDataGridPageSize,
     checkboxSelection = true,
     disableRowSelectionOnClick = false,
-    disableColumnMenu = false,
     isLoading = false,
     onCellDoubleClick,
 }) => {
@@ -43,7 +42,6 @@ const GenericDataGrid: React.FC<GenericDataGridProps> = ({
                 pageSizeOptions={[pageSize]}
                 checkboxSelection={checkboxSelection}
                 disableRowSelectionOnClick={disableRowSelectionOnClick}
-                disableColumnMenu={disableColumnMenu}
                 onCellDoubleClick={onCellDoubleClick}
                 onPaginationModelChange={handlePageChangeScrollToGridTop}
             />
