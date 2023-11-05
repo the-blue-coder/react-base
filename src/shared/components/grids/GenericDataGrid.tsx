@@ -1,5 +1,5 @@
 import { GenericDataGridProps } from "shared/types/Grids.type";
-import { DataGrid } from "@mui/x-data-grid";
+import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { Box } from "@mui/material";
 import useGenericDataGridStyles from "shared/styles/components/grids/useGenericDataGridStyles";
 import { useRef } from "react";
@@ -16,18 +16,18 @@ const GenericDataGrid: React.FC<GenericDataGridProps> = ({
 }) => {
     const styles = useGenericDataGridStyles();
 
-    const ref = useRef<HTMLDivElement>(null);
+    const gridRef = useRef<HTMLDivElement>(null);
 
     const handlePageChangeScrollToGridTop = () => {
-        if (ref?.current) {
-            ref.current.scrollIntoView();
+        if (gridRef?.current) {
+            gridRef.current.scrollIntoView();
         }
     };
 
     return (
         <Box sx={styles.genericDataGrid}>
             <DataGrid
-                ref={ref}
+                ref={gridRef}
                 rows={rows}
                 columns={columns}
                 initialState={{
@@ -37,11 +37,13 @@ const GenericDataGrid: React.FC<GenericDataGridProps> = ({
                         },
                     },
                 }}
+                slots={{ toolbar: GridToolbar }}
                 autoHeight
                 loading={isLoading}
                 pageSizeOptions={[pageSize]}
                 checkboxSelection={checkboxSelection}
                 disableRowSelectionOnClick={disableRowSelectionOnClick}
+                disableColumnMenu={true}
                 onCellDoubleClick={onCellDoubleClick}
                 onPaginationModelChange={handlePageChangeScrollToGridTop}
             />
