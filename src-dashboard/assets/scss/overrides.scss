@@ -29,3 +29,44 @@ form.rjsf {
         }
     }
 }
+
+/**
+* Material UI > DataGrid
+*/
+.MuiDataGrid-root {
+    .MuiDataGrid-filterIcon {
+        color: $primary;
+    }
+}
+
+.MuiDataGrid-panel {
+    form.rjsf {
+        > .form-group {
+            > .MuiFormControl-root {
+                > .MuiGrid-root {
+                    margin-top: -16px !important;
+
+                    > .MuiGrid-item {
+                        margin-bottom: 0 !important;
+
+                        .select-form-control {
+                            width: 163px;
+                        }
+
+                        .MuiSvgIcon-root[data-testid="ClearIcon"] {
+                            top: 66%;
+                            right: -21.43px;
+                            width: 21.43px;
+                            height: 21.43px;
+                            color: rgba(0, 0, 0, 0.54);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .MuiDataGrid-filterFormDeleteIcon {
+        top: 2px;
+    }
+}
