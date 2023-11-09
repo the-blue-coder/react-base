@@ -1,6 +1,6 @@
 import { GridToolbarContainer, GridToolbarFilterButton } from "@mui/x-data-grid";
 
-const GridFilterToolbar: React.FC = () => {
+const CustomGridFilterToolbar: React.FC = () => {
     return (
         <GridToolbarContainer>
             <GridToolbarFilterButton />
@@ -8,4 +8,4 @@ const GridFilterToolbar: React.FC = () => {
     );
 };
 
-export default GridFilterToolbar;
+export default CustomGridFilterToolbar;
