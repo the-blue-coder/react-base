@@ -22,7 +22,7 @@ export type CustomGridSelectFilterFormDataType = {
 };
 
 export type useCustomGridFilterOperatorsProps = {
-    field: string;
+    targetField: string;
     selectOptions: SelectOptionType[];
 };
 
