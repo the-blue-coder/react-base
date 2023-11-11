@@ -1,9 +1,7 @@
 import { GridColDef, GridEventListener, GridValidRowModel } from "@mui/x-data-grid";
 import { GenericFormSchemaType, SelectOptionType } from "./Forms.type";
-import { GridApiCommunity } from "@mui/x-data-grid/internals";
 
 export type GenericDataGridProps = {
-    apiRef: React.MutableRefObject<GridApiCommunity>;
     columns: GridColDef[];
     rows: GridValidRowModel[];
     pageSize?: number;

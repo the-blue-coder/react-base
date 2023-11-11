@@ -4,10 +4,9 @@ import { Box } from "@mui/material";
 import useGenericDataGridStyles from "shared/styles/components/grids/useGenericDataGridStyles";
 import { useRef } from "react";
 import { defaultDataGridPageSize } from "shared/constants/MuiDataGrid.constant";
-import CustomGridFilterToolbar from "./CustomGridFilterToolbar";
+import GridFilterToolbar from "./CustomGridFilterToolbar";
 
 const GenericDataGrid: React.FC<GenericDataGridProps> = ({
-    apiRef,
     columns,
     rows,
     pageSize = defaultDataGridPageSize,
@@ -32,7 +31,6 @@ const GenericDataGrid: React.FC<GenericDataGridProps> = ({
         <Box sx={styles.genericDataGrid}>
             <DataGrid
                 ref={gridRef}
-                apiRef={apiRef}
                 rows={rows}
                 columns={columns}
                 initialState={{
@@ -43,7 +41,7 @@ const GenericDataGrid: React.FC<GenericDataGridProps> = ({
                     },
                 }}
                 slots={{
-                    toolbar: onlyGridFilterInToolbar ? CustomGridFilterToolbar : GridToolbar,
+                    toolbar: onlyGridFilterInToolbar ? GridFilterToolbar : GridToolbar,
                 }}
                 autoHeight
                 loading={isLoading}
