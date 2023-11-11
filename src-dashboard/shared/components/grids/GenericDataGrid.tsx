@@ -7,6 +7,7 @@ import { defaultDataGridPageSize } from "shared/constants/MuiDataGrid.constant";
 import CustomGridFilterToolbar from "./CustomGridFilterToolbar";
 
 const GenericDataGrid: React.FC<GenericDataGridProps> = ({
+    apiRef,
     columns,
     rows,
     pageSize = defaultDataGridPageSize,
@@ -31,6 +32,7 @@ const GenericDataGrid: React.FC<GenericDataGridProps> = ({
         <Box sx={styles.genericDataGrid}>
             <DataGrid
                 ref={gridRef}
+                apiRef={apiRef}
                 rows={rows}
                 columns={columns}
                 initialState={{
