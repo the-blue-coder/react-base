@@ -19,13 +19,12 @@ const useCustomGridFilterOperators = ({ targetField, selectOptions }: useCustomG
                     return false;
                 }
 
-                if (typeof params.row[targetField] === "string") {
-                    console.log(params.row[targetField]);
-                    console.log(filterItem.value);
-                    return String(params.row[targetField]).includes(filterItem.value);
+                // If is iterable, meaning the column has multiple value
+                if (typeof params.row[targetField][Symbol.iterator] === "function") {
+                    return params.row[targetField].some((value: number) => filterItem.value.includes(value));
                 }
 
-                return params.row[targetField].some((value: number) => filterItem.value.includes(value));
+                return filterItem.value.includes(Number(params.row[targetField]));
             };
         },
         InputComponent: ({ item, applyValue, apiRef }) => (
