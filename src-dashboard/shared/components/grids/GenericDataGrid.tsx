@@ -1,10 +1,11 @@
 import { GenericDataGridProps } from "shared/types/Grids.type";
-import { DataGrid, GridToolbar } from "@mui/x-data-grid";
+import { DataGrid, GridFilterModel, GridToolbar } from "@mui/x-data-grid";
 import { Box } from "@mui/material";
 import useGenericDataGridStyles from "shared/styles/components/grids/useGenericDataGridStyles";
-import { useRef } from "react";
+import { useMemo, useRef, useState } from "react";
 import { defaultDataGridPageSize } from "shared/constants/MuiDataGrid.constant";
-import GridFilterToolbar from "./CustomGridFilterToolbar";
+import CustomGridFilterToolbar from "./CustomGridFilterToolbar";
+import { GridFilterContext } from "shared/contexts/Grids.context";
 
 const GenericDataGrid: React.FC<GenericDataGridProps> = ({
     columns,
@@ -15,11 +16,16 @@ const GenericDataGrid: React.FC<GenericDataGridProps> = ({
     disableColumnMenu = true,
     onlyGridFilterInToolbar = false,
     isLoading = false,
+    filterSelectsOptions,
     onCellDoubleClick,
 }) => {
-    const styles = useGenericDataGridStyles();
+    const [currentFilterModel, setCurrentFilterModel] = useState<GridFilterModel | undefined>();
+
+    const contextValue = useMemo(() => ({ currentFilterModel, filterSelectsOptions }), [currentFilterModel, filterSelectsOptions]);
 
     const gridRef = useRef<HTMLDivElement>(null);
+
+    const styles = useGenericDataGridStyles();
 
     const handlePageChangeScrollToGridTop = () => {
         if (gridRef?.current) {
@@ -27,32 +33,39 @@ const GenericDataGrid: React.FC<GenericDataGridProps> = ({
         }
     };
 
+    const handleFilterModelChange = (model: GridFilterModel) => {
+        setCurrentFilterModel(model);
+    };
+
     return (
-        <Box sx={styles.genericDataGrid}>
-            <DataGrid
-                ref={gridRef}
-                rows={rows}
-                columns={columns}
-                initialState={{
-                    pagination: {
-                        paginationModel: {
-                            pageSize,
+        <GridFilterContext.Provider value={contextValue}>
+            <Box sx={styles.genericDataGrid}>
+                <DataGrid
+                    ref={gridRef}
+                    rows={rows}
+                    columns={columns}
+                    initialState={{
+                        pagination: {
+                            paginationModel: {
+                                pageSize,
+                            },
                         },
-                    },
-                }}
-                slots={{
-                    toolbar: onlyGridFilterInToolbar ? GridFilterToolbar : GridToolbar,
-                }}
-                autoHeight
-                loading={isLoading}
-                pageSizeOptions={[pageSize]}
-                checkboxSelection={checkboxSelection}
-                disableRowSelectionOnClick={disableRowSelectionOnClick}
-                disableColumnMenu={disableColumnMenu}
-                onCellDoubleClick={onCellDoubleClick}
-                onPaginationModelChange={handlePageChangeScrollToGridTop}
-            />
-        </Box>
+                    }}
+                    slots={{
+                        toolbar: onlyGridFilterInToolbar ? CustomGridFilterToolbar : GridToolbar,
+                    }}
+                    autoHeight
+                    loading={isLoading}
+                    pageSizeOptions={[pageSize]}
+                    checkboxSelection={checkboxSelection}
+                    disableRowSelectionOnClick={disableRowSelectionOnClick}
+                    disableColumnMenu={disableColumnMenu}
+                    onCellDoubleClick={onCellDoubleClick}
+                    onPaginationModelChange={handlePageChangeScrollToGridTop}
+                    onFilterModelChange={handleFilterModelChange}
+                />
+            </Box>
+        </GridFilterContext.Provider>
     );
 };
 

@@ -7,7 +7,7 @@ const CustomGridSelectFilterForm: React.FC<CustomGridSelectFilterFormProps & Gri
     item,
     applyValue,
 }) => {
-    const defaultValue = {
+    const formData = {
         filter: item.value,
     };
 
@@ -15,7 +15,7 @@ const CustomGridSelectFilterForm: React.FC<CustomGridSelectFilterFormProps & Gri
         applyValue({ ...item, value: formData.filter });
     };
 
-    return <GenericForm schema={schema} defaultValue={defaultValue} hideDefaultSubmitBtn onFormChange={handleFilterChange} />;
+    return <GenericForm schema={schema} formData={formData} hideDefaultSubmitBtn onFormChange={handleFilterChange} />;
 };
 
 export default CustomGridSelectFilterForm;

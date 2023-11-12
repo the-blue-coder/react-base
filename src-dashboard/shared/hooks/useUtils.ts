@@ -1,3 +1,4 @@
+import _ from "lodash";
 import { DEFAULT_CURRENCY } from "shared/constants/currency.constant";
 
 const useUtils = () => {
@@ -15,7 +16,19 @@ const useUtils = () => {
         return sortedArray;
     };
 
-    return { formatNumber, formatNumberToCurrency, sortArrayAsc };
+    const camelCaseToWords = (string: string, capitalize = true) => {
+        const wordsArray = string.replace(/([a-z])([A-Z])/g, "$1 $2").split(/[\s_]+/);
+        const words = wordsArray.join(" ").toLowerCase();
+
+        return capitalize ? _.capitalize(words) : words;
+    };
+
+    const snakeCaseToWords = (string: string, capitalize = true) => {
+        const words = string.replace(/_/g, " ");
+        return capitalize ? _.capitalize(words) : words;
+    };
+
+    return { formatNumber, formatNumberToCurrency, sortArrayAsc, camelCaseToWords, snakeCaseToWords };
 };
 
 export default useUtils;

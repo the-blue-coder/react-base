@@ -1,4 +1,4 @@
-import { GridColDef, GridEventListener, GridValidRowModel } from "@mui/x-data-grid";
+import { GridColDef, GridEventListener, GridFilterModel, GridValidRowModel } from "@mui/x-data-grid";
 import { GenericFormSchemaType, SelectOptionType } from "./Forms.type";
 
 export type GenericDataGridProps = {
@@ -10,6 +10,7 @@ export type GenericDataGridProps = {
     disableColumnMenu?: boolean;
     onlyGridFilterInToolbar?: boolean;
     isLoading?: boolean;
+    filterSelectsOptions?: Record<string, SelectOptionType[]>;
     onCellDoubleClick?: GridEventListener<"cellDoubleClick">;
 };
 
@@ -19,6 +20,11 @@ export type CustomGridSelectFilterFormProps = {
 
 export type CustomGridSelectFilterFormDataType = {
     filter: number | number[];
+};
+
+export type GridFilterContextType = {
+    currentFilterModel?: GridFilterModel;
+    filterSelectsOptions?: Record<string, SelectOptionType[]>;
 };
 
 export type useCustomGridFilterOperatorsProps = {
