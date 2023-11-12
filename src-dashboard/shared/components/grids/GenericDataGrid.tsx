@@ -18,6 +18,7 @@ const GenericDataGrid: React.FC<GenericDataGridProps> = ({
     onlyGridFilterInToolbar = false,
     isLoading = false,
     filterSelectsOptions,
+    onRowSelectionModelChange,
     onCellDoubleClick,
 }) => {
     const [currentFilterModel, setCurrentFilterModel] = useState<GridFilterModel | undefined>();
@@ -64,6 +65,7 @@ const GenericDataGrid: React.FC<GenericDataGridProps> = ({
                     checkboxSelection={checkboxSelection}
                     disableRowSelectionOnClick={disableRowSelectionOnClick}
                     disableColumnMenu={disableColumnMenu}
+                    onRowSelectionModelChange={onRowSelectionModelChange}
                     onCellDoubleClick={onCellDoubleClick}
                     onPaginationModelChange={handlePageChangeScrollToGridTop}
                     onFilterModelChange={handleFilterModelChange}

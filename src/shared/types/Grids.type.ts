@@ -1,5 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { GridColDef, GridEventListener, GridFilterModel, GridValidRowModel } from "@mui/x-data-grid";
+import {
+    GridCallbackDetails,
+    GridColDef,
+    GridEventListener,
+    GridFilterModel,
+    GridRowSelectionModel,
+    GridValidRowModel,
+} from "@mui/x-data-grid";
 import { GenericFormSchemaType, SelectOptionType } from "./Forms.type";
 
 export type GenericDataGridProps = {
@@ -13,6 +20,7 @@ export type GenericDataGridProps = {
     onlyGridFilterInToolbar?: boolean;
     isLoading?: boolean;
     filterSelectsOptions?: Record<string, SelectOptionType[]>;
+    onRowSelectionModelChange?: (rowSelectionModel: GridRowSelectionModel, details: GridCallbackDetails<any>) => void;
     onCellDoubleClick?: GridEventListener<"cellDoubleClick">;
 };
 
