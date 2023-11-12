@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import Form from "@rjsf/mui";
 import { GenericFormProps } from "../../types/Forms.type";
-import { useState } from "react";
 import { IChangeEvent } from "@rjsf/core";
 import validator from "@rjsf/validator-ajv8";
 import { ErrorTransformer, RJSFSchema } from "@rjsf/utils";
@@ -9,7 +8,7 @@ import { Box } from "@mui/material";
 import useGenericFormStyles from "shared/styles/components/forms/useGenericFormStyles";
 
 const GenericForm: React.FC<GenericFormProps> = ({
-    defaultValue = {},
+    formData = {},
     schema,
     hideDefaultSubmitBtn = false,
     children,
@@ -18,8 +17,6 @@ const GenericForm: React.FC<GenericFormProps> = ({
     onSubmit,
     ...props
 }) => {
-    const [formData, setFormData] = useState(defaultValue);
-
     const styles = useGenericFormStyles(hideDefaultSubmitBtn);
 
     const transformErrors: ErrorTransformer<any, RJSFSchema, any> = (errors, uiSchema) => {
@@ -34,17 +31,16 @@ const GenericForm: React.FC<GenericFormProps> = ({
         });
     };
 
-    const handleChange = ({ formData }: IChangeEvent<any>): void => {
-        setFormData(formData ?? defaultValue);
-        onFormChange?.(formData);
+    const handleChange = ({ formData: newFormData }: IChangeEvent<any>): void => {
+        onFormChange?.(newFormData);
     };
 
     const handleBlur = (id: string, data: any): void => {
         onSingleFieldBlur?.(id, data);
     };
 
-    const handleSubmit = ({ formData }: IChangeEvent<any>) => {
-        onSubmit?.(formData);
+    const handleSubmit = ({ formData: newFormData }: IChangeEvent<any>) => {
+        onSubmit?.(newFormData);
     };
 
     return (
