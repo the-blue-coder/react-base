@@ -28,7 +28,7 @@ const CustomGridFilterToolbar: React.FC = () => {
                 {((filterItem?.operator !== "is_empty" && filterItem?.value && filterItem.value.length > 0) ||
                     filterItem?.operator === "is_empty") && (
                     <Box>
-                        Active filter: {camelCaseToWords(filterItem?.field)} column {snakeCaseToWords(filterItem?.operator, false)}{" "}
+                        Active filter: {camelCaseToWords(filterItem?.field)} column which {snakeCaseToWords(filterItem?.operator, false)}{" "}
                         {Array.isArray(filterItem?.value)
                             ? filterItem?.value
                                   .map(
