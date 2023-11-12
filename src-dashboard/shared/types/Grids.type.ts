@@ -1,8 +1,10 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { GridColDef, GridEventListener, GridFilterModel, GridValidRowModel } from "@mui/x-data-grid";
 import { GenericFormSchemaType, SelectOptionType } from "./Forms.type";
 
 export type GenericDataGridProps = {
     columns: GridColDef[];
+    columnNames?: any;
     rows: GridValidRowModel[];
     pageSize?: number;
     checkboxSelection?: boolean;
@@ -24,6 +26,7 @@ export type CustomGridSelectFilterFormDataType = {
 
 export type GridFilterContextType = {
     currentFilterModel?: GridFilterModel;
+    columnNames?: any;
     filterSelectsOptions?: Record<string, SelectOptionType[]>;
 };
 

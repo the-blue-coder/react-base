@@ -8,11 +8,11 @@ import useUtils from "shared/hooks/useUtils";
 const CustomGridFilterToolbar: React.FC = () => {
     const apiRef = useGridApiContext();
 
-    const { currentFilterModel, filterSelectsOptions } = useGridFilterContext();
+    const { currentFilterModel, columnNames, filterSelectsOptions } = useGridFilterContext();
 
     const filterItem = currentFilterModel?.items?.[0];
 
-    const { camelCaseToWords, snakeCaseToWords } = useUtils();
+    const { snakeCaseToWords } = useUtils();
 
     const styles = useCustomGridFilterToolbarStyles();
 
@@ -28,7 +28,7 @@ const CustomGridFilterToolbar: React.FC = () => {
                 {((filterItem?.operator !== "is_empty" && filterItem?.value && filterItem.value.length > 0) ||
                     filterItem?.operator === "is_empty") && (
                     <Box>
-                        Active filter: {camelCaseToWords(filterItem?.field)} column which {snakeCaseToWords(filterItem?.operator, false)}{" "}
+                        Active filter: {columnNames?.[filterItem?.field]} column which {snakeCaseToWords(filterItem?.operator, false)}{" "}
                         {Array.isArray(filterItem?.value)
                             ? filterItem?.value
                                   .map(

@@ -9,6 +9,7 @@ import { GridFilterContext } from "shared/contexts/Grids.context";
 
 const GenericDataGrid: React.FC<GenericDataGridProps> = ({
     columns,
+    columnNames,
     rows,
     pageSize = defaultDataGridPageSize,
     checkboxSelection = true,
@@ -21,7 +22,10 @@ const GenericDataGrid: React.FC<GenericDataGridProps> = ({
 }) => {
     const [currentFilterModel, setCurrentFilterModel] = useState<GridFilterModel | undefined>();
 
-    const contextValue = useMemo(() => ({ currentFilterModel, filterSelectsOptions }), [currentFilterModel, filterSelectsOptions]);
+    const contextValue = useMemo(
+        () => ({ currentFilterModel, columnNames, filterSelectsOptions }),
+        [currentFilterModel, columnNames, filterSelectsOptions]
+    );
 
     const gridRef = useRef<HTMLDivElement>(null);
 

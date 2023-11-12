@@ -17,3 +17,7 @@ export type TimestampDataType = {
 export type MutateAsyncFunctionType = UseMutateAsyncFunction<AxiosResponse<any, any>, unknown, any, unknown>;
 
 export type CallbackFunctionType = (callback?: ((data?: unknown) => void) | undefined) => void;
+
+export type EnumType<T> = {
+    [key in keyof T]: T[key];
+};
