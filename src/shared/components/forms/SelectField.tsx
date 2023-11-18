@@ -14,6 +14,7 @@ const SelectField: React.FC<WidgetProps> = ({ value, schema, uiSchema, onChange 
     const variant = (uiOptions?.variant as SelectProps["variant"]) ?? "standard";
     const options = uiOptions?.options as SelectOptionType[] | undefined;
     const isMultiple = Boolean(uiOptions?.isMultiple);
+    const defaultValue = isMultiple ? [] : "";
     const hasClearBtn = Boolean(uiOptions?.hasClearBtn);
     const hasValue = isMultiple ? value && value.length > 0 : value;
 
@@ -27,14 +28,14 @@ const SelectField: React.FC<WidgetProps> = ({ value, schema, uiSchema, onChange 
 
     return (
         <Box sx={styles.selectField}>
-            {options && options.length > 0 && (
+            {options && (
                 <FormControl variant={variant} id={id} className="select-form-control">
                     <InputLabel id={`${id}-label`}>{label}</InputLabel>
                     <Select
                         variant={variant}
                         labelId={`${id}-label`}
                         id={id}
-                        value={value ?? (isMultiple ? [] : "")}
+                        value={options.length > 0 && value ? value : defaultValue}
                         onChange={handleChange}
                         label={label}
                         multiple={isMultiple}
