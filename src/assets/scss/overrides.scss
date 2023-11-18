@@ -31,14 +31,8 @@ form.rjsf {
 }
 
 /**
-* Material UI > DataGrid
+* Material UI > DataGrid panel (it's outside datagrid div container, so we have to put it here)
 */
-.MuiDataGrid-root {
-    .MuiDataGrid-filterIcon {
-        color: $primary;
-    }
-}
-
 .MuiDataGrid-panel {
     form.rjsf {
         > .form-group {

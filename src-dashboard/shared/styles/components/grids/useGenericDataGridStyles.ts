@@ -1,3 +1,5 @@
+import { BASE_COLOR } from "shared/constants/colors.constant";
+
 const useGenericDataGridStyles = () => {
     return {
         genericDataGrid: {
@@ -9,6 +11,14 @@ const useGenericDataGridStyles = () => {
                 "& .MuiDataGrid-columnHeaderTitle": {
                     fontWeight: "bold",
                 },
+
+                "& .MuiDataGrid-filterIcon": {
+                    color: BASE_COLOR.primary,
+                },
+            },
+
+            "& .MuiDataGrid-cell": {
+                overflowX: "auto !important",
             },
         },
     };
