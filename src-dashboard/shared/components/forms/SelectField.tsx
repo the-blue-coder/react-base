@@ -27,7 +27,7 @@ const SelectField: React.FC<WidgetProps> = ({ value, schema, uiSchema, onChange 
 
     return (
         <Box sx={styles.selectField}>
-            {options && (
+            {options && options.length > 0 && (
                 <FormControl variant={variant} id={id} className="select-form-control">
                     <InputLabel id={`${id}-label`}>{label}</InputLabel>
                     <Select
@@ -39,9 +39,6 @@ const SelectField: React.FC<WidgetProps> = ({ value, schema, uiSchema, onChange 
                         label={label}
                         multiple={isMultiple}
                     >
-                        {/* The following line is for removing console error about out of range value */}
-                        {options.length === 0 && <MenuItem value="1" hidden></MenuItem>}
-
                         {options?.map((option: Record<string, string | number>) => {
                             return (
                                 <MenuItem key={option.id} value={option.id}>
