@@ -28,7 +28,17 @@ const useUtils = () => {
         return capitalize ? _.capitalize(words) : words;
     };
 
-    return { formatNumber, formatNumberToCurrency, sortArrayAsc, camelCaseToWords, snakeCaseToWords };
+    const slugify = (string: string): string => {
+        return string
+            .toLowerCase()
+            .replace(/\s+/g, "-")
+            .replace(/[^\w-]+/g, "")
+            .replace(/-+/g, "-")
+            .replace(/^-+/, "")
+            .replace(/-+$/, "");
+    };
+
+    return { formatNumber, formatNumberToCurrency, sortArrayAsc, camelCaseToWords, snakeCaseToWords, slugify };
 };
 
 export default useUtils;
