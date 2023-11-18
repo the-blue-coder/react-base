@@ -14,7 +14,7 @@ const GenericDataGrid: React.FC<GenericDataGridProps> = ({
     pageSize = defaultDataGridPageSize,
     checkboxSelection = true,
     disableRowSelectionOnClick = false,
-    disableColumnMenu = true,
+    disableColumnMenu = false,
     onlyGridFilterInToolbar = false,
     isLoading = false,
     filterSelectsOptions,
