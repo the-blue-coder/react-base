@@ -28,6 +28,7 @@ const GenericForm = forwardRef<any, GenericFormProps>(
 
         const handleChange = ({ formData: newFormData }: IChangeEvent<any>): void => {
             onFormChange?.(newFormData);
+            setInternalFormData(newFormData);
         };
 
         const handleBlur = (id: string, data: any): void => {
