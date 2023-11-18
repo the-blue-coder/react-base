@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { forwardRef } from "react";
+import { forwardRef, useState } from "react";
 import Form from "@rjsf/mui";
 import { GenericFormProps } from "../../types/Forms.type";
 import { IChangeEvent } from "@rjsf/core";
@@ -10,6 +10,8 @@ import useGenericFormStyles from "shared/styles/components/forms/useGenericFormS
 
 const GenericForm = forwardRef<any, GenericFormProps>(
     ({ formData = {}, schema, hideDefaultSubmitBtn = false, children, onFormChange, onSingleFieldBlur, onSubmit, ...props }, ref) => {
+        const [internalFormData, setInternalFormData] = useState<any>(formData);
+
         const styles = useGenericFormStyles(hideDefaultSubmitBtn);
 
         const transformErrors: ErrorTransformer<any, RJSFSchema, any> = (errors, uiSchema) => {
@@ -34,6 +36,7 @@ const GenericForm = forwardRef<any, GenericFormProps>(
 
         const handleSubmit = ({ formData: newFormData }: IChangeEvent<any>) => {
             onSubmit?.(newFormData);
+            setInternalFormData(newFormData);
         };
 
         return (
@@ -43,7 +46,7 @@ const GenericForm = forwardRef<any, GenericFormProps>(
                     ref={ref}
                     schema={schema.schema}
                     uiSchema={schema.uiSchema}
-                    formData={formData}
+                    formData={internalFormData}
                     validator={validator}
                     showErrorList={false}
                     onChange={handleChange}
