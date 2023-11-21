@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {
     GridCallbackDetails,
     GridColDef,
@@ -19,7 +20,7 @@ export type GenericDataGridProps = {
     onlyGridFilterInToolbar?: boolean;
     isLoading?: boolean;
     filterSelectsOptions?: Record<string, SelectOptionType[]>;
-    onRowSelectionModelChange?: (rowSelectionModel: GridRowSelectionModel, details: GridCallbackDetails<never>) => void;
+    onRowSelectionModelChange?: (rowSelectionModel: GridRowSelectionModel, details: GridCallbackDetails<any>) => void;
     onCellDoubleClick?: GridEventListener<"cellDoubleClick">;
 };
 
