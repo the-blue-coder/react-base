@@ -1,11 +1,11 @@
 import { Clear } from "@mui/icons-material";
 import { Box, FormControl, InputLabel, MenuItem, Select, SelectChangeEvent, SelectProps } from "@mui/material";
 import { WidgetProps } from "@rjsf/utils";
-import useSelectFieldStyles from "shared/styles/components/forms/useSelectFieldStyles";
+import useCustomSelectFieldStyles from "shared/styles/components/forms/useCustomSelectFieldStyles";
 import { SelectOptionType } from "shared/types/Forms.type";
 
-const SelectField: React.FC<WidgetProps> = ({ value, schema, uiSchema, onChange }) => {
-    const styles = useSelectFieldStyles();
+const CustomSelectField: React.FC<WidgetProps> = ({ value, schema, uiSchema, onChange }) => {
+    const styles = useCustomSelectFieldStyles();
 
     const uiOptions = uiSchema?.["ui:options"];
 
@@ -27,7 +27,7 @@ const SelectField: React.FC<WidgetProps> = ({ value, schema, uiSchema, onChange 
     };
 
     return (
-        <Box sx={styles.selectField}>
+        <Box sx={styles.customSelectField}>
             {options && (
                 <FormControl variant={variant} id={id} className="select-form-control">
                     <InputLabel id={`${id}-label`}>{label}</InputLabel>
@@ -56,4 +56,4 @@ const SelectField: React.FC<WidgetProps> = ({ value, schema, uiSchema, onChange 
     );
 };
 
-export default SelectField;
+export default CustomSelectField;

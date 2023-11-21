@@ -1,6 +1,6 @@
-const useSelectFieldStyles = () => {
+const useCustomSelectFieldStyles = () => {
     return {
-        selectField: {
+        customSelectField: {
             "& .select-form-control": {
                 minWidth: 150,
 
@@ -16,4 +16,4 @@ const useSelectFieldStyles = () => {
     };
 };
 
-export default useSelectFieldStyles;
+export default useCustomSelectFieldStyles;

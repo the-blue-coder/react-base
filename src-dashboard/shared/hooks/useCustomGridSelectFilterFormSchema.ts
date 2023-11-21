@@ -1,4 +1,4 @@
-import SelectField from "shared/components/forms/SelectField";
+import CustomSelectField from "shared/components/forms/CustomSelectField";
 import { GenericFormSchemaType } from "shared/types/Forms.type";
 import { useCustomGridSelectFilterFormSchemaProps } from "shared/types/Grids.type";
 
@@ -16,7 +16,7 @@ const useCustomGridSelectFilterFormSchema = ({ options }: useCustomGridSelectFil
 
         uiSchema: {
             filter: {
-                "ui:widget": SelectField,
+                "ui:widget": CustomSelectField,
                 "ui:options": {
                     variant: "standard",
                     options,
