@@ -13,13 +13,18 @@ const Menu: React.FC = () => {
 
     return (
         <List sx={styles.menu}>
-            {menuItems.map((menuItem) => (
-                <ListItem key={menuItem.path} disablePadding>
-                    <ListItemButton onClick={() => navigate(getRoutePath(menuItem))} selected={`${menuItem.path}` === location.pathname}>
-                        <ListItemText primary={menuItem.title} />
-                    </ListItemButton>
-                </ListItem>
-            ))}
+            {menuItems.map((menuItem) => {
+                return (
+                    <ListItem key={menuItem.path} disablePadding>
+                        <ListItemButton
+                            onClick={() => navigate(getRoutePath(menuItem))}
+                            selected={`${menuItem.path}` === location.pathname}
+                        >
+                            <ListItemText primary={menuItem.title} />
+                        </ListItemButton>
+                    </ListItem>
+                );
+            })}
         </List>
     );
 };
