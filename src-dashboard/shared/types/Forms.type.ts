@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { ReactNode } from "react";
 import { FormProps } from "@rjsf/core";
 import { JSONSchema7 } from "json-schema";
@@ -7,9 +8,9 @@ export type GenericFormProps = {
     formData?: unknown;
     hideDefaultSubmitBtn?: boolean;
     children?: ReactNode;
-    onFormChange?: (formData: unknown) => unknown;
-    onSingleFieldBlur?: (id: string, value: unknown) => unknown;
-    onSubmit?: (formData: unknown) => unknown;
+    onFormChange?: (formData: any) => void;
+    onSingleFieldBlur?: (id: string, value: any) => void;
+    onSubmit?: (formData: any) => void;
 };
 
 export type GenericFormSchemaType = {
