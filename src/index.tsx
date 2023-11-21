@@ -82,6 +82,9 @@ const theme: Theme = createTheme({
                 root: {
                     marginRight: "4px",
                 },
+                label: {
+                    fontSize: defaultFontSize,
+                },
             },
         },
     },
