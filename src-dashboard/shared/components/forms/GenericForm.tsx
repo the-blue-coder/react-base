@@ -17,9 +17,9 @@ const GenericForm = forwardRef<any, GenericFormProps>(
         const transformErrors: ErrorTransformer<any, RJSFSchema, any> = (errors, uiSchema) => {
             return errors.map((error) => {
                 const errorType = String(error.name);
-                const fieldProperty = String(error.property?.slice(1));
+                const fieldProperty = String(error.property);
                 const customErrorMessage = uiSchema?.[fieldProperty]?.["ui:customErrorMessages"]?.[errorType];
-                const fieldName = error.stack.split("' ")[0]?.slice(1);
+                const fieldName = error.stack.split(" '")[1]?.replace(/'/g, "");
                 const updatedMessage = `${fieldName} ${error.message?.toLowerCase()}`;
 
                 return { ...error, message: customErrorMessage || updatedMessage };
