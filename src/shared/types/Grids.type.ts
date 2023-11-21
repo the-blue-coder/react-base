@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import {
     GridCallbackDetails,
     GridColDef,
@@ -11,7 +10,7 @@ import { GenericFormSchemaType, SelectOptionType } from "./Forms.type";
 
 export type GenericDataGridProps = {
     columns: GridColDef[];
-    columnNames?: any;
+    columnNames?: unknown;
     rows: GridValidRowModel[];
     pageSize?: number;
     checkboxSelection?: boolean;
@@ -20,7 +19,7 @@ export type GenericDataGridProps = {
     onlyGridFilterInToolbar?: boolean;
     isLoading?: boolean;
     filterSelectsOptions?: Record<string, SelectOptionType[]>;
-    onRowSelectionModelChange?: (rowSelectionModel: GridRowSelectionModel, details: GridCallbackDetails<any>) => void;
+    onRowSelectionModelChange?: (rowSelectionModel: GridRowSelectionModel, details: GridCallbackDetails<never>) => void;
     onCellDoubleClick?: GridEventListener<"cellDoubleClick">;
 };
 
@@ -34,7 +33,7 @@ export type CustomGridSelectFilterFormDataType = {
 
 export type GridFilterContextType = {
     currentFilterModel?: GridFilterModel;
-    columnNames?: any;
+    columnNames?: unknown;
     filterSelectsOptions?: Record<string, SelectOptionType[]>;
 };
 

@@ -13,8 +13,7 @@ export type TimestampDataType = {
     timezone: string;
 };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export type MutateAsyncFunctionType = UseMutateAsyncFunction<AxiosResponse<any, any>, unknown, any, unknown>;
+export type MutateAsyncFunctionType = UseMutateAsyncFunction<AxiosResponse<unknown, unknown>, unknown, unknown, unknown>;
 
 export type CallbackFunctionType = (callback?: ((data?: unknown) => void) | undefined) => void;
 

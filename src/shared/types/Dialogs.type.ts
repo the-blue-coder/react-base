@@ -7,3 +7,8 @@ export type GenericDialogProps = {
     children?: ReactNode;
     onClose: () => void;
 };
+
+export type GenerciDeleteConfirmationDialogProps = GenericDialogProps & {
+    isDeleting: boolean;
+    onDeletionConfirm: (data: unknown) => void;
+};

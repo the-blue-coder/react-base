@@ -4,7 +4,7 @@
 @import "./variables/colors";
 
 /**
-* Material UI > Forms > RJSF
+* MUI > Forms > RJSF
 */
 form.rjsf {
     .form-group {
@@ -21,7 +21,7 @@ form.rjsf {
 }
 
 /**
-* Material UI > DataGrid panel (it's outside datagrid div container, so we have to put it here)
+* MUI > DataGrid panel (it's outside datagrid div container, so we have to put it here)
 */
 .MuiDataGrid-panel {
     form.rjsf {
@@ -53,4 +53,11 @@ form.rjsf {
     .MuiDataGrid-filterFormDeleteIcon {
         top: 2px;
     }
+}
+
+/**
+* MUI > Chip
+*/
+.MuiChip-root[role="button"]:hover {
+    opacity: 0.85;
 }
