@@ -17,6 +17,8 @@ export type MutateAsyncFunctionType = UseMutateAsyncFunction<AxiosResponse<unkno
 
 export type CallbackFunctionType = (callback?: ((data?: unknown) => void) | undefined) => void;
 
+export type SimpleVoidFunctionType = () => void;
+
 export type EnumType<T> = {
     [key in keyof T]: T[key];
 };
