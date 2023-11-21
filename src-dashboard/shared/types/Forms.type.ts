@@ -14,8 +14,16 @@ export type GenericFormProps = {
 };
 
 export type GenericFormSchemaType = {
-    schema: JSONSchema7;
+    schema: JSONSchema7 & ExtendedJSONSchemaType;
     uiSchema: FormProps["uiSchema"];
+};
+
+export type ExtendedJSONSchemaType = {
+    properties: {
+        [key: string]: {
+            id?: string;
+        };
+    };
 };
 
 export type SelectOptionType = {
