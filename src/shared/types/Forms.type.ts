@@ -18,8 +18,15 @@ export type GenericFormSchemaType = {
     uiSchema: FormProps["uiSchema"];
 };
 
-export type SelectOptionType = {
+export type GenericFormFieldOptionType = {
     id: string | number;
     value: string | number;
+};
+
+export type SelectOptionType = GenericFormFieldOptionType & {
     slug?: string;
+};
+
+export type useCustomRadiosFieldStylesProps = {
+    isInline: boolean;
 };
