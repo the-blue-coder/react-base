@@ -2,13 +2,13 @@ import { Box, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup } from
 import { WidgetProps } from "@rjsf/utils";
 import { ChangeEvent } from "react";
 import useCustomRadiosFieldStyles from "shared/styles/components/forms/useCustomRadiosFieldStyles";
-import { RadioOptionType } from "shared/types/Forms.type";
+import { GenericFormFieldOptionType } from "shared/types/Forms.type";
 
 const CustomRadiosField: React.FC<WidgetProps> = ({ value, schema, uiSchema, onChange }) => {
     const uiOptions = uiSchema?.["ui:options"];
 
     const label = schema.title;
-    const options = uiOptions?.options as RadioOptionType[] | undefined;
+    const options = uiOptions?.options as GenericFormFieldOptionType[] | undefined;
     const isInline = uiOptions?.inline || false;
 
     const styles = useCustomRadiosFieldStyles({ isInline });
