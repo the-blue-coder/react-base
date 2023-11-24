@@ -40,7 +40,7 @@ export type GridFilterContextType = {
 
 export type useCustomGridFilterOperatorsProps = {
     targetField: string;
-    selectOptions: SelectOptionType[];
+    options: SelectOptionType[];
 };
 
 export type useCustomGridSelectFilterFormSchemaProps = {

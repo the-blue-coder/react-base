@@ -3,8 +3,8 @@ import CustomGridSelectFilterForm from "shared/components/grids/CustomGridSelect
 import useCustomGridSelectFilterFormSchema from "./useCustomGridSelectFilterFormSchema";
 import { useCustomGridFilterOperatorsProps } from "shared/types/Grids.type";
 
-const useCustomGridFilterOperators = ({ targetField, selectOptions }: useCustomGridFilterOperatorsProps) => {
-    const customGridSelectFilterFormSchema = useCustomGridSelectFilterFormSchema({ options: selectOptions });
+const useCustomGridFilterOperators = ({ targetField, options }: useCustomGridFilterOperatorsProps) => {
+    const customGridSelectFilterFormSchema = useCustomGridSelectFilterFormSchema({ options });
 
     const customSelectFilterOperator: GridFilterOperator = {
         label: "contains",
