@@ -9,7 +9,7 @@ const CustomSelectField: React.FC<WidgetProps> = ({ value, schema, uiSchema, onC
 
     const uiOptions = uiSchema?.["ui:options"];
 
-    const id = String(uiOptions?.id);
+    const id = String(uiOptions?.id || "custom-select-field");
     const label = schema.title;
     const variant = (uiOptions?.variant as SelectProps["variant"]) ?? "standard";
     const options = uiOptions?.options as SelectOptionType[] | undefined;
