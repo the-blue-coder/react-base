@@ -38,6 +38,8 @@ export type GridFilterContextType = {
     filterSelectsOptions?: Record<string, SelectOptionType[]>;
 };
 
+export type GridRowSelectionModelChangeType = (rowSelectionModel: GridRowSelectionModel, details: GridCallbackDetails<any>) => void;
+
 export type useCustomGridFilterOperatorsProps = {
     targetField: string;
     options: SelectOptionType[];
