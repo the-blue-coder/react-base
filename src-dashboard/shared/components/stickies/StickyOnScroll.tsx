@@ -4,14 +4,14 @@ import Box from "@mui/material/Box";
 import { StickyOnScrollProps } from "shared/types/Stickies.type";
 import useStickyOnScrollStyles from "shared/styles/components/stickies/useStickyOnScrollStyles";
 
-const StickyOnScroll: React.FC<StickyOnScrollProps> = ({ topOffsetStickyStart = 0, children }) => {
+const StickyOnScroll: React.FC<StickyOnScrollProps> = ({ offsetTopStickyStart = 0, children }) => {
     const [isSticky, setIsSticky] = useState<boolean>(false);
     const elementRef = useRef(null);
     const styles = useStickyOnScrollStyles(isSticky);
 
     useEffect(() => {
         const handleScroll = () => {
-            setIsSticky(window.scrollY > topOffsetStickyStart);
+            setIsSticky(window.scrollY > offsetTopStickyStart);
         };
 
         window.addEventListener("scroll", handleScroll);
