@@ -4,11 +4,11 @@ const useFullPageLoaderStyles = () => {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            position: "fixed",
             backgroundColor: "#ffffff",
+            position: "fixed",
             width: "100%",
             height: "100%",
-            zIndex: 5,
+            zIndex: 6,
         },
     };
 };
