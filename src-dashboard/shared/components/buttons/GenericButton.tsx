@@ -5,7 +5,7 @@ const GenericButton: React.FC<GenericButtonProps> = ({ mr = 0.5, noMr = false, v
     return (
         <Button
             {...props}
-            sx={{ mr: noMr ? 0 : mr }}
+            sx={{ ...props.sx, mr: noMr ? 0 : mr }}
             variant={isText ? "text" : variant ?? "contained"}
             color={color ?? "primary"}
             onClick={onClick}
