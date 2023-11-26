@@ -5,13 +5,14 @@ import GenericButton from "shared/components/buttons/GenericButton";
 
 const GenerciDeleteConfirmationDialog: React.FC<GenericDialogProps & GenerciDeleteConfirmationDialogProps> = ({
     open,
+    title,
     isDeleting,
     children,
     onClose,
     onDeletionConfirm,
 }) => {
     return (
-        <GenericDialog id="delete-groups-dialog" open={open} title="Delete selected groups" onClose={onClose}>
+        <GenericDialog open={open} title={title} onClose={onClose}>
             <Box>
                 {children}
 
