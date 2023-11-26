@@ -2,7 +2,6 @@ import { Box } from "@mui/material";
 import GenericDialog from "shared/components/dialogs/GenericDialog";
 import { GenerciDeleteConfirmationDialogProps, GenericDialogProps } from "shared/types/Dialogs.type";
 import GenericButton from "shared/components/buttons/GenericButton";
-import useGenerciDeleteConfirmationDialogStyles from "shared/styles/components/dialogs/useGenerciDeleteConfirmationDialogStyles";
 
 const GenerciDeleteConfirmationDialog: React.FC<GenericDialogProps & GenerciDeleteConfirmationDialogProps> = ({
     open,
@@ -11,11 +10,9 @@ const GenerciDeleteConfirmationDialog: React.FC<GenericDialogProps & GenerciDele
     onClose,
     onDeletionConfirm,
 }) => {
-    const styles = useGenerciDeleteConfirmationDialogStyles();
-
     return (
         <GenericDialog id="delete-groups-dialog" open={open} title="Delete selected groups" onClose={onClose}>
-            <Box sx={styles.deleteDialog}>
+            <Box>
                 {children}
 
                 <Box mt={2} className="btns-container">
