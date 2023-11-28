@@ -11,7 +11,7 @@ import { GenericFormSchemaType, SelectOptionType } from "./Forms.type";
 
 export type GenericDataGridProps = {
     columns: GridColDef[];
-    columnNames?: unknown;
+    columnNames: unknown;
     rows: GridValidRowModel[];
     pageSize?: number;
     checkboxSelection?: boolean;
