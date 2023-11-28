@@ -1,13 +1,29 @@
-import { Dialog, DialogContent, useMediaQuery, useTheme } from "@mui/material";
+import { Dialog, DialogContent, IconButton, useMediaQuery, useTheme } from "@mui/material";
 import { GenericDialogProps } from "shared/types/Dialogs.type";
 import GenericDialogTitle from "../texts/GenericDialogTitle";
+import { GridCloseIcon } from "@mui/x-data-grid";
+import useGenericDialogStyles from "shared/styles/components/dialogs/useGenericDialogStyles";
 
 const GenericDialog: React.FC<GenericDialogProps> = ({ id, open, title, fullScreen = false, children, onClose }) => {
+    const styles = useGenericDialogStyles();
     const theme = useTheme();
     const responsiveFullScreen = useMediaQuery(theme.breakpoints.down("md"));
 
     return (
-        <Dialog fullScreen={fullScreen || responsiveFullScreen} open={open} id={id} onClose={onClose} aria-labelledby={id}>
+        <Dialog
+            sx={styles.genericDialog}
+            fullScreen={fullScreen || responsiveFullScreen}
+            open={open}
+            id={id}
+            onClose={onClose}
+            aria-labelledby={id}
+        >
+            {(fullScreen || responsiveFullScreen) && (
+                <IconButton className="close-button" edge="end" color="inherit" onClick={onClose} aria-label="close">
+                    <GridCloseIcon />
+                </IconButton>
+            )}
+
             <GenericDialogTitle id={`${id}-title`}>{title}</GenericDialogTitle>
             <DialogContent>{children}</DialogContent>
         </Dialog>
