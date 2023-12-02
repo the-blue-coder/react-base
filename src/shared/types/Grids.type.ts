@@ -19,6 +19,7 @@ export type GenericDataGridProps = {
     disableColumnMenu?: boolean;
     onlyGridFilterInToolbar?: boolean;
     isLoading?: boolean;
+    hasToolbar?: boolean;
     filterSelectsOptions?: Record<string, SelectOptionType[]>;
     onRowSelectionModelChange?: (rowSelectionModel: GridRowSelectionModel, details: GridCallbackDetails<any>) => void;
     onCellDoubleClick?: GridEventListener<"cellDoubleClick">;

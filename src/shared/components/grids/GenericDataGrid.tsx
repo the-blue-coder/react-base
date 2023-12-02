@@ -17,6 +17,7 @@ const GenericDataGrid: React.FC<GenericDataGridProps> = ({
     disableColumnMenu = false,
     onlyGridFilterInToolbar = true,
     isLoading = false,
+    hasToolbar = true,
     filterSelectsOptions,
     onRowSelectionModelChange,
     onCellDoubleClick,
@@ -42,6 +43,18 @@ const GenericDataGrid: React.FC<GenericDataGridProps> = ({
         setCurrentFilterModel(model);
     };
 
+    const getToolbar = () => {
+        if (!hasToolbar) {
+            return null;
+        }
+
+        if (onlyGridFilterInToolbar) {
+            return CustomGridFilterToolbar;
+        }
+
+        return GridToolbar;
+    };
+
     return (
         <GridFilterContext.Provider value={contextValue}>
             <Box sx={styles.genericDataGrid}>
@@ -57,7 +70,7 @@ const GenericDataGrid: React.FC<GenericDataGridProps> = ({
                         },
                     }}
                     slots={{
-                        toolbar: onlyGridFilterInToolbar ? CustomGridFilterToolbar : GridToolbar,
+                        toolbar: getToolbar(),
                     }}
                     autoHeight
                     loading={isLoading}
