@@ -91,11 +91,12 @@ const theme: Theme = createTheme({
         MuiTab: {
             styleOverrides: {
                 root: {
+                    marginRight: "20px",
                     paddingLeft: 0,
                     paddingRight: 0,
                     paddingTop: "4px",
                     paddingBottom: "4px",
-                    marginRight: "20px",
+                    fontWeight: "bold",
                 },
             },
         },
