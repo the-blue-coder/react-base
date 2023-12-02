@@ -2,6 +2,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import "./assets/scss/custom-styles.scss";
 import "./assets/scss/overrides.scss";
+import "./assets/scss/sticky.scss";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { RecoilRoot } from "recoil";
 import { ThemeProvider } from "@mui/material";
@@ -84,6 +85,16 @@ const theme: Theme = createTheme({
                 },
                 label: {
                     fontSize: defaultFontSize,
+                },
+            },
+        },
+        MuiTab: {
+            styleOverrides: {
+                root: {
+                    paddingLeft: 0,
+                    paddingRight: 0,
+                    paddingBottom: "4px",
+                    marginRight: "20px",
                 },
             },
         },
