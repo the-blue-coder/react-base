@@ -1,5 +1,5 @@
 import { GenericDataGridProps } from "shared/types/Grids.type";
-import { DataGrid, GridColDef, GridFilterModel, GridToolbar } from "@mui/x-data-grid";
+import { DataGrid, GridFilterModel, GridToolbar } from "@mui/x-data-grid";
 import { Box } from "@mui/material";
 import useGenericDataGridStyles from "shared/styles/components/grids/useGenericDataGridStyles";
 import { useMemo, useRef, useState } from "react";
@@ -61,7 +61,7 @@ const GenericDataGrid: React.FC<GenericDataGridProps> = ({
                 <DataGrid
                     ref={gridRef}
                     rows={rows}
-                    columns={columns as GridColDef[]}
+                    columns={columns}
                     initialState={{
                         pagination: {
                             paginationModel: {

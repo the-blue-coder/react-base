@@ -10,7 +10,7 @@ import {
 import { GenericFormSchemaType, SelectOptionType } from "./Forms.type";
 
 export type GenericDataGridProps = {
-    columns: (GridColDef | null)[];
+    columns: GridColDef[];
     columnNames: unknown;
     rows: GridValidRowModel[];
     pageSize?: number;
