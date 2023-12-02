@@ -2,7 +2,6 @@ import { ReactNode } from "react";
 import { SimpleVoidFunctionType } from "./Misc.type";
 
 export type GenericDialogProps = {
-    id?: string;
     open: boolean;
     title?: string;
     fullScreen?: boolean;

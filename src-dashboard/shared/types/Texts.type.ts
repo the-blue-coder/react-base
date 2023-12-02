@@ -10,7 +10,6 @@ export type SectionSubTitleProps = {
 };
 
 export type GenericDialogTitleProps = {
-    id: string;
     color?: string;
     children: ReactNode;
 };
