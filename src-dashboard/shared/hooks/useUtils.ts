@@ -38,7 +38,19 @@ const useUtils = () => {
             .replace(/-+$/, "");
     };
 
-    return { formatNumber, formatNumberToCurrency, sortArrayAsc, camelCaseToWords, snakeCaseToWords, slugify };
+    const capitalizeFirstLetter = (string: string) => {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    };
+
+    return {
+        formatNumber,
+        formatNumberToCurrency,
+        sortArrayAsc,
+        camelCaseToWords,
+        snakeCaseToWords,
+        slugify,
+        capitalizeFirstLetter,
+    };
 };
 
 export default useUtils;
