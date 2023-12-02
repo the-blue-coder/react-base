@@ -93,6 +93,7 @@ const theme: Theme = createTheme({
                 root: {
                     paddingLeft: 0,
                     paddingRight: 0,
+                    paddingTop: "4px",
                     paddingBottom: "4px",
                     marginRight: "20px",
                 },
