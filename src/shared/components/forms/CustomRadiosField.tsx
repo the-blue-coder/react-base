@@ -4,7 +4,7 @@ import { ChangeEvent } from "react";
 import useCustomRadiosFieldStyles from "shared/styles/components/forms/useCustomRadiosFieldStyles";
 import { GenericFormFieldOptionType } from "shared/types/Forms.type";
 
-const CustomRadiosField: React.FC<WidgetProps> = ({ value, schema, uiSchema, onChange }) => {
+const CustomRadiosField: React.FC<WidgetProps> = ({ value, required, schema, uiSchema, onChange }) => {
     const uiOptions = uiSchema?.["ui:options"];
 
     const label = schema.title;
@@ -20,7 +20,7 @@ const CustomRadiosField: React.FC<WidgetProps> = ({ value, schema, uiSchema, onC
     return (
         <Box sx={styles.customRadiosField}>
             <FormControl variant="standard">
-                <FormLabel>{label}</FormLabel>
+                <FormLabel>{`${label}${required ? " *" : ""}`}</FormLabel>
                 <RadioGroup
                     aria-labelledby={label}
                     name="custom_radios_field"
