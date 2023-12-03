@@ -45,9 +45,9 @@ const theme: Theme = createTheme({
                 root: {
                     "& .MuiAlert-root.error": {
                         backgroundColor: BASE_COLOR.primary,
-                        color: "#ffffff",
+                        color: BASE_COLOR.white,
                         "& .MuiAlert-icon": {
-                            color: "#ffffff",
+                            color: BASE_COLOR.white,
                         },
                     },
                     "& .MuiAlert-message p": {

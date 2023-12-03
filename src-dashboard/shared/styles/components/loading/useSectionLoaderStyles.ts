@@ -1,18 +1,18 @@
 import { BASE_COLOR } from "shared/constants/colors.constant";
 
-const useFullPageLoaderStyles = () => {
+const useSectionLoaderStyles = () => {
     return {
-        fullPageLoader: {
+        sectionLoader: {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
+            position: "absolute",
             backgroundColor: BASE_COLOR.white,
-            position: "fixed",
             width: "100%",
-            height: "100%",
-            zIndex: 6,
+            height: "100vh",
+            zIndex: 5,
         },
     };
 };
 
-export default useFullPageLoaderStyles;
+export default useSectionLoaderStyles;

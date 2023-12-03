@@ -10,7 +10,7 @@ const useMenuStyles = () => {
 
             "& .MuiListItemButton-root.Mui-selected, & .MuiListItemButton-root.Mui-selected:hover, & .MuiListItemButton-root:hover": {
                 backgroundColor: BASE_COLOR.primary,
-                color: "#ffffff",
+                color: BASE_COLOR.white,
             },
         },
     };

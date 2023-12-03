@@ -1,10 +1,12 @@
+import { BASE_COLOR } from "shared/constants/colors.constant";
+
 const useFullPageLoaderStyles = () => {
     return {
         fullPageLoader: {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            backgroundColor: "#ffffff",
+            backgroundColor: BASE_COLOR.white,
             position: "fixed",
             width: "100%",
             height: "100%",
