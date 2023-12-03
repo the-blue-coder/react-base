@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 import _ from "lodash";
 import { DEFAULT_CURRENCY } from "shared/constants/currency.constant";
 
@@ -42,6 +43,23 @@ const useUtils = () => {
         return string.charAt(0).toUpperCase() + string.slice(1);
     };
 
+    const autoLink = (text: string) => {
+        const delimiter =
+            /((?:https?:\/\/)?(?:(?:[a-z0-9]?(?:[a-z0-9-]{1,61}[a-z0-9])?\.[^\.|\s])+[a-z\.]*[a-z]+|(?:25[0-5]|2[0-4][\d]|[01]?[\d][\d]?)(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3})(?::\d{1,5})*[a-z0-9.,_\/~#&=;%+?\-\\(\\)]*)/gi;
+
+        return text
+            .split(delimiter)
+            .map((word) => {
+                const match = word.match(delimiter);
+                if (match) {
+                    const url = match[0];
+                    return `<a key="${slugify(word)}" href="${url.startsWith("http") ? url : `http://${url}`}" target="_blank">${url}</a>`;
+                }
+                return word;
+            })
+            .join(" ");
+    };
+
     return {
         formatNumber,
         formatNumberToCurrency,
@@ -50,6 +68,7 @@ const useUtils = () => {
         snakeCaseToWords,
         slugify,
         capitalizeFirstLetter,
+        autoLink,
     };
 };
 
