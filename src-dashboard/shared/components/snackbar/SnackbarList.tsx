@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Button, IconButton, Alert, Snackbar, Typography } from "@mui/material";
 import { useRecoilState } from "recoil";
 import { SnackbarListState } from "../../states/SnackbarList.state";
