@@ -6,7 +6,3 @@ export type GenericButtonProps = ButtonProps & {
     isText?: boolean;
     target?: string;
 };
-
-export type FacebookButtonProps = GenericButtonProps & {
-    hasEndIcon?: boolean;
-};
