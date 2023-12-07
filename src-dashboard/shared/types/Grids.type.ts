@@ -42,7 +42,7 @@ export type GenericColoredGridChipProps = {
 
 export type GridFilterContextType = {
     currentFilterModel?: GridFilterModel;
-    columnNames?: unknown;
+    columnNames?: any;
     filterSelectsOptions?: Record<string, SelectOptionType[]>;
 };
 
