@@ -2,7 +2,6 @@ import { ReactNode } from "react";
 import { SimpleVoidFunctionType } from "./Misc.type";
 
 export type GenericDialogProps = {
-    id?: string;
     open: boolean;
     title?: string;
     fullScreen?: boolean;
@@ -10,7 +9,13 @@ export type GenericDialogProps = {
     onClose: SimpleVoidFunctionType;
 };
 
-export type GenerciDeleteConfirmationDialogProps = GenericDialogProps & {
+export type GenericConfirmationDialogProps = GenericDialogProps & {
+    isConfirming: boolean;
+    isDelete?: boolean;
+    onConfirm: (data: unknown) => void;
+};
+
+export type GenericDeleteConfirmationDialogProps = GenericDialogProps & {
     isDeleting: boolean;
     onDeletionConfirm: (data: unknown) => void;
 };

@@ -1,25 +1,26 @@
 import { Box } from "@mui/material";
 import GenericDialog from "shared/components/dialogs/GenericDialog";
-import { GenerciDeleteConfirmationDialogProps, GenericDialogProps } from "shared/types/Dialogs.type";
+import { GenericConfirmationDialogProps } from "shared/types/Dialogs.type";
 import GenericButton from "shared/components/buttons/GenericButton";
 
-const GenerciDeleteConfirmationDialog: React.FC<GenericDialogProps & GenerciDeleteConfirmationDialogProps> = ({
+const GenericConfirmationDialog: React.FC<GenericConfirmationDialogProps> = ({
     open,
     title,
-    isDeleting,
+    isConfirming,
     children,
+    isDelete,
     onClose,
-    onDeletionConfirm,
+    onConfirm,
 }) => {
     return (
         <GenericDialog open={open} title={title} onClose={onClose}>
             <Box>
                 {children}
 
-                <Box mt={2} className="btns-container">
+                <Box mt={2}>
                     <GenericButton onClick={onClose}>Cancel</GenericButton>
-                    <GenericButton onClick={onDeletionConfirm} disabled={isDeleting}>
-                        <strong>DELETE</strong>
+                    <GenericButton onClick={onConfirm} disabled={isConfirming} noMr>
+                        {isDelete ? <strong>DELETE</strong> : "Confirm"}
                     </GenericButton>
                 </Box>
             </Box>
@@ -27,4 +28,4 @@ const GenerciDeleteConfirmationDialog: React.FC<GenericDialogProps & GenerciDele
     );
 };
 
-export default GenerciDeleteConfirmationDialog;
+export default GenericConfirmationDialog;
