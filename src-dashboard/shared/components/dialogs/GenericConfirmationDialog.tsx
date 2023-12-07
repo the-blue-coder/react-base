@@ -20,7 +20,7 @@ const GenericConfirmationDialog: React.FC<GenericConfirmationDialogProps> = ({
                 <Box mt={2}>
                     <GenericButton onClick={onClose}>Cancel</GenericButton>
                     <GenericButton onClick={onConfirm} disabled={isConfirming} noMr>
-                        {isDelete ? <strong>DELETE</strong> : "Confirm"}
+                        <strong>{isDelete ? "DELETE" : "Confirm"}</strong>
                     </GenericButton>
                 </Box>
             </Box>
