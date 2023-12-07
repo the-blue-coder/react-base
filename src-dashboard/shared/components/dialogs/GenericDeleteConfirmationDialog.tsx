@@ -1,7 +1,7 @@
-import { GenericDeleteConfirmationDialogProps, GenericDialogProps } from "shared/types/Dialogs.type";
+import { GenericDeleteConfirmationDialogProps } from "shared/types/Dialogs.type";
 import GenericConfirmationDialog from "./GenericConfirmationDialog";
 
-const GenericDeleteConfirmationDialog: React.FC<GenericDialogProps & GenericDeleteConfirmationDialogProps> = ({
+const GenericDeleteConfirmationDialog: React.FC<GenericDeleteConfirmationDialogProps> = ({
     open,
     title,
     isDeleting,
