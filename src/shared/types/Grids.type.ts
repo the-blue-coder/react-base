@@ -38,8 +38,7 @@ export type GenericColoredGridChipProps = {
     row?: any;
     backgroundColor: string;
     color: string;
-    onClick?: (row: any) => void;
-};
+} & ({ onClick: (row: any) => void } & { row: any });
 
 export type GridFilterContextType = {
     currentFilterModel?: GridFilterModel;
