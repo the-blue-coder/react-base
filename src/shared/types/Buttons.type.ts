@@ -6,3 +6,7 @@ export type GenericButtonProps = ButtonProps & {
     isText?: boolean;
     target?: string;
 };
+
+export type GenericGoToButtonProps = GenericButtonProps & {
+    routePathTarget: string;
+};
