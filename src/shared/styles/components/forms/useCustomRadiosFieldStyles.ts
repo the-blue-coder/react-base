@@ -7,6 +7,10 @@ const useCustomRadiosFieldStyles = ({ isInline }: useCustomRadiosFieldStylesProp
                 display: "flex",
                 flexDirection: isInline ? "row" : "column",
             },
+
+            "& p.Mui-error": {
+                backgroundColor: "red",
+            },
         },
     };
 };

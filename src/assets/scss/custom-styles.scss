@@ -20,6 +20,12 @@ a:active {
     outline: none !important;
 }
 
+.content-text-decoration-none {
+    a {
+        text-decoration: none;
+    }
+}
+
 .color-facebook-blue {
     color: $facebookBlue;
 }

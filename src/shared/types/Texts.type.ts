@@ -1,7 +1,6 @@
 import { ReactNode } from "react";
 
 export type SectionTitleProps = {
-    hasUpperSection?: boolean;
     children: ReactNode;
 };
 

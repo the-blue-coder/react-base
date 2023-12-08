@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import SnackbarList from "shared/components/snackbar/SnackbarList";
 import AppRouter from "shared/components/routes/AppRouter";
 import { Box, CssBaseline } from "@mui/material";
@@ -5,7 +6,7 @@ import { Box, CssBaseline } from "@mui/material";
 const App: React.FC = () => {
     return (
         <Box>
-            {/* Needs implementation of page loading {pageIsLoading && <FullPageLoader />} */}
+            {/* {isLoading && <FullPageLoader />} */}
             <CssBaseline />
             <SnackbarList />
             <AppRouter />

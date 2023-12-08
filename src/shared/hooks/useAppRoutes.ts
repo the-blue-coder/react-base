@@ -5,7 +5,11 @@ const useAppRoutes = () => {
         return routeItem.path;
     };
 
-    return { getRoutePath };
+    const getFacebookApiEndpoint = (path: string) => {
+        return `${path}${path.includes("?") ? "&" : "?"}access_token=`;
+    };
+
+    return { getRoutePath, getFacebookApiEndpoint };
 };
 
 export default useAppRoutes;
