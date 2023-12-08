@@ -1,11 +1,12 @@
+import { RouteSectionType } from "shared/types/Routes.type";
 import VideoEditor from "./VideoEditor/containers/VideoEditor";
 
-const prefix = "/asset";
+export const assetPrefix = "/asset";
 
-export const assetRoutes = {
+export const assetRoutes: RouteSectionType = {
     videoEditor: {
         title: "Video editor",
-        path: `${prefix}`,
+        path: `${assetPrefix}`,
         container: <VideoEditor />,
     },
 };

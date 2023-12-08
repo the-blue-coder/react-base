@@ -1,17 +1,18 @@
+import { RouteSectionType } from "shared/types/Routes.type";
 import Groups from "./Groups/containers/Groups";
 import Overview from "./Overview/containers/Overview";
 
-const prefix = "/facebook";
+export const facebookPrefix = "/facebook";
 
-export const facebookRoutes = {
+export const facebookRoutes: RouteSectionType = {
     overview: {
         title: "Overview",
-        path: `${prefix}`,
+        path: `${facebookPrefix}`,
         container: <Overview />,
     },
     groups: {
         title: "Groups",
-        path: `${prefix}/groups`,
+        path: `${facebookPrefix}/groups`,
         container: <Groups />,
     },
 };
