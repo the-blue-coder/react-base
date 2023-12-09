@@ -60,6 +60,13 @@ const useUtils = () => {
             .join(" ");
     };
 
+    const generateUniqueId = () => {
+        const timestamp = new Date().getTime();
+        const random = Math.floor(Math.random() * 1000);
+
+        return `${timestamp}${random}`;
+    };
+
     return {
         formatNumber,
         formatNumberToCurrency,
@@ -69,6 +76,7 @@ const useUtils = () => {
         slugify,
         capitalizeFirstLetter,
         autoLink,
+        generateUniqueId,
     };
 };
 
