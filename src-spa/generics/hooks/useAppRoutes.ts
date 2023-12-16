@@ -1,7 +1,7 @@
-import { RouteItemType } from "generics/types/Routes.type";
+import { RouteSectionItemType } from "shared/types/Routes.type";
 
 const useAppRoutes = () => {
-    const getRoutePath = (routeItem: RouteItemType) => {
+    const getRoutePath = (routeItem: RouteSectionItemType) => {
         return routeItem.path;
     };
 

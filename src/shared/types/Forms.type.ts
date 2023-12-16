@@ -2,6 +2,7 @@
 import { ReactNode } from "react";
 import { FormProps } from "@rjsf/core";
 import { JSONSchema7 } from "json-schema";
+import { GridFilterInputValueProps } from "@mui/x-data-grid";
 
 export type GenericFormProps = {
     schema: GenericFormSchemaType;
@@ -25,6 +26,10 @@ export type GenericFormFieldOptionType = {
 
 export type SelectOptionType = GenericFormFieldOptionType & {
     slug?: string;
+};
+
+export type CustomGridSelectFilterFormProps = GridFilterInputValueProps & {
+    schema: GenericFormSchemaType;
 };
 
 export type useCustomRadiosFieldStylesProps = {

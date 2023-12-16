@@ -1,8 +1,8 @@
 import { CustomGridSelectFilterFormDataType } from "shared/types/Grids.type";
 import GenericForm from "../forms/GenericForm";
-import { GridFilterInputValueProps } from "@mui/x-data-grid";
+import { CustomGridSelectFilterFormProps } from "shared/types/Forms.type";
 
-const CustomGridSelectFilterForm: React.FC<GridFilterInputValueProps> = ({ schema, item, applyValue }) => {
+const CustomGridSelectFilterForm: React.FC<CustomGridSelectFilterFormProps> = ({ schema, item, applyValue }) => {
     const formData = {
         filter: item.value,
     };
