@@ -1,9 +1,9 @@
 import { StopwatchProps } from "shared/types/Timers.type";
 import { createTimeModel, useTimeModel } from "react-compound-timer";
 import { useMemo } from "react";
-import { Box } from "@mui/material";
+import { Alert } from "@mui/material";
 
-const Stopwatch: React.FC<StopwatchProps> = ({ label, initialTimeInMilliseconds }) => {
+const Stopwatch: React.FC<StopwatchProps> = ({ label, alertSeverity = "error", initialTimeInMilliseconds }) => {
     const timer = useMemo(() => {
         return createTimeModel({
             initialTime: initialTimeInMilliseconds,
@@ -14,12 +14,14 @@ const Stopwatch: React.FC<StopwatchProps> = ({ label, initialTimeInMilliseconds 
     const { value } = useTimeModel(timer);
 
     return (
-        <Box>
-            {label}
-            {` ${value.h} hour${value.h > 1 ? "s" : ""}, ${value.m} minute${value.m > 1 ? "s" : ""} and ${value.s} second${
-                value.s > 1 ? "s" : ""
-            }`}
-        </Box>
+        <Alert severity={alertSeverity}>
+            <strong>
+                {label}
+                {` ${value.h} hour${value.h > 1 ? "s" : ""}, ${value.m} minute${value.m > 1 ? "s" : ""} and ${value.s} second${
+                    value.s > 1 ? "s" : ""
+                }`}
+            </strong>
+        </Alert>
     );
 };
 
