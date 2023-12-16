@@ -16,8 +16,8 @@ const Stopwatch: React.FC<StopwatchProps> = ({ label, alertSeverity = "error", i
     return (
         <Alert severity={alertSeverity}>
             <strong>
-                {label}
-                {` ${value.h} hour${value.h > 1 ? "s" : ""}, ${value.m} minute${value.m > 1 ? "s" : ""} and ${value.s} second${
+                {label ? `${label} ` : ""}
+                {`${value.h} hour${value.h > 1 ? "s" : ""}, ${value.m} minute${value.m > 1 ? "s" : ""} and ${value.s} second${
                     value.s > 1 ? "s" : ""
                 }`}
             </strong>
