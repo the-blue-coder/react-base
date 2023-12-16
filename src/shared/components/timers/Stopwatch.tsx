@@ -1,14 +1,20 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { StopwatchProps } from "shared/types/Timers.type";
 import { createTimeModel, useTimeModel } from "react-compound-timer";
 import { useMemo } from "react";
 import { Alert } from "@mui/material";
 
-const Stopwatch: React.FC<StopwatchProps> = ({ label, alertSeverity = "error", initialTimeInMilliseconds }) => {
+const Stopwatch: React.FC<StopwatchProps> = ({ label, alertSeverity = "error", initialTimeInMilliseconds, onStop }) => {
     const timer = useMemo(() => {
-        return createTimeModel({
-            initialTime: initialTimeInMilliseconds,
-            direction: "backward",
-        });
+        return createTimeModel(
+            {
+                initialTime: initialTimeInMilliseconds,
+                direction: "backward",
+            },
+            {
+                onStop: onStop,
+            }
+        );
     }, [initialTimeInMilliseconds]);
 
     const { value } = useTimeModel(timer);
