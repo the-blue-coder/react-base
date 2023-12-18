@@ -1,8 +1,8 @@
-import { RouteSectionItemType } from "shared/types/Routes.type";
+import { RouteSectionItemType } from "generics/types/Routes.type";
 
 const useAppRoutes = () => {
-    const getRoutePath = (routeItem: RouteSectionItemType) => {
-        return routeItem.path;
+    const getRoutePath = (routeSectionItem: RouteSectionItemType) => {
+        return routeSectionItem.path;
     };
 
     const getFacebookApiEndpoint = (path: string) => {
