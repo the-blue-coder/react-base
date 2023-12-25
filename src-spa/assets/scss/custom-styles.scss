@@ -20,6 +20,12 @@ a:active {
     outline: none !important;
 }
 
+.no-grid-chip-user-select {
+    .MuiChip-root {
+        user-select: none;
+    }
+}
+
 .content-text-decoration-none {
     a {
         text-decoration: none;

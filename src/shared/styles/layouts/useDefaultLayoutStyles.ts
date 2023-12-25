@@ -9,6 +9,12 @@ const useDefaultLayoutStyles = () => {
                 "& #left-section": {
                     position: "fixed",
                     width: leftSectionWidth,
+
+                    "& .other-items-container": {
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                    },
                 },
 
                 "& #right-section": {

@@ -1,13 +1,28 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import PageNotFound from "generics/components/errors/PageNotFound";
-import VideoEditor from "container/VideoEditor";
+import { defaultRoute, routes } from "routes";
+import useAppRoutes from "generics/hooks/useAppRoutes";
 
 const AppRouter: React.FC = () => {
+    const { getRoutePath } = useAppRoutes();
+
     return (
         <BrowserRouter>
             <Routes>
                 {/* Redirect / to overview */}
-                <Route path="/" element={<VideoEditor />}></Route>
+                <Route path="/" element={<Navigate to={getRoutePath(defaultRoute)} />}></Route>
+
+                {Object.keys(routes).map((globalRouteKey) => {
+                    const routeElement = routes[globalRouteKey];
+
+                    return (
+                        <Route key={globalRouteKey} path={`/${globalRouteKey}`} element={routeElement.layout}>
+                            {Object.entries(routeElement.subRoutes).map(([key, routeItem]) => (
+                                <Route key={key} path={getRoutePath(routeItem)} element={routeItem.container}></Route>
+                            ))}
+                        </Route>
+                    );
+                })}
 
                 {/* 404 page */}
                 <Route path="*" element={<PageNotFound />} />

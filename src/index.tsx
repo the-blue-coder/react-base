@@ -78,6 +78,15 @@ const theme: Theme = createTheme({
                 },
             },
         },
+        MuiListItem: {
+            styleOverrides: {
+                root: {
+                    "& .MuiFormHelperText-root.Mui-error": {
+                        color: BASE_COLOR.primary,
+                    },
+                },
+            },
+        },
         MuiChip: {
             styleOverrides: {
                 root: {

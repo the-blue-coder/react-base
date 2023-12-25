@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
             <Grid container alignItems="center">
                 <Grid item xs={12} textAlign="center">
                     <Typography>
-                        <Link to={getRoutePath(routes.asset.subRoutes.videoEditor)}>{getEnvVariable("VITE_APP_NAME")}</Link> -{" "}
+                        <Link to={getRoutePath(routes.facebook.subRoutes.overview)}>{getEnvVariable("VITE_APP_NAME")}</Link> -{" "}
                         {new Date().getFullYear()}
                     </Typography>
                 </Grid>

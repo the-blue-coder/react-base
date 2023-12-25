@@ -33,14 +33,6 @@ export type CustomGridSelectFilterFormDataType = {
     filter: number | number[];
 };
 
-export type GenericColoredGridChipProps = {
-    value: string | number;
-    row?: any;
-    backgroundColor: string;
-    color: string;
-    disabled?: boolean;
-} & ({ onClick: (row: any) => void } & { row: any });
-
 export type GridFilterContextType = {
     currentFilterModel?: GridFilterModel;
     columnNames?: any;

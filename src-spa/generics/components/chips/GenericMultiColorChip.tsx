@@ -1,14 +1,7 @@
 import { Chip } from "@mui/material";
-import { GenericColoredGridChipProps } from "shared/types/Grids.type";
+import { GenericMultiColorChipProps } from "generics/types/Chips.type";
 
-const GenericColoredGridChip: React.FC<GenericColoredGridChipProps> = ({
-    value,
-    row,
-    backgroundColor,
-    color,
-    disabled = false,
-    onClick,
-}) => {
+const GenericMultiColorChip: React.FC<GenericMultiColorChipProps> = ({ value, row, backgroundColor, color, disabled = false, onClick }) => {
     return (
         <Chip
             label={value}
@@ -25,4 +18,4 @@ const GenericColoredGridChip: React.FC<GenericColoredGridChipProps> = ({
     );
 };
 
-export default GenericColoredGridChip;
+export default GenericMultiColorChip;

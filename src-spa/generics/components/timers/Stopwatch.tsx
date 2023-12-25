@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { StopwatchProps } from "shared/types/Timers.type";
+import { StopwatchProps } from "generics/types/Timers.type";
 import { createTimeModel, useTimeModel } from "react-compound-timer";
 import { useMemo } from "react";
 import { Alert } from "@mui/material";

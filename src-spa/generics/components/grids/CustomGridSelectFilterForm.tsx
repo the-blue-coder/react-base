@@ -1,6 +1,6 @@
-import { CustomGridSelectFilterFormDataType } from "shared/types/Grids.type";
+import { CustomGridSelectFilterFormDataType } from "generics/types/Grids.type";
 import GenericForm from "../forms/GenericForm";
-import { CustomGridSelectFilterFormProps } from "shared/types/Forms.type";
+import { CustomGridSelectFilterFormProps } from "generics/types/Forms.type";
 
 const CustomGridSelectFilterForm: React.FC<CustomGridSelectFilterFormProps> = ({ schema, item, applyValue }) => {
     const formData = {
