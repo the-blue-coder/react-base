@@ -3,14 +3,14 @@ import useDotEnv from "./useDotEnv";
 const useAppConfigs = () => {
     const { getEnvVariable } = useDotEnv();
 
-    const getDisplayFacebookGroupCategories = () => {
-        return getEnvVariable("VITE_DISPLAY_FACEBOOK_GROUP_CATEGORIES") === "true";
+    const getIsPortfolio = () => {
+        return getEnvVariable("VITE_IS_PORTFOLIO") === "true";
     };
 
-    const displayFacebookGroupCategories = getDisplayFacebookGroupCategories();
+    const isPortfolio = getIsPortfolio();
 
     return {
-        displayFacebookGroupCategories,
+        isPortfolio,
     };
 };
 
