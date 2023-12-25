@@ -7,7 +7,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { RecoilRoot } from "recoil";
 import { ThemeProvider } from "@mui/material";
 import { createTheme, Theme } from "@mui/material/styles";
-import { BASE_COLOR } from "generics/constants/colors.constant";
+import { BASE_COLOR } from "shared/constants/colors.constant";
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 
@@ -75,6 +75,15 @@ const theme: Theme = createTheme({
             styleOverrides: {
                 root: {
                     marginTop: "-16px",
+                },
+            },
+        },
+        MuiListItem: {
+            styleOverrides: {
+                root: {
+                    "& .MuiFormHelperText-root.Mui-error": {
+                        color: BASE_COLOR.primary,
+                    },
                 },
             },
         },
