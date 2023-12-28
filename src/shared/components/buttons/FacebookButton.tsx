@@ -3,12 +3,13 @@ import GenericButton from "./GenericButton";
 import { Facebook, OpenInNew } from "@mui/icons-material";
 import useFacebookButtonStyles from "shared/styles/components/buttons/useFacebookButtonStyles";
 
-const FacebookButton: React.FC<GenericButtonProps> = ({ href, disabled, children, onClick }) => {
+const FacebookButton: React.FC<GenericButtonProps> = ({ className, href, disabled, children, onClick }) => {
     const styles = useFacebookButtonStyles();
 
     return (
         <GenericButton
             sx={styles.facebookButton}
+            className={className}
             href={href}
             target="_blank"
             startIcon={<Facebook />}
