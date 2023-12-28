@@ -8,6 +8,7 @@ import {
     GridValidRowModel,
 } from "@mui/x-data-grid";
 import { GenericFormSchemaType, SelectOptionType } from "./Forms.type";
+import { DataGridPropsWithoutDefaultValue } from "@mui/x-data-grid/internals";
 
 export type GenericDataGridProps = {
     columns: GridColDef[];
@@ -21,6 +22,7 @@ export type GenericDataGridProps = {
     isLoading?: boolean;
     hasToolbar?: boolean;
     filterSelectsOptions?: Record<string, SelectOptionType[]>;
+    getRowClassName?: DataGridPropsWithoutDefaultValue["getRowClassName"];
     onRowSelectionModelChange?: (rowSelectionModel: GridRowSelectionModel, details: GridCallbackDetails<any>) => void;
     onCellDoubleClick?: GridEventListener<"cellDoubleClick">;
 };

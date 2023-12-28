@@ -2,6 +2,7 @@
 import { ChipTypeMap } from "@mui/material";
 
 export type GenericMultiColorChipProps = {
+    className?: string;
     value: string | number;
     row?: any;
     backgroundColor: string;

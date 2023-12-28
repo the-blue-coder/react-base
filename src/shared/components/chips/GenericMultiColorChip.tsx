@@ -1,9 +1,18 @@
 import { Chip } from "@mui/material";
 import { GenericMultiColorChipProps } from "shared/types/Chips.type";
 
-const GenericMultiColorChip: React.FC<GenericMultiColorChipProps> = ({ value, row, backgroundColor, color, disabled = false, onClick }) => {
+const GenericMultiColorChip: React.FC<GenericMultiColorChipProps> = ({
+    className,
+    value,
+    row,
+    backgroundColor,
+    color,
+    disabled = false,
+    onClick,
+}) => {
     return (
         <Chip
+            className={className}
             label={value}
             sx={{
                 backgroundColor: backgroundColor,
