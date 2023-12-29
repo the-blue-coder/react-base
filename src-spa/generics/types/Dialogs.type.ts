@@ -12,6 +12,7 @@ export type GenericDialogProps = {
 export type GenericConfirmationDialogProps = GenericDialogProps & {
     isConfirming: boolean;
     isDelete?: boolean;
+    customConfirmButtonText?: string;
     onConfirm: (data: unknown) => void;
 };
 
