@@ -16,7 +16,7 @@ export type GenericGoToButtonProps = GenericButtonProps & {
 export type GenericDropdownButtonProps = {
     label: string;
     options: GenericOptionType[];
-    onSelect: (optionId: number) => void;
+    onSelect: (option: GenericOptionType) => void;
 };
 
 export type ManageTagsButtonProps = ButtonProps & PartialFormProps;

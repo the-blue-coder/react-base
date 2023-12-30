@@ -2,6 +2,7 @@ import { Menu, MenuItem } from "@mui/material";
 import { MouseEvent, useState } from "react";
 import GenericButton from "./GenericButton";
 import { GenericDropdownButtonProps } from "generics/types/Buttons.type";
+import { GenericOptionType } from "generics/types/Forms.type";
 
 const GenericDropdownButton: React.FC<GenericDropdownButtonProps> = ({ label, options, onSelect }) => {
     const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
@@ -14,8 +15,8 @@ const GenericDropdownButton: React.FC<GenericDropdownButtonProps> = ({ label, op
         setAnchorEl(null);
     };
 
-    const handleSelectOption = (optionId: number) => {
-        onSelect(optionId);
+    const handleSelectOption = (option: GenericOptionType) => {
+        onSelect(option);
         handleCloseDropdown();
     };
 
@@ -26,7 +27,7 @@ const GenericDropdownButton: React.FC<GenericDropdownButtonProps> = ({ label, op
             </GenericButton>
             <Menu anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleCloseDropdown}>
                 {options.map((option) => (
-                    <MenuItem key={option.id} onClick={() => handleSelectOption(Number(option.id))}>
+                    <MenuItem key={option.id} onClick={() => handleSelectOption(option)}>
                         {option.value}
                     </MenuItem>
                 ))}
