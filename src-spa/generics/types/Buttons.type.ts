@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { ButtonProps } from "@mui/material";
-import { FormProps } from "@rjsf/core";
+import { GenericOptionType, PartialFormProps } from "./Forms.type";
 
 export type GenericButtonProps = ButtonProps & {
     mr?: number;
@@ -13,7 +13,11 @@ export type GenericGoToButtonProps = GenericButtonProps & {
     routePathTarget: string;
 };
 
-export type PartialFormProps = Omit<FormProps<any, any, any>, "schema" | "validator">;
+export type GenericDropdownButtonProps = {
+    label: string;
+    options: GenericOptionType[];
+    onSelect: (optionId: number) => void;
+};
 
 export type ManageTagsButtonProps = ButtonProps & PartialFormProps;
 

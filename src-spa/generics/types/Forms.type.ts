@@ -19,18 +19,20 @@ export type GenericFormSchemaType = {
     uiSchema: FormProps["uiSchema"];
 };
 
-export type GenericFormFieldOptionType = {
+export type GenericOptionType = {
     id: string | number;
     value: string | number;
 };
 
-export type SelectOptionType = GenericFormFieldOptionType & {
+export type SelectOptionType = GenericOptionType & {
     slug?: string;
 };
 
 export type CustomGridSelectFilterFormProps = GridFilterInputValueProps & {
     schema: GenericFormSchemaType;
 };
+
+export type PartialFormProps = Omit<FormProps<any, any, any>, "schema" | "validator">;
 
 export type useCustomRadiosFieldStylesProps = {
     isInline: boolean;
