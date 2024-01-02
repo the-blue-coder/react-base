@@ -52,7 +52,7 @@ const GenericFileUploaderField: React.FC<WidgetProps> = ({ uiSchema, onChange })
     }, []);
 
     return (
-        <Box sx={styles.genericFileUploaderField} mt={-2}>
+        <Box sx={styles.genericFileUploaderField} mt={-2} mb={1}>
             <Box mb={0.5}>
                 <FormLabel className="form-label">{label}</FormLabel>
             </Box>
