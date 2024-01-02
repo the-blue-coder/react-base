@@ -71,6 +71,15 @@ const theme: Theme = createTheme({
                 },
             },
         },
+        MuiFormLabel: {
+            styleOverrides: {
+                root: {
+                    "&.Mui-error": {
+                        color: BASE_COLOR.primary,
+                    },
+                },
+            },
+        },
         MuiTextField: {
             styleOverrides: {
                 root: {

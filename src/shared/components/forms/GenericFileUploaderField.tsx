@@ -7,9 +7,9 @@ import { useDropzone, Accept } from "react-dropzone";
 import useGenericFileUploaderFieldStyles from "shared/styles/components/forms/useGenericFileUploaderFieldStyles";
 import { GenericFileUploaderFileType } from "shared/types/Forms.type";
 
-const GenericFileUploaderField: React.FC<WidgetProps> = ({ uiSchema, onChange }) => {
+const GenericFileUploaderField: React.FC<WidgetProps> = ({ uiSchema, rawErrors, onChange }) => {
     const [files, setFiles] = useState<GenericFileUploaderFileType[]>([]);
-    const [error, setError] = useState<string | null>(null);
+    const [fileRejectionError, setFileRejectionError] = useState<string | null>(null);
 
     const styles = useGenericFileUploaderFieldStyles();
 
@@ -20,6 +20,7 @@ const GenericFileUploaderField: React.FC<WidgetProps> = ({ uiSchema, onChange })
     const placeholder = uiOptions?.["placeholder"];
     const maxFiles = uiOptions?.["maxFiles"];
     const isImageUpload = _.some(accept, (_value, key) => _.includes(key, "image"));
+    const hasRawErrors = rawErrors && rawErrors.length > 0;
 
     const { getRootProps, getInputProps } = useDropzone({
         accept: accept,
@@ -27,7 +28,7 @@ const GenericFileUploaderField: React.FC<WidgetProps> = ({ uiSchema, onChange })
         maxFiles: maxFiles ? Number(maxFiles) : 1,
 
         onDrop: (acceptedFiles) => {
-            setError(null);
+            setFileRejectionError(null);
 
             setFiles(
                 acceptedFiles.map((file) =>
@@ -42,7 +43,7 @@ const GenericFileUploaderField: React.FC<WidgetProps> = ({ uiSchema, onChange })
 
         onDropRejected: (fileRejections) => {
             if (fileRejections.length > 0) {
-                setError(fileRejections[0].errors[0].message);
+                setFileRejectionError(fileRejections[0].errors[0].message);
             }
         },
     });
@@ -87,9 +88,9 @@ const GenericFileUploaderField: React.FC<WidgetProps> = ({ uiSchema, onChange })
                 )}
             </Paper>
 
-            {error && (
+            {(hasRawErrors || fileRejectionError) && (
                 <Box className="error" mt={0.5}>
-                    Error: {error?.toLowerCase()}
+                    Error: {hasRawErrors ? rawErrors[0].toLowerCase() : fileRejectionError?.toLowerCase()}
                 </Box>
             )}
         </Box>
