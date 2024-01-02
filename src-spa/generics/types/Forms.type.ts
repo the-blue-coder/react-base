@@ -28,6 +28,10 @@ export type SelectOptionType = GenericOptionType & {
     slug?: string;
 };
 
+export type GenericFileUploaderFileType = File & {
+    preview: string;
+};
+
 export type CustomGridSelectFilterFormProps = GridFilterInputValueProps & {
     schema: GenericFormSchemaType;
 };
