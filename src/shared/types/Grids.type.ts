@@ -12,7 +12,7 @@ import { DataGridPropsWithoutDefaultValue } from "@mui/x-data-grid/internals";
 
 export type GenericDataGridProps = {
     columns: GridColDef[];
-    columnNames: unknown;
+    columnNames?: unknown;
     rows: GridValidRowModel[];
     pageSize?: number;
     checkboxSelection?: boolean;
@@ -26,6 +26,8 @@ export type GenericDataGridProps = {
     onRowSelectionModelChange?: (rowSelectionModel: GridRowSelectionModel, details: GridCallbackDetails<any>) => void;
     onCellDoubleClick?: GridEventListener<"cellDoubleClick">;
 };
+
+export type GenericDataGridPropsWithoutColumnNames = Omit<GenericDataGridProps, "columnNames">;
 
 export type CustomGridSelectFilterFormProps = {
     schema: GenericFormSchemaType;
