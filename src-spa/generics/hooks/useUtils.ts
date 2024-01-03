@@ -1,6 +1,6 @@
 /* eslint-disable no-useless-escape */
 import _ from "lodash";
-import { DEFAULT_CURRENCY } from "generics/constants/currency.constant";
+import { DEFAULT_CURRENCY } from "shared/constants/currency.constant";
 
 const useUtils = () => {
     const formatNumber = (value: number, locale: string = "fr-FR") => {
@@ -67,6 +67,12 @@ const useUtils = () => {
         return `${timestamp}${random}`;
     };
 
+    const getFilenameFromBlob = (blob: Blob): string => {
+        const match = blob.type.match(/name=([^;]+)/);
+
+        return match ? match[1] : "";
+    };
+
     return {
         formatNumber,
         formatNumberToCurrency,
@@ -77,6 +83,7 @@ const useUtils = () => {
         capitalizeFirstLetter,
         autoLink,
         generateUniqueId,
+        getFilenameFromBlob,
     };
 };
 

@@ -67,6 +67,12 @@ const useUtils = () => {
         return `${timestamp}${random}`;
     };
 
+    const getFilenameFromBlob = (blob: Blob): string => {
+        const match = blob.type.match(/name=([^;]+)/);
+
+        return match ? match[1] : "";
+    };
+
     return {
         formatNumber,
         formatNumberToCurrency,
@@ -77,6 +83,7 @@ const useUtils = () => {
         capitalizeFirstLetter,
         autoLink,
         generateUniqueId,
+        getFilenameFromBlob,
     };
 };
 
