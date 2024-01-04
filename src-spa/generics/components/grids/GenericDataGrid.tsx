@@ -1,11 +1,12 @@
-import { GenericDataGridProps } from "generics/types/Grids.type";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { GenericDataGridProps } from "shared/types/Grids.type";
 import { DataGrid, GridFilterModel, GridToolbar } from "@mui/x-data-grid";
 import { Box } from "@mui/material";
-import useGenericDataGridStyles from "generics/styles/components/grids/useGenericDataGridStyles";
+import useGenericDataGridStyles from "shared/styles/components/grids/useGenericDataGridStyles";
 import { useMemo, useRef, useState } from "react";
-import { defaultDataGridPageSize } from "generics/constants/MuiDataGrid.constant";
+import { defaultDataGridPageSize } from "shared/constants/MuiDataGrid.constant";
 import CustomGridFilterToolbar from "./CustomGridFilterToolbar";
-import { GridFilterContext } from "generics/contexts/Grids.context";
+import { GridFilterContext } from "shared/contexts/Grids.context";
 
 const GenericDataGrid: React.FC<GenericDataGridProps> = ({
     columns,
@@ -20,6 +21,7 @@ const GenericDataGrid: React.FC<GenericDataGridProps> = ({
     hasToolbar = true,
     filterSelectsOptions,
     getRowClassName,
+    processRowUpdate,
     onRowSelectionModelChange,
     onCellDoubleClick,
 }) => {
@@ -43,6 +45,8 @@ const GenericDataGrid: React.FC<GenericDataGridProps> = ({
     const handleFilterModelChange = (model: GridFilterModel) => {
         setCurrentFilterModel(model);
     };
+
+    const handleProcessRowUpdateError = () => {}; // Yes, it's an empty arrow function
 
     const getToolbar = () => {
         if (!hasToolbar) {
@@ -80,10 +84,12 @@ const GenericDataGrid: React.FC<GenericDataGridProps> = ({
                     disableRowSelectionOnClick={disableRowSelectionOnClick}
                     disableColumnMenu={disableColumnMenu}
                     getRowClassName={getRowClassName}
+                    processRowUpdate={processRowUpdate}
                     onRowSelectionModelChange={onRowSelectionModelChange}
                     onCellDoubleClick={onCellDoubleClick}
                     onPaginationModelChange={handlePageChangeScrollToGridTop}
                     onFilterModelChange={handleFilterModelChange}
+                    onProcessRowUpdateError={handleProcessRowUpdateError}
                 />
             </Box>
         </GridFilterContext.Provider>

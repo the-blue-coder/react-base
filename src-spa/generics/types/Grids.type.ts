@@ -23,6 +23,7 @@ export type GenericDataGridProps = {
     hasToolbar?: boolean;
     filterSelectsOptions?: Record<string, SelectOptionType[]>;
     getRowClassName?: DataGridPropsWithoutDefaultValue["getRowClassName"];
+    processRowUpdate?: DataGridPropsWithoutDefaultValue["processRowUpdate"];
     onRowSelectionModelChange?: (rowSelectionModel: GridRowSelectionModel, details: GridCallbackDetails<any>) => void;
     onCellDoubleClick?: GridEventListener<"cellDoubleClick">;
 };
