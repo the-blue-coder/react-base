@@ -20,7 +20,9 @@ const GenericSummaryTable: React.FC<GenericSummaryTableProps> = ({ summaryData, 
                             </TableCell>
 
                             <TableCell>
-                                <Typography>{formatNumber(Number(summaryItem.value))}</Typography>
+                                <Typography>
+                                    {typeof summaryItem.value === "number" ? formatNumber(Number(summaryItem.value)) : summaryItem.value}
+                                </Typography>
                             </TableCell>
                         </TableRow>
                     ))}
