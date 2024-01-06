@@ -28,6 +28,11 @@ export type SelectOptionType = GenericOptionType & {
     slug?: string;
 };
 
+export type GenericColoredOptionType = GenericOptionType & {
+    backgroundColor: string;
+    color: string;
+};
+
 export type CustomGridSelectFilterFormProps = GridFilterInputValueProps & {
     schema: GenericFormSchemaType;
 };
