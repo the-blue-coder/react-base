@@ -4,10 +4,11 @@ import { WidgetProps } from "@rjsf/utils";
 import useCustomSelectFieldStyles from "generics/styles/components/forms/useCustomSelectFieldStyles";
 import { SelectOptionType } from "generics/types/Forms.type";
 
-const CustomSelectField: React.FC<WidgetProps> = ({ value, schema, uiSchema, onChange }) => {
+const CustomSelectField: React.FC<WidgetProps> = ({ value, schema, uiSchema, required, onChange }) => {
     const styles = useCustomSelectFieldStyles();
 
     const uiOptions = uiSchema?.["ui:options"];
+    const uiDisabled = uiSchema?.["ui:disabled"];
 
     const id = String(uiOptions?.id || "custom-select-field");
     const label = schema.title;
@@ -30,7 +31,7 @@ const CustomSelectField: React.FC<WidgetProps> = ({ value, schema, uiSchema, onC
         <Box sx={styles.customSelectField}>
             {options && (
                 <FormControl variant={variant} id={id} className="select-form-control">
-                    <InputLabel id={`${id}-label`}>{label}</InputLabel>
+                    <InputLabel id={`${id}-label`}>{`${label}${required ? " *" : ""}`}</InputLabel>
                     <Select
                         variant={variant}
                         labelId={`${id}-label`}
@@ -39,6 +40,7 @@ const CustomSelectField: React.FC<WidgetProps> = ({ value, schema, uiSchema, onC
                         onChange={handleChange}
                         label={label}
                         multiple={isMultiple}
+                        disabled={uiDisabled}
                     >
                         {options?.map((option: Record<string, string | number>) => {
                             return (
@@ -49,7 +51,7 @@ const CustomSelectField: React.FC<WidgetProps> = ({ value, schema, uiSchema, onC
                         })}
                     </Select>
 
-                    {hasClearBtn && hasValue && <Clear onClick={handleClear} />}
+                    {hasClearBtn && hasValue && !uiDisabled && <Clear onClick={handleClear} />}
                 </FormControl>
             )}
         </Box>
