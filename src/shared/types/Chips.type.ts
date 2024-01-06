@@ -8,6 +8,7 @@ export type GenericMultiColorChipProps = {
     backgroundColor: string;
     color: string;
     disabled?: boolean;
+    noMr?: boolean;
 } & ({ onClick: (row: any) => void } & { row: any });
 
 export type GenericUniColorChipProps = {

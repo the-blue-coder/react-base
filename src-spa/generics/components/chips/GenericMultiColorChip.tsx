@@ -1,4 +1,4 @@
-import { Chip } from "@mui/material";
+import { Chip, SxProps } from "@mui/material";
 import { GenericMultiColorChipProps } from "generics/types/Chips.type";
 
 const GenericMultiColorChip: React.FC<GenericMultiColorChipProps> = ({
@@ -8,23 +8,25 @@ const GenericMultiColorChip: React.FC<GenericMultiColorChipProps> = ({
     backgroundColor,
     color,
     disabled = false,
+    noMr = false,
     onClick,
 }) => {
-    return (
-        <Chip
-            className={className}
-            label={value}
-            sx={{
-                backgroundColor: backgroundColor,
-                color: color,
-                "&:hover": {
-                    backgroundColor: backgroundColor,
-                },
-            }}
-            onClick={onClick ? () => onClick(row) : undefined}
-            disabled={disabled}
-        />
-    );
+    let sx: SxProps = {
+        backgroundColor: backgroundColor,
+        color: color,
+        "&:hover": {
+            backgroundColor: backgroundColor,
+        },
+    };
+
+    if (noMr) {
+        sx = {
+            ...sx,
+            marginRight: 0,
+        };
+    }
+
+    return <Chip className={className} label={value} sx={sx} onClick={onClick ? () => onClick(row) : undefined} disabled={disabled} />;
 };
 
 export default GenericMultiColorChip;
