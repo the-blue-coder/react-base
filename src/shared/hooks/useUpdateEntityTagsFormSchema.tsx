@@ -35,7 +35,6 @@ const useUpdateEntityTagsFormSchema = ({ updateEntityTagsFieldTitle }: useUpdate
                     variant: "outlined",
                     options: currentTags,
                     isMultiple: true,
-                    hasClearBtn: true,
                 },
             },
         },

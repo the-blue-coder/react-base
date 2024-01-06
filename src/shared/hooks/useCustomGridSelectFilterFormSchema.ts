@@ -21,7 +21,6 @@ const useCustomGridSelectFilterFormSchema = ({ options }: useCustomGridSelectFil
                     variant: "standard",
                     options,
                     isMultiple: true,
-                    hasClearBtn: true,
                 },
             },
         },
