@@ -15,7 +15,7 @@ const CustomSelectField: React.FC<WidgetProps> = ({ value, schema, uiSchema, onC
     const options = uiOptions?.options as SelectOptionType[] | undefined;
     const isMultiple = Boolean(uiOptions?.isMultiple);
     const defaultValue = isMultiple ? [] : "";
-    const hasClearBtn = Boolean(uiOptions?.hasClearBtn || true);
+    const hasClearBtn = uiOptions?.hasClearBtn;
     const hasValue = isMultiple ? value && value.length > 0 : value;
 
     const handleChange = (e: SelectChangeEvent) => {
