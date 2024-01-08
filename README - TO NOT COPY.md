@@ -4,6 +4,7 @@ Copy .prettierrc, .prettierignore, .env.development and .env.production to the r
 Update the content of the .env files
 Add "baseUrl": "src" in tsconfig.json > compilerOptions
 Ignore .env.development ONLY (do not ignore .env.production) in your .gitignore file (use "# Dotenv" as header comment)
+IF YOU'RE GOING TO HOST THE APP ON CPANEL WITH SYMFONY THEN DO NOT IGNORE dist folder, I REPEAT IF YOU'RE GOING TO HOST THE APP ON CPANEL WITH SYMFONY!!!
 In index.html > Update <title> tag and <script type="module" src="/src/[main.tsx INTO index.tsx]"></script>
 
 Run this long pnpm command:
