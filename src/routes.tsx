@@ -1,6 +1,4 @@
-import { assetRoutes } from "modules/Asset/asset.routes";
 import { facebookRoutes } from "modules/Facebook/facebook.routes";
-import AssetLayout from "shared/layouts/AssetLayout";
 import FacebookLayout from "shared/layouts/FacebookLayout";
 import { GlobalRoutesType } from "shared/types/Routes.type";
 
@@ -11,10 +9,6 @@ export const routes: GlobalRoutesType = {
     facebook: {
         subRoutes: { ...facebookRoutes },
         layout: <FacebookLayout />,
-    },
-    asset: {
-        subRoutes: { ...assetRoutes },
-        layout: <AssetLayout />,
     },
 };
 
