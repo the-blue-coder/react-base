@@ -1,19 +1,10 @@
 import { ReactNode } from "react";
 
-export type GlobalRouteItemType = {
-    subRoutes: RouteSectionType;
-    layout: ReactNode;
+export type RoutesType = {
+    [key: string]: RouteItemType;
 };
 
-export type GlobalRoutesType = {
-    [key: string]: GlobalRouteItemType;
-};
-
-export type RouteSectionType = {
-    [key: string]: RouteSectionItemType;
-};
-
-export type RouteSectionItemType = {
+export type RouteItemType = {
     title: string;
     path: string;
     container: ReactNode;

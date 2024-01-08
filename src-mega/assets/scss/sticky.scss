@@ -1,0 +1,17 @@
+.sticky-on-scroll {
+    width: 100%;
+    background-color: #ffffff;
+
+    .toolbar-container {
+        .action-btns-container {
+            button {
+                margin-right: 4px !important;
+            }
+        }
+    }
+
+    &.is-sticky {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+}

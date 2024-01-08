@@ -1,15 +1,19 @@
-import { facebookRoutes } from "modules/Facebook/facebook.routes";
-import FacebookLayout from "shared/layouts/FacebookLayout";
-import { GlobalRoutesType } from "shared/types/Routes.type";
+import Groups from "pages/Groups/containers/Groups";
+import Overview from "pages/Overview/containers/Overview";
+import { RoutesType } from "shared/types/Routes.type";
 
 /**
  * The react-router-dom implementation is done inside shared\components\routes\AppRouter.tsx
  */
-export const routes: GlobalRoutesType = {
-    facebook: {
-        subRoutes: { ...facebookRoutes },
-        layout: <FacebookLayout />,
+export const routes: RoutesType = {
+    overview: {
+        title: "Overview",
+        path: "/",
+        container: <Overview />,
+    },
+    groups: {
+        title: "Groups",
+        path: "/groups",
+        container: <Groups />,
     },
 };
-
-export const defaultRoute = routes.facebook.subRoutes.overview;

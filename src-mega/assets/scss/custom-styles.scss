@@ -1,0 +1,37 @@
+/**
+* Import variables
+*/
+@import "./variables/colors";
+
+/**
+* Misc
+*/
+a,
+a:visited,
+a:active {
+    color: inherit;
+    text-decoration: none;
+}
+
+/**
+* Custom classes
+*/
+.no-outline {
+    outline: none !important;
+}
+
+.no-grid-chip-user-select {
+    .MuiChip-root {
+        user-select: none;
+    }
+}
+
+.content-text-decoration-none {
+    a {
+        text-decoration: none;
+    }
+}
+
+.color-facebook-blue {
+    color: $facebookBlue;
+}
