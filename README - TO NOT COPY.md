@@ -6,7 +6,7 @@ Add "baseUrl": "src" in tsconfig.json > compilerOptions
 Ignore .env.development ONLY (do not ignore .env.production) in your .gitignore file (use "# Dotenv" as header comment)
 In index.html > Update <title> tag and <script type="module" src="/src/[main.tsx INTO index.tsx]"></script>
 
-Run this long pnpm commands:
+Run this long pnpm command:
 pnpm add @tanstack/react-query recoil @mui/material @mui/icons-material @mui/x-data-grid @mui/lab react-router-dom json-schema @types/json-schema @rjsf/mui @rjsf/core @rjsf/validator-ajv8 @rjsf/utils lodash @types/lodash axios react-dropzone react-compound-timer sass vite-tsconfig-paths tslib
 
 Add tsconfigPaths() as element in the array "defineConfig" > "plugins" in the file vite.config.ts (plugins: [react(), tsconfigPaths()])
