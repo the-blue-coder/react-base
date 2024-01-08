@@ -7,10 +7,12 @@ import useDotEnv from "./useDotEnv";
 const useGenericMutation = ({ method, endpointPath }: GenericMutationPropsType) => {
     const { getEnvVariable } = useDotEnv();
 
-    const mutation = useMutation(async (data: any) => {
-        const url = `${getEnvVariable("VITE_API_BASE_URL")}${endpointPath}`;
+    const mutation = useMutation({
+        mutationFn: async (data: any) => {
+            const url = `${getEnvVariable("VITE_API_BASE_URL")}${endpointPath}`;
 
-        return await axios({ method, url, data });
+            return await axios({ method, url, data });
+        },
     });
 
     return { ...mutation };
