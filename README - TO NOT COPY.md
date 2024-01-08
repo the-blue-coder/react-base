@@ -1,4 +1,4 @@
-Remove the default content of src folder EXCEPT vite-end.d.ts (keep this one)
+Remove the default content of src folder EXCEPT vite-end.d.ts (keep vite-end.d.ts)
 Copy the content of src folder from react-base to your project
 Copy .prettierrc, .prettierignore, .env.development and .env.production to the root of your new React project
 Update the content of the .env files
