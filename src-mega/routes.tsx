@@ -12,4 +12,10 @@ export const routes: GlobalRoutesType = {
     },
 };
 
+export const globalApiRoutes = {
+    tag: "/tag",
+
+    entityTag: "/entity-tag",
+};
+
 export const defaultRoute = routes.facebook.subRoutes.overview;

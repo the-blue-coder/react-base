@@ -17,3 +17,9 @@ export const routes: RoutesType = {
         container: <Groups />,
     },
 };
+
+export const apiRoutes = {
+    tag: "/tag",
+
+    entityTag: "/entity-tag",
+};
