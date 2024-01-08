@@ -1,6 +1,6 @@
 /* eslint-disable no-useless-escape */
 import _ from "lodash";
-import { DEFAULT_CURRENCY } from "shared/constants/currency.constant";
+import { DEFAULT_CURRENCY } from "generics/constants/currency.constant";
 
 const useUtils = () => {
     const formatNumber = (value: number, locale: string = "fr-FR") => {

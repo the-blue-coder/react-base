@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { GenericDataGridProps } from "shared/types/Grids.type";
+import { GenericDataGridProps } from "generics/types/Grids.type";
 import { DataGrid, GridFilterModel, GridToolbar } from "@mui/x-data-grid";
 import { Box } from "@mui/material";
-import useGenericDataGridStyles from "shared/styles/components/grids/useGenericDataGridStyles";
+import useGenericDataGridStyles from "generics/styles/components/grids/useGenericDataGridStyles";
 import { useMemo, useRef, useState } from "react";
-import { defaultDataGridPageSize } from "shared/constants/MuiDataGrid.constant";
+import { defaultDataGridPageSize } from "generics/constants/MuiDataGrid.constant";
 import CustomGridFilterToolbar from "./CustomGridFilterToolbar";
-import { GridFilterContext } from "shared/contexts/Grids.context";
+import { GridFilterContext } from "generics/contexts/Grids.context";
 
 const GenericDataGrid: React.FC<GenericDataGridProps> = ({
     columns,
