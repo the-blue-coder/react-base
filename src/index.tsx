@@ -71,6 +71,17 @@ const theme: Theme = createTheme({
                 },
             },
         },
+        MuiFormControl: {
+            styleOverrides: {
+                root: {
+                    "& .MuiList-root": {
+                        "& p": {
+                            margin: 0,
+                        },
+                    },
+                },
+            },
+        },
         MuiFormLabel: {
             styleOverrides: {
                 root: {

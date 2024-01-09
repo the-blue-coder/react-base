@@ -1,30 +1,35 @@
 import { Clear } from "@mui/icons-material";
 import { Box, FormControl, InputLabel, MenuItem, Select, SelectChangeEvent, SelectProps } from "@mui/material";
 import { WidgetProps } from "@rjsf/utils";
+import useUtils from "shared/hooks/useUtils";
 import useCustomSelectFieldStyles from "shared/styles/components/forms/useCustomSelectFieldStyles";
 import { SelectOptionType } from "shared/types/Forms.type";
 
 const CustomSelectField: React.FC<WidgetProps> = ({ value, schema, uiSchema, required, onChange }) => {
-    const styles = useCustomSelectFieldStyles();
+    const { generateUniqueId } = useUtils();
+    const uniquid = generateUniqueId();
 
     const uiOptions = uiSchema?.["ui:options"];
     const uiDisabled = uiSchema?.["ui:disabled"];
 
-    const id = String(uiOptions?.id || "custom-select-field");
+    const id = String(uiOptions?.id || `${`custom-select-field-${uniquid}`}`);
     const label = schema.title;
-    const variant = (uiOptions?.variant as SelectProps["variant"]) ?? "standard";
+    const variant = (uiOptions?.variant as SelectProps["variant"]) ?? "outlined";
     const options = uiOptions?.options as SelectOptionType[] | undefined;
-    const isMultiple = Boolean(uiOptions?.isMultiple ?? false);
-    const defaultValue = isMultiple ? [] : "";
+    const fullWidth = Boolean(uiOptions?.fullWidth ?? true);
+    const multiple = Boolean(uiOptions?.multiple ?? false);
+    const defaultValue = multiple ? [] : "";
     const hasClearBtn = uiOptions?.hasClearBtn ?? true;
-    const hasValue = isMultiple ? value && value.length > 0 : value;
+    const hasValue = multiple ? value && value.length > 0 : value;
+
+    const styles = useCustomSelectFieldStyles({ fullWidth });
 
     const handleChange = (e: SelectChangeEvent) => {
         onChange(e.target.value);
     };
 
     const handleClear = () => {
-        onChange(isMultiple ? [] : "");
+        onChange(multiple ? [] : "");
     };
 
     return (
@@ -39,7 +44,7 @@ const CustomSelectField: React.FC<WidgetProps> = ({ value, schema, uiSchema, req
                         value={options.length > 0 && value ? value : defaultValue}
                         onChange={handleChange}
                         label={label}
-                        multiple={isMultiple}
+                        multiple={multiple}
                         disabled={uiDisabled}
                     >
                         {options?.map((option: Record<string, string | number>) => {
