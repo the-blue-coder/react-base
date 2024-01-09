@@ -1,8 +1,11 @@
-const useCustomSelectFieldStyles = () => {
+import { useCustomSelectFieldStylesProps } from "generics/types/Forms.type";
+
+const useCustomSelectFieldStyles = ({ fullWidth }: useCustomSelectFieldStylesProps) => {
     return {
         customSelectField: {
             "& .select-form-control": {
-                minWidth: 150,
+                minWidth: 200,
+                width: fullWidth ? "100%" : "inherit",
 
                 "& .MuiSvgIcon-root[data-testid='ClearIcon']": {
                     position: "absolute",

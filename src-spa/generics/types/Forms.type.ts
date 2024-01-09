@@ -42,3 +42,7 @@ export type PartialFormProps = Omit<FormProps<any, any, any>, "schema" | "valida
 export type useCustomRadiosFieldStylesProps = {
     isInline: boolean;
 };
+
+export type useCustomSelectFieldStylesProps = {
+    fullWidth: boolean;
+};
