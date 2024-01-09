@@ -19,7 +19,7 @@ const CustomSelectField: React.FC<WidgetProps> = ({ value, schema, uiSchema, req
     const fullWidth = Boolean(uiOptions?.fullWidth ?? true);
     const multiple = Boolean(uiOptions?.multiple ?? false);
     const defaultValue = multiple ? [] : "";
-    const hasClearBtn = uiOptions?.hasClearBtn ?? true;
+    const hasClearButton = uiOptions?.hasClearButton ?? true;
     const hasValue = multiple ? value && value.length > 0 : value;
 
     const styles = useCustomSelectFieldStyles({ fullWidth });
@@ -56,7 +56,7 @@ const CustomSelectField: React.FC<WidgetProps> = ({ value, schema, uiSchema, req
                         })}
                     </Select>
 
-                    {hasClearBtn && hasValue && !uiDisabled && <Clear onClick={handleClear} />}
+                    {hasClearButton && hasValue && !uiDisabled && <Clear onClick={handleClear} />}
                 </FormControl>
             )}
         </Box>
