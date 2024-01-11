@@ -3,7 +3,7 @@ import { Box, Grid } from "@mui/material";
 import Footer from "../common/Footer";
 import useDefaultLayoutStyles from "../styles/layouts/useDefaultLayoutStyles";
 import { Outlet } from "react-router-dom";
-import GenericLeftNav from "shared/components/navs/GenericLeftNav";
+import GenericNav from "shared/components/navs/GenericNav";
 import { routes } from "routes";
 
 const DefaultLayout: React.FC = () => {
@@ -13,7 +13,7 @@ const DefaultLayout: React.FC = () => {
         <Box sx={styles.defaultLayout}>
             <Grid container id="content">
                 <Grid item id="left-section">
-                    <GenericLeftNav navItems={routes} />
+                    <GenericNav navItems={routes} />
                 </Grid>
 
                 <Grid item id="right-section" py={1} pl={1} pr={2}>

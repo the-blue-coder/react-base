@@ -1,5 +1,5 @@
 import { RouteSectionType } from "./Routes.type";
 
-export type GenericLeftNavProps = {
+export type GenericNavProps = {
     navItems: RouteSectionType;
 };

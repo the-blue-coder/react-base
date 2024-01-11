@@ -2,9 +2,9 @@ import { Box, List, ListItem, ListItemButton, ListItemText } from "@mui/material
 import { useLocation, useNavigate } from "react-router-dom";
 import useAppRoutes from "generics/hooks/useAppRoutes";
 import useMenuStyles from "generics/styles/common/useMenuStyles";
-import { GenericLeftNavProps } from "generics/types/Navs.type";
+import { GenericNavProps } from "generics/types/Navs.type";
 
-const GenericLeftNav: React.FC<GenericLeftNavProps> = ({ navItems }) => {
+const GenericNav: React.FC<GenericNavProps> = ({ navItems }) => {
     const { getRoutePath } = useAppRoutes();
 
     const navigate = useNavigate();
@@ -33,4 +33,4 @@ const GenericLeftNav: React.FC<GenericLeftNavProps> = ({ navItems }) => {
     );
 };
 
-export default GenericLeftNav;
+export default GenericNav;
