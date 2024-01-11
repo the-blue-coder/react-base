@@ -1,3 +1,4 @@
+import { SxProps } from "@mui/material";
 import { UseMutateAsyncFunction } from "@tanstack/react-query";
 import { AxiosResponse } from "axios";
 
@@ -22,3 +23,5 @@ export type SimpleVoidFunctionType = () => void;
 export type EnumType<T> = {
     [key in keyof T]: T[key];
 };
+
+export type StylesHookType = Record<string, SxProps>;
