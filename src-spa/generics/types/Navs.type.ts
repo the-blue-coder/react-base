@@ -1,5 +1,10 @@
-import { RouteSectionType } from "./Routes.type";
+import { RoutesType } from "./Routes.type";
 
 export type GenericNavProps = {
-    navItems: RouteSectionType;
+    navItems: RoutesType;
+    inline?: boolean;
+};
+
+export type useMenuStylesProps = {
+    inline: boolean;
 };
