@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { ReactNode } from "react";
 import { SimpleVoidFunctionType } from "./Misc.type";
 import { GenericFormSchemaType } from "./Forms.type";
@@ -13,8 +14,8 @@ export type GenericDialogProps = {
 export type GenericUpdateEntityDialogProps = GenericDialogProps & {
     isUpdating: boolean;
     schema: GenericFormSchemaType;
-    selectedEntity: unknown;
-    onSubmit: (formData: unknown) => void;
+    selectedEntity: any;
+    onSubmit: (formData: any) => void;
 };
 
 export type GenericConfirmationDialogProps = GenericDialogProps & {
