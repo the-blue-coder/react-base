@@ -25,3 +25,5 @@ export type EnumType<T> = {
 };
 
 export type StylesHookType = Record<string, SxProps>;
+
+export type SingleActionType = "add" | "edit";
