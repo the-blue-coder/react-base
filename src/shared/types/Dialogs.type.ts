@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import { SimpleVoidFunctionType } from "./Misc.type";
+import { GenericFormSchemaType } from "./Forms.type";
 
 export type GenericDialogProps = {
     open: boolean;
@@ -7,6 +8,13 @@ export type GenericDialogProps = {
     fullScreen?: boolean;
     children?: ReactNode;
     onClose: SimpleVoidFunctionType;
+};
+
+export type GenericUpdateEntityDialogProps = GenericDialogProps & {
+    isUpdating: boolean;
+    schema: GenericFormSchemaType;
+    selectedEntity: unknown;
+    onSubmit: (formData: unknown) => void;
 };
 
 export type GenericConfirmationDialogProps = GenericDialogProps & {
