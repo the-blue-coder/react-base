@@ -6,7 +6,7 @@ import GenericButton from "shared/components/buttons/GenericButton";
 const GenericConfirmationDialog: React.FC<GenericConfirmationDialogProps> = ({
     open,
     title,
-    isConfirming,
+    isPending,
     children,
     isDelete,
     customConfirmButtonText,
@@ -20,7 +20,7 @@ const GenericConfirmationDialog: React.FC<GenericConfirmationDialogProps> = ({
 
                 <Box mt={2}>
                     <GenericButton onClick={onClose}>Cancel</GenericButton>
-                    <GenericButton onClick={onConfirm} disabled={isConfirming} noMr>
+                    <GenericButton onClick={onConfirm} disabled={isPending} noMr>
                         <strong>{customConfirmButtonText || (isDelete ? "DELETE" : "Confirm")}</strong>
                     </GenericButton>
                 </Box>

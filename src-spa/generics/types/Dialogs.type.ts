@@ -15,15 +15,11 @@ export type GenericDialogProps = {
 export type GenericSingleEntityDialogProps = GenericDialogProps & {
     schema: GenericFormSchemaType;
     onFormChange?: (formData: any) => void;
-    onSubmit: (formData: any) => void;
+    onSubmit?: (formData: any) => void;
 };
 
 export type GenericConfirmationDialogProps = GenericDialogProps & {
     isDelete?: boolean;
     customConfirmButtonText?: string;
     onConfirm: (data: unknown) => void;
-};
-
-export type GenericDeleteConfirmationDialogProps = GenericDialogProps & {
-    onDeletionConfirm: (data: unknown) => void;
 };
