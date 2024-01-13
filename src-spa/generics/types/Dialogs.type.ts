@@ -8,24 +8,22 @@ export type GenericDialogProps = {
     title?: string;
     fullScreen?: boolean;
     children?: ReactNode;
+    isPending?: boolean;
     onClose: SimpleVoidFunctionType;
 };
 
-export type GenericUpdateEntityDialogProps = GenericDialogProps & {
-    isUpdating: boolean;
+export type GenericSingleEntityDialogProps = GenericDialogProps & {
     schema: GenericFormSchemaType;
     onFormChange?: (formData: any) => void;
     onSubmit: (formData: any) => void;
 };
 
 export type GenericConfirmationDialogProps = GenericDialogProps & {
-    isConfirming: boolean;
     isDelete?: boolean;
     customConfirmButtonText?: string;
     onConfirm: (data: unknown) => void;
 };
 
 export type GenericDeleteConfirmationDialogProps = GenericDialogProps & {
-    isDeleting: boolean;
     onDeletionConfirm: (data: unknown) => void;
 };
