@@ -14,6 +14,7 @@ export type GenericDialogProps = {
 export type GenericUpdateEntityDialogProps = GenericDialogProps & {
     isUpdating: boolean;
     schema: GenericFormSchemaType;
+    onFormChange?: (formData: any) => void;
     onSubmit: (formData: any) => void;
 };
 
