@@ -11,7 +11,7 @@ import { BASE_COLOR } from "shared/constants/colors.constant";
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 
-const defaultFontSize = 15;
+const defaultFontSize = 13;
 
 const theme: Theme = createTheme({
     palette: {
@@ -25,7 +25,7 @@ const theme: Theme = createTheme({
             fontSize: defaultFontSize,
         },
         h6: {
-            fontSize: 18,
+            fontSize: 16,
         },
         button: {
             fontSize: defaultFontSize,
@@ -35,6 +35,10 @@ const theme: Theme = createTheme({
     components: {
         MuiCssBaseline: {
             styleOverrides: {
+                ".MuiDataGrid-root div[data-field='actions'] button": {
+                    padding: 4,
+                    minWidth: "initial",
+                },
                 ".MuiDataGrid-panel .MuiTextField-root": {
                     marginTop: 0,
                 },
