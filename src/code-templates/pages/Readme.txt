@@ -9,7 +9,7 @@ ENTITY STRUCTURE:
 BACK END:
 
 -   Create the entity and do migration
--   Run symfony console make:crud
+-   Run symfony console make:crud -> It will create the controller automatically
 -   Create the service
 -   Update the logics in the controller and the service's methods as needed
 
