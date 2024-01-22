@@ -43,7 +43,7 @@ FRONT END:
         pageExample: "/page-example",
         pageExamplesSummary: "/page-example/summary",
 
--   Update PageExampleType and SinglePageExampleFormDataType in types/SinglePageExample.type (change PageExample to the actual name of your screen)
+-   Update PageExampleType and SinglePageExampleFormDataType's properties in types/SinglePageExample.type 
 
 -   Update hooks/useSinglePageExampleFormSchema.ts
 
