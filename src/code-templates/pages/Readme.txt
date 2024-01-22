@@ -11,7 +11,7 @@ BACK END:
 -   Create the entity and do migration
 -   Run symfony console make:crud
 -   Create the service
--   Fill the logics in the controller and the service's methods
+-   Update the logics in the controller and the service's methods as needed
 
 ---
 
