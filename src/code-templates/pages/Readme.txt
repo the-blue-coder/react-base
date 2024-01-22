@@ -17,7 +17,7 @@ BACK END:
 
 FRONT END:
 
--   Copy the entire PageExample folder to src/pages
+-   Copy the entire PageExample folder to src/pages and rename it to your desired new page name
 
 -   Do the following bulk renaming in files (MAKE SURE TO ACTIVATE Match Case [Aa] on the VSCode's search input option):
 
