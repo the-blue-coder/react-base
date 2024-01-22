@@ -49,7 +49,7 @@ FRONT END:
 
 -   Update components/UpdateSinglePageExampleDialog.tsx
 
--   update the message in components/DeleteSinglePageExampleConfirmationDialog.tsx
+-   Update the message in components/DeleteSinglePageExampleConfirmationDialog.tsx
 
 -   Update styles/useSinglePageExampleDialogStyles.ts
 
