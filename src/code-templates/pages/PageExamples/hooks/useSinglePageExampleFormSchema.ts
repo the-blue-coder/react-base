@@ -36,8 +36,8 @@ const useSinglePageExampleFormSchema = (): GenericFormSchemaType => {
                 "ui:widget": CustomSelectField,
                 "ui:options": {
                     options: [
-                        { id: 1, name: "Male" },
-                        { id: 2, name: "Female" },
+                        { id: 1, value: "Male" },
+                        { id: 2, value: "Female" },
                     ],
                 },
                 "ui:customErrorMessages": {
