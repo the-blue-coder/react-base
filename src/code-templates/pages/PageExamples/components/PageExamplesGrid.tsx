@@ -22,6 +22,7 @@ const PageExamplesGrid: React.FC<GenericDataGridPropsWithoutColumnNames> = ({
                 rows={rows}
                 isLoading={isLoading}
                 filterSelectsOptions={filterSelectsOptions}
+                checkboxSelection={false}
                 disableColumnMenu
                 onRowSelectionModelChange={onRowSelectionModelChange}
                 onCellDoubleClick={onCellDoubleClick}
