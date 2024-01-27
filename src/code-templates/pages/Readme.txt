@@ -9,8 +9,8 @@ ENTITY STRUCTURE:
 BACK END:
 
 -   Create the entity and do migration
--   Run symfony console make:crud -> It will create the controller automatically
--   Create the service
+-   Create the controller methods based on AffTrack > SqueezePageController
+-   Create the service methods based on AffTrack > SqueezePageService
 -   Update the logics in the controller and the service's methods as needed
 
 ---
@@ -26,6 +26,7 @@ FRONT END:
     -   PageExample -> PageName
     -   pageExample -> pageName
     -   page-examples- -> page-names-
+    -   page_example_ -> page_name_
     -   PAGE_EXAMPLE -> PAGE_NAME
 
 -   Rename the files
@@ -40,8 +41,13 @@ FRONT END:
         },
 
     -   In const apiRoutes, add
-        pageExample: "/page-example",
-        pageExamplesSummary: "/page-example/summary",
+        app_api_page_example_index: "/page-example-",
+        app_api_page_example_show: "/page-example-/{id}",
+        app_api_page_example_new: "/page-example-/new",
+        app_api_page_example_edit: "/page-example-/{id}/edit",
+        app_api_page_example_delete: "/page-example-/{id}",
+        app_api_page_example_summary: "/page-example-/summary",
+        app_api_page_example_options: "/page-example-/option",
 
 -   Update PageExampleType and SinglePageExampleFormDataType's properties in types/SinglePageExample.type 
 
