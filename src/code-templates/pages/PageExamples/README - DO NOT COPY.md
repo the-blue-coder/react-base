@@ -26,7 +26,7 @@ FRONT END:
     -   PageExample -> PageName
     -   pageExample -> pageName
     -   page-examples- -> page-names-
-    -   page_example_ -> page_name_
+    -   page*example* -> page*name*
     -   PAGE_EXAMPLE -> PAGE_NAME
 
 -   Rename the files
@@ -49,7 +49,7 @@ FRONT END:
         app_api_page_example_summary: "/page-example-/summary",
         app_api_page_example_options: "/page-example-/option",
 
--   Update PageExampleType and SinglePageExampleFormDataType's properties in types/SinglePageExample.type 
+-   Update PageExampleType and SinglePageExampleFormDataType's properties in types/SinglePageExample.type
 
 -   Update hooks/useSinglePageExampleFormSchema.ts
 
