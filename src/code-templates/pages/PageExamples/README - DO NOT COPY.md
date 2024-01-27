@@ -8,7 +8,7 @@ ENTITY STRUCTURE:
 
 BACK END:
 
--   Create the entity and do migration
+-   Create the entity and do migration. Do not forget to use TimestampableEntityTrait inside the entity
 -   Create the controller methods based on AffTrack > SqueezePageController
 -   Create the service methods based on AffTrack > SqueezePageService
 -   Update the logics in the controller and the service's methods as needed
