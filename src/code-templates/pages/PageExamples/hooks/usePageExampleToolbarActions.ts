@@ -2,9 +2,12 @@ import { useState } from "react";
 import { apiRoutes } from "routes";
 import useGenericMutation from "shared/hooks/useGenericMutation";
 import useDisplayAlert from "shared/hooks/useDisplayAlert";
-import { SinglePageExampleFormDataType, useAddPageExampleActionsProps } from "../types/SinglePageExample.type";
+import { SinglePageExampleFormDataType, usePageExampleToolbarActionsProps } from "../types/SinglePageExample.type";
 
-const useAddPageExampleActions = ({ fetchPageExamplesSummary, handleUpdatePageExamplesGridRows }: useAddPageExampleActionsProps) => {
+const usePageExampleToolbarActions = ({
+    fetchPageExamplesSummary,
+    handleUpdatePageExamplesGridRows,
+}: usePageExampleToolbarActionsProps) => {
     const [addPageExampleDialogOpen, setAddPageExampleDialogOpen] = useState<boolean>(false);
 
     const { mutateAsync: addPageExample, isPending: isAddingPageExample } = useGenericMutation({
@@ -39,4 +42,4 @@ const useAddPageExampleActions = ({ fetchPageExamplesSummary, handleUpdatePageEx
     };
 };
 
-export default useAddPageExampleActions;
+export default usePageExampleToolbarActions;

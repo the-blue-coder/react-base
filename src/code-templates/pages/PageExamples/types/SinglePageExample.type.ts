@@ -27,7 +27,7 @@ export type DeleteSinglePageExampleConfirmationDialogProps = GenericConfirmation
     selectedSinglePageExample: PageExampleType | undefined;
 };
 
-export type useAddPageExampleActionsProps = {
+export type usePageExampleToolbarActionsProps = {
     fetchPageExamplesSummary: MutateAsyncFunctionType;
     handleUpdatePageExamplesGridRows: CallbackFunctionType;
 };

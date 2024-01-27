@@ -4,7 +4,7 @@ import SectionTitle from "shared/components/texts/SectionTitle";
 import usePageExamplesStyles from "../styles/usePageExamplesStyles";
 import PageExamplesToolbar from "../components/PageExamplesToolbar";
 import AddPageExampleDialog from "../components/AddPageExampleDialog";
-import useAddPageExampleActions from "../hooks/useAddPageExampleActions";
+import usePageExampleToolbarActions from "../hooks/usePageExampleToolbarActions";
 import usePageExamplesFormSchemas from "../hooks/usePageExamplesFormSchemas";
 import PageExamplesGrid from "../components/PageExamplesGrid";
 import usePageExamplesGridActions from "../hooks/usePageExamplesGridActions";
@@ -59,7 +59,7 @@ const PageExamples: React.FC = () => {
     });
 
     const { addPageExampleDialogOpen, isAddingPageExample, handleToggleAddPageExampleDialog, handleAddPageExampleSubmit } =
-        useAddPageExampleActions({ fetchPageExamplesSummary, handleUpdatePageExamplesGridRows });
+        usePageExampleToolbarActions({ fetchPageExamplesSummary, handleUpdatePageExamplesGridRows });
     // End of Actions
 
     useEffect(() => {
