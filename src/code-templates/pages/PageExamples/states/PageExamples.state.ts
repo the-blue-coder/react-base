@@ -1,6 +1,6 @@
 import { atom } from "recoil";
 import { SingleActionType } from "shared/types/Misc.type";
-import { PageExampleType } from "../types/SinglePageExample.type";
+import { PageExampleType } from "../types/PageExample.type";
 
 export const SinglePageExampleActionState = atom<SingleActionType>({
     key: "SinglePageExampleActionState",

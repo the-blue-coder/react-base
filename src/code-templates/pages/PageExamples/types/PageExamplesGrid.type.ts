@@ -1,5 +1,5 @@
 import { MutateAsyncFunctionType } from "shared/types/Misc.type";
-import { PageExampleType } from "./SinglePageExample.type";
+import { PageExampleType } from "./PageExample.type";
 
 export type PageExamplesGridButtonActionType = (pageExample: PageExampleType) => void;
 

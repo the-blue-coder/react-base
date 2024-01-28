@@ -1,7 +1,7 @@
 import { GridColDef, GridValidRowModel } from "@mui/x-data-grid";
 import { useState } from "react";
 import { PAGE_EXAMPLES_GRID_COLUMN_NAMES } from "../enums/PageExamplesGrid.enum";
-import { PageExampleType } from "../types/SinglePageExample.type";
+import { PageExampleType } from "../types/PageExample.type";
 import { Box } from "@mui/material";
 import GenericButton from "shared/components/buttons/GenericButton";
 import { usePageExamplesGridContentProps } from "../types/PageExamplesGrid.type";

@@ -2,7 +2,7 @@ import { AxiosResponse } from "axios";
 import { usePageExamplesGridActionsProps } from "../types/PageExamplesGrid.type";
 import usePageExamplesGridContent from "./usePageExamplesGridContent";
 import useDisplayAlert from "shared/hooks/useDisplayAlert";
-import { PageExampleType, SinglePageExampleFormDataType } from "../types/SinglePageExample.type";
+import { PageExampleType, SinglePageExampleFormDataType } from "../types/PageExample.type";
 import { useSetRecoilState } from "recoil";
 import { SelectedSinglePageExampleState, SinglePageExampleActionState } from "../states/PageExamples.state";
 import { useState } from "react";

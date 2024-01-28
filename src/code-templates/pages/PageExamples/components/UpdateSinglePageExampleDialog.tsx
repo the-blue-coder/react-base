@@ -3,7 +3,7 @@ import GenericDialog from "shared/components/dialogs/GenericDialog";
 import GenericForm from "shared/components/forms/GenericForm";
 import GenericSubmitButton from "shared/components/buttons/GenericSubmitButton";
 import useSinglePageExampleDialogStyles from "../styles/useSinglePageExampleDialogStyles";
-import { UpdateSinglePageExampleDialogProps } from "../types/SinglePageExample.type";
+import { UpdateSinglePageExampleDialogProps } from "../types/PageExample.type";
 
 const UpdateSinglePageExampleDialog: React.FC<UpdateSinglePageExampleDialogProps> = ({
     open,

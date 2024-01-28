@@ -50,7 +50,7 @@ FRONT END:
         app_api_page_example_summary: "/page-example-/summary",
         app_api_page_example_options: "/page-example-/option",
 
--   Update PageExampleType and SinglePageExampleFormDataType's properties in types/SinglePageExample.type
+-   Update PageExampleType and SinglePageExampleFormDataType's properties in types/PageExample.type
 
 -   Update hooks/useSinglePageExampleFormSchema.ts
 

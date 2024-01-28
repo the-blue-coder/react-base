@@ -2,7 +2,7 @@ import { useState } from "react";
 import { apiRoutes } from "routes";
 import useGenericMutation from "shared/hooks/useGenericMutation";
 import useDisplayAlert from "shared/hooks/useDisplayAlert";
-import { SinglePageExampleFormDataType, usePageExampleToolbarActionsProps } from "../types/SinglePageExample.type";
+import { SinglePageExampleFormDataType, usePageExampleToolbarActionsProps } from "../types/PageExample.type";
 
 const usePageExampleToolbarActions = ({
     fetchPageExamplesSummary,
