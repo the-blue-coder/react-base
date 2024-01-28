@@ -8,8 +8,10 @@ ENTITY STRUCTURE:
 
 BACK END:
 
--   Create the entity and do migration. Do not forget to use TimestampableEntityTrait inside the entity.
--   Create the FormType class. DO NOT FORGET TO USE SNAKE_CASE FOR ALL FIELS IN THE FORM TYPE CLASS.
+-   Create the entity and do migration. Do not forget to use TimestampableEntityTrait inside the entity, and add #[ORM\HasLifecycleCallbacks] just before the entity class
+-   Create the FormType class base on the entity.
+-   Remove created_at and updated_t in the FormType (the timestamps are managed by TimestampableEntityTrait).
+-   Use snake_case for all the fields in the form type class.
 -   Create the controller methods based on AffTrack > SqueezePageController
 -   Create the service methods based on AffTrack > SqueezePageService
 -   Update the logics in the controller and the service's methods as needed
