@@ -8,7 +8,8 @@ ENTITY STRUCTURE:
 
 BACK END:
 
--   Create the entity and do migration. Do not forget to use TimestampableEntityTrait inside the entity
+-   Create the entity and do migration. Do not forget to use TimestampableEntityTrait inside the entity.
+-   Create the FormType class. DO NOT FORGET TO USE SNAKE_CASE FOR ALL FIELS IN THE FORM TYPE CLASS.
 -   Create the controller methods based on AffTrack > SqueezePageController
 -   Create the service methods based on AffTrack > SqueezePageService
 -   Update the logics in the controller and the service's methods as needed
@@ -62,3 +63,5 @@ FRONT END:
 -   Update enums/PageExamplesGrid.enum.ts
 
 -   Update hooks/usePageExamplesGridContent.tsx
+
+-   Update offsetTopStickyStart in components/PageExamplesToolbar.tsx
