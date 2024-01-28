@@ -32,12 +32,6 @@ const PageExamples: React.FC = () => {
     // End of Backend data
 
     /**
-     * Form schemas
-     */
-    const { singlePageExampleFormSchema } = usePageExamplesFormSchemas();
-    // End of form schemas
-
-    /**
      * Actions
      */
     const {
@@ -61,6 +55,12 @@ const PageExamples: React.FC = () => {
     const { addPageExampleDialogOpen, isAddingPageExample, handleToggleAddPageExampleDialog, handleAddPageExampleSubmit } =
         usePageExampleToolbarActions({ fetchPageExamplesSummary, handleUpdatePageExamplesGridRows });
     // End of Actions
+
+    /**
+     * Form schemas
+     */
+    const { singlePageExampleFormSchema } = usePageExamplesFormSchemas();
+    // End of form schemas
 
     useEffect(() => {
         fetchPageExamplesSummary({});
