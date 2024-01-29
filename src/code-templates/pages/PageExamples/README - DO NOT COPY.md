@@ -61,7 +61,7 @@ FRONT END:
 
 -   Update the message in components/DeleteSinglePageExampleConfirmationDialog.tsx
 
--   Update styles/useSinglePageExampleDialogStyles.ts
+-   Update styles/useSinglePageExampleDialogStyles.ts (add the order number of custom options fields inside the array parameter of getPaddingTopsFixStyle())
 
 -   Update enums/PageExamplesGrid.enum.ts
 
