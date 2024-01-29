@@ -11,9 +11,10 @@ BACK END:
 -   Create the entity and do migration. Do not forget to use TimestampableEntityTrait inside the entity, and add #[ORM\HasLifecycleCallbacks] just before the entity class
 -   Create the FormType class base on the entity.
 -   Remove created_at and updated_t in the FormType (the timestamps are managed by TimestampableEntityTrait).
--   Use snake_case for all the fields in the form type class.
--   Create the controller methods based on AffTrack > SqueezePageController
--   Create the service methods based on AffTrack > SqueezePageService
+-   Use snake_case for all the fields in the form type class even for the relations (relatedEntity must be named related_entity in the form type class)
+-   Copy code-templates/backend/Controller/PageExampleController.php to backend > app/Controller/, rename file and update variables and methods names as needed
+-   Copy code-templates/backend/Service/AbstractService.php to backend > app/Service/
+-   Copy code-templates/backend/Service/PageService.php to backend app/Service/, rename file and update variables and methods names as needed
 -   Update the logics in the controller and the service's methods as needed
 
 ---
