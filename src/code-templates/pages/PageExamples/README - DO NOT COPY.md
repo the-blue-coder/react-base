@@ -15,6 +15,7 @@ BACK END:
 -   Copy code-templates/backend/Controller/PageExampleController.php to backend > app/Controller/, rename file and update variables and methods names as needed
 -   Copy code-templates/backend/Service/AbstractService.php to backend > app/Service/
 -   Copy code-templates/backend/Service/PageService.php to backend app/Service/, rename file and update variables and methods names as needed
+-   Update PageService->buildSingleForTheFrontend()
 -   Update the logics in the controller and the service's methods as needed
 
 ---
