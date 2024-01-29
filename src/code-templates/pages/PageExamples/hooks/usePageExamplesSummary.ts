@@ -8,7 +8,7 @@ const usePageExamplesSummary = () => {
         isPending: isFetchingPageExamplesSummary,
     } = useGenericMutation({
         method: "GET",
-        endpointPath: `${apiRoutes.pageExamplesSummary}`,
+        endpointPath: `${apiRoutes.app_api_page_example_summary}`,
     });
 
     const pageExamplesSummaryData = pageExamplesSummaryRawData?.data?.pageExamplesSummary;

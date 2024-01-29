@@ -44,12 +44,12 @@ const usePageExamplesGridActions = ({
 
     const { mutateAsync: updateSinglePageExample, isPending: isUpdatingSinglePageExample } = useGenericMutation({
         method: "POST",
-        endpointPath: `${apiRoutes.pageExample}/${selectedSinglePageExample?.id}`,
+        endpointPath: `${apiRoutes.app_api_page_example_edit}/${selectedSinglePageExample?.id}`,
     });
 
     const { mutateAsync: deleteSinglePageExample, isPending: isDeletingSinglePageExample } = useGenericMutation({
         method: "DELETE",
-        endpointPath: `${apiRoutes.pageExample}/${selectedSinglePageExample?.id}`,
+        endpointPath: `${apiRoutes.app_api_page_example_edit}/${selectedSinglePageExample?.id}`,
     });
 
     const handleToggleUpdateSinglePageExampleDialog = () => {
