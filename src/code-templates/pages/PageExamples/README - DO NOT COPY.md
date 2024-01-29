@@ -45,13 +45,13 @@ FRONT END:
         },
 
     -   In const apiRoutes, add
-        app_api_page_example_summary: "/page-example-/summary",
-        app_api_page_example_index: "/page-example-",
-        app_api_page_example_show: "/page-example-/{id}",
-        app_api_page_example_new: "/page-example-/new",
-        app_api_page_example_edit: "/page-example-/{id}/edit",
-        app_api_page_example_delete: "/page-example-/{id}",
-        app_api_page_example_options: "/page-example-/option",
+        app_api_page_example_summary: "/page-example/summary",
+        app_api_page_example_index: "/page-example",
+        app_api_page_example_show: "/page-example/{id}",
+        app_api_page_example_new: "/page-example/new",
+        app_api_page_example_edit: "/page-example/{id}/edit",
+        app_api_page_example_delete: "/page-example/{id}",
+        app_api_page_example_options: "/page-example/option",
 
 -   Update PageExampleType and SinglePageExampleFormDataType's properties in types/SinglePageExample.type
 
