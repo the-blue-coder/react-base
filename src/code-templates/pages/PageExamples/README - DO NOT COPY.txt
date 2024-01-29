@@ -32,6 +32,7 @@ FRONT END:
     -   pageExample -> pageName
     -   page-examples- -> page-names-
     -   page-example- -> page-name-
+    -   page_example_ -> page_name_
     -   PAGE_EXAMPLE -> PAGE_NAME
 
 -   Rename the files
