@@ -39,7 +39,7 @@ class PageExampleController extends AbstractController
         ], JsonResponse::HTTP_OK);
     }
 
-    #[Route('/{id}', name: 'app_api_page_example_show', methods: ['GET'])]
+    #[Route('/{id}', name: 'app_api_page_example_show', methods: ['GET'], requirements: ['id' => '\d+'])]
     public function show(PageExample $pageExample): JsonResponse
     {
         $pageExample = $this->pageExampleService->buildSingleForTheFrontend($pageExample);
@@ -70,7 +70,7 @@ class PageExampleController extends AbstractController
         ], JsonResponse::HTTP_BAD_REQUEST);
     }
 
-    #[Route('/{id}/edit', name: 'app_api_page_example_edit', methods: ['POST'])]
+    #[Route('/{id}/edit', name: 'app_api_page_example_edit', methods: ['POST'], requirements: ['id' => '\d+'])]
     public function edit(Request $request, PageExample $pageExample): JsonResponse
     {
         $form = $this->createForm(PageExampleType::class, $pageExample);
@@ -89,7 +89,7 @@ class PageExampleController extends AbstractController
         ], JsonResponse::HTTP_BAD_REQUEST);
     }
 
-    #[Route('/{id}', name: 'app_api_page_example_delete', methods: ['DELETE'])]
+    #[Route('/{id}', name: 'app_api_page_example_delete', methods: ['DELETE'], requirements: ['id' => '\d+'])]
     public function delete(PageExample $pageExample): JsonResponse
     {
         $this->pageExampleService->deleteEntity($pageExample);
