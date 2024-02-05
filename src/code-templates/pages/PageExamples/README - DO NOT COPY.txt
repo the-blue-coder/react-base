@@ -43,9 +43,9 @@ FRONT END:
 
     -   In const routes, add
         pageExamples: {
-        title: "Page examples",
-        path: "/page-examples",
-        container: <PageExamples />,
+            title: "Page examples",
+            path: "/page-examples",
+            container: <PageExamples />,
         },
 
     -   In const apiRoutes, add
