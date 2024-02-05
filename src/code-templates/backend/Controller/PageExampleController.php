@@ -28,7 +28,7 @@ class PageExampleController extends AbstractController
         ], JsonResponse::HTTP_OK);
     }
 
-    #[Route('/', name: 'app_api_page_example_index', methods: ['GET'])]
+    #[Route('', name: 'app_api_page_example_index', methods: ['GET'])]
     public function index(): JsonResponse
     {
         $pageExamples = $this->pageExampleService->getAll();
