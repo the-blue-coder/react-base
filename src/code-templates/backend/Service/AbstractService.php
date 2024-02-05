@@ -5,6 +5,7 @@ namespace App\Service;
 use DateTime;
 use DateTimeImmutable;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
@@ -75,6 +76,28 @@ abstract class AbstractService
     public function throwNotFoundEntityHttpException($customErrorMessage = null)
     {
         throw new NotFoundHttpException($customErrorMessage ?? 'Entity not found');
+    }
+
+    /**
+     * Files management
+     */
+    public function createTwigFile($folderPath, $fileBaseName, $fileContent)
+    {
+        $filesystem = new Filesystem();
+
+        if (!$filesystem->exists($folderPath)) {
+            $filesystem->mkdir($folderPath);
+        }
+
+        $twigFileName = $fileBaseName . '.html.twig';
+        $twigFilePath = $folderPath . '/' . $twigFileName;
+
+        $filesystem->dumpFile($twigFilePath, $fileContent);
+    }
+
+    public function doAGitCommit($message)
+    {
+        exec("git add --a && git commit -m '" . $message .  "'");
     }
 
     /**
