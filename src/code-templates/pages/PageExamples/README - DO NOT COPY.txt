@@ -24,7 +24,7 @@ FRONT END:
 
 -   Copy the entire PageExample folder to src/pages and rename it to your desired new page name
 
--   Delete readme file in the copied folder
+-   From now on use, the copied readme, it will be faster for finding the files
 
 -   Do the following bulk renaming in files (MAKE SURE TO ACTIVATE Match Case [Aa] on the VSCode's search input option):
 
@@ -72,3 +72,5 @@ FRONT END:
 -   Update hooks/usePageExamplesGridContent.tsx
 
 -   Update offsetTopStickyStart in components/PageExamplesToolbar.tsx
+
+-   Delete readme file in the copied folder
