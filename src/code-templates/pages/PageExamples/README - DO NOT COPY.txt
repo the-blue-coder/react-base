@@ -10,7 +10,7 @@ BACK END:
 
 -   Create the entity and do migration. Do not forget to use TimestampableEntityTrait inside the entity, and add #[ORM\HasLifecycleCallbacks] just before the entity class
 -   Create the FormType class base on the entity.
--   Remove created_at and updated_t in the FormType (the timestamps are managed by TimestampableEntityTrait).
+-   Remove created_at and updated_at in the FormType (the timestamps are managed by TimestampableEntityTrait).
 -   Use snake_case for all the fields in the form type class.
 -   Copy code-templates/backend/Controller/PageExampleController.php to backend > app/Controller/, rename file and update variables and methods names as needed
 -   Copy code-templates/backend/Service/AbstractService.php to backend > app/Service/
