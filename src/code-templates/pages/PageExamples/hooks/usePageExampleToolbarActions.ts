@@ -12,7 +12,7 @@ const usePageExampleToolbarActions = ({
 
     const { mutateAsync: addPageExample, isPending: isAddingPageExample } = useGenericMutation({
         method: "POST",
-        endpointPath: apiRoutes.pageExample,
+        endpointPath: apiRoutes.app_api_page_example_new,
     });
 
     const { displaySuccessAlert, displayFailureAlert } = useDisplayAlert();
