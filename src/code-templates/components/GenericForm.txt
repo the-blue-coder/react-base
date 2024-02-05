@@ -33,7 +33,7 @@ const schema = useSchema();
 
 const { displaySuccessAlert, displayFailureAlert } = useDisplayAlert();
 
-const { mutateAsync: doAction, isLoading } = useGenericMutation({
+const { mutateAsync: doAction, isPending } = useGenericMutation({
     method: "POST",
     endpointPath: ApiRoutes.route,
 });
