@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { KeyValueObject } from "shared/types/Misc.type";
 import { RouteItemType } from "shared/types/Routes.type";
 
@@ -10,7 +11,7 @@ const useAppRoutes = () => {
         return `${path}${path.includes("?") ? "&" : "?"}access_token=`;
     };
 
-    const buildEndpointWithParams = (endpoint: string, params: KeyValueObject[]) => {
+    const buildEndpointPathWithParams = (endpoint: string, params: KeyValueObject[]) => {
         params.forEach((param) => {
             endpoint = endpoint.replace(new RegExp(`{${param.key}}`, "g"), String(param.value));
         });
@@ -18,7 +19,16 @@ const useAppRoutes = () => {
         return endpoint;
     };
 
-    return { getRoutePath, getFacebookApiEndpoint, buildEndpointWithParams };
+    const buildEndpointPathWithIdAsParam = (route: string, entity: any) => {
+        return buildEndpointPathWithParams(route, [
+            {
+                key: "id",
+                value: Number(entity?.id),
+            },
+        ]);
+    };
+
+    return { getRoutePath, getFacebookApiEndpoint, buildEndpointPathWithParams, buildEndpointPathWithIdAsParam };
 };
 
 export default useAppRoutes;

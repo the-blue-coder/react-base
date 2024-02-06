@@ -8,6 +8,7 @@ import { SelectedSinglePageExampleState, SinglePageExampleActionState } from "..
 import { useState } from "react";
 import useGenericMutation from "shared/hooks/useGenericMutation";
 import { apiRoutes } from "routes";
+import useAppRoutes from "shared/hooks/useAppRoutes";
 
 const usePageExamplesGridActions = ({
     selectedSinglePageExample,
@@ -19,6 +20,8 @@ const usePageExamplesGridActions = ({
 
     const [updateSinglePageExampleDialogOpen, setUpdateSinglePageExampleDialogOpen] = useState<boolean>(false);
     const [deleteSinglePageExampleDialogOpen, setDeleteSinglePageExampleDialogOpen] = useState<boolean>(false);
+
+    const { buildEndpointPathWithIdAsParam } = useAppRoutes();
 
     const { displaySuccessAlert, displayFailureAlert } = useDisplayAlert();
 
@@ -44,12 +47,12 @@ const usePageExamplesGridActions = ({
 
     const { mutateAsync: updateSinglePageExample, isPending: isUpdatingSinglePageExample } = useGenericMutation({
         method: "POST",
-        endpointPath: `${apiRoutes.app_api_page_example_edit}/${selectedSinglePageExample?.id}`,
+        endpointPath: buildEndpointPathWithIdAsParam(app_api_page_example_edit, selectedSinglePageExample),
     });
 
     const { mutateAsync: deleteSinglePageExample, isPending: isDeletingSinglePageExample } = useGenericMutation({
         method: "DELETE",
-        endpointPath: `${apiRoutes.app_api_page_example_edit}/${selectedSinglePageExample?.id}`,
+        endpointPath: buildEndpointPathWithIdAsParam(app_api_page_example_delete, selectedSinglePageExample),
     });
 
     const handleToggleUpdateSinglePageExampleDialog = () => {
