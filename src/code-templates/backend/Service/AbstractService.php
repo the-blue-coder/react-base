@@ -68,9 +68,9 @@ abstract class AbstractService
     /**
      * Http exceptions
      */
-    public function throwBadRequestHttpException()
+    public function throwBadRequestHttpException($customErrorMessage = null)
     {
-        throw new BadRequestHttpException('Bad Request: Missing or malformed parameters');
+        throw new BadRequestHttpException($customErrorMessage ?? 'Bad Request: Missing or malformed parameters');
     }
 
     public function throwNotFoundEntityHttpException($customErrorMessage = null)
