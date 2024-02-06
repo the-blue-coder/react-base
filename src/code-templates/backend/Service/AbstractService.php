@@ -81,7 +81,7 @@ abstract class AbstractService
     /**
      * Files management
      */
-    public function createTwigFile($folderPath, $fileBaseName, $fileContent)
+    public function createFile($folderPath, $fileName, $fileContent)
     {
         $filesystem = new Filesystem();
 
@@ -89,12 +89,23 @@ abstract class AbstractService
             $filesystem->mkdir($folderPath);
         }
 
-        $twigFileName = $fileBaseName . '.html.twig';
-        $twigFilePath = $folderPath . '/' . $twigFileName;
+        $filePath = $folderPath . '/' . $fileName;
 
-        $filesystem->dumpFile($twigFilePath, $fileContent);
+        $filesystem->dumpFile($filePath, $fileContent);
     }
 
+    public function renameFile($oldFilePath, $newFilePath)
+    {
+        $filesystem = new Filesystem();
+        
+        if ($oldFilePath !== $newFilePath) {
+            $filesystem->rename($oldFilePath, $newFilePath);
+        }
+    }
+
+    /**
+     * Git related methods
+     */
     public function doAGitCommit($message)
     {
         exec("git add --a && git commit -m '" . $message .  "'");
