@@ -125,7 +125,7 @@ abstract class AbstractService
         /**
          * Get $requestData as array
          */
-        $requestData = json_decode($request->getContent(), true);
+        $requestData = $this->getRequestDataArray($request);
 
         /**
          * Transform keys into snake case, then remove those having _id suffix
@@ -145,6 +145,11 @@ abstract class AbstractService
             },
             []
         );
+    }
+
+    public function getRequestDataArray($request)
+    {
+        return json_decode($request->getContent(), true);
     }
 
     public function getOptionValueByItsId($optionsArray, $id)
