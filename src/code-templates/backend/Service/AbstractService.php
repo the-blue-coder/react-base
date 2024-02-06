@@ -103,6 +103,13 @@ abstract class AbstractService
         }
     }
 
+    public function deleteFile($filePath)
+    {
+        $filesystem = new Filesystem();
+        
+        $filesystem->remove($filePath);
+    }
+
     /**
      * Git related methods
      */
