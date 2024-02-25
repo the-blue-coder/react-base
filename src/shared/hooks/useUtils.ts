@@ -67,9 +67,11 @@ const useUtils = () => {
         return `${timestamp}${random}`;
     };
 
-    const base64StringToFile = (base64String: string, fileName: string) => {
+    const base64StringToFile = (base64String: string) => {
         const dataUrlParts = base64String.split(",");
         const contentType = dataUrlParts[0].split(":")[1].split(";")[0];
+        const extension = contentType.split("/")[1];
+        const fileName = `file_${generateUniqueId}.${extension}`;
         const content = atob(dataUrlParts[1]);
         const blob = new Blob([content], { type: contentType });
 
